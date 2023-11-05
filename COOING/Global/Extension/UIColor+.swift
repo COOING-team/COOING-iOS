@@ -28,6 +28,10 @@ extension UIColor {
     static var cooingGray2: UIColor {
         return UIColor(hex: "#4F4D43", alpha: 0.05)
     }
+    
+    static var navGray: UIColor {
+        return UIColor(hex: "#898989")
+    }
 
 }
 

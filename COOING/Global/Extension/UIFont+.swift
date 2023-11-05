@@ -44,4 +44,24 @@ extension UIFont {
     class func body6() -> UIFont {
         return UIFont(name: AppFontName.mediumFont.rawValue, size: 10)!
     }
+    
+    class func button1() -> UIFont {
+        return UIFont(name: AppFontName.extraBoldFont.rawValue, size: 18)!
+    }
+    
+    class func button2() -> UIFont {
+        return UIFont(name: AppFontName.boldFont.rawValue, size: 22)!
+    }
+    
+    class func button3() -> UIFont {
+        return UIFont(name: AppFontName.extraBoldFont.rawValue, size: 10)!
+    }
+    
+    class func popup() -> UIFont {
+        return UIFont(name: AppFontName.mediumFont.rawValue, size: 13)!
+    }
+    
+    class func nav() -> UIFont {
+        return UIFont(name: AppFontName.semiBoldFont.rawValue, size: 10)!
+    }
 }
