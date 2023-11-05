@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		054787612AF7992100823463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787602AF7992100823463 /* AppDelegate.swift */; };
 		054787632AF7992100823463 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787622AF7992100823463 /* SceneDelegate.swift */; };
-		054787652AF7992100823463 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787642AF7992100823463 /* ViewController.swift */; };
+		054787652AF7992100823463 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787642AF7992100823463 /* HomeViewController.swift */; };
 		0547876A2AF7992300823463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054787692AF7992300823463 /* Assets.xcassets */; };
 		0547876D2AF7992300823463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547876B2AF7992300823463 /* LaunchScreen.storyboard */; };
 		0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547878D2AF7ACA200823463 /* BaseViewController.swift */; };
@@ -25,13 +25,21 @@
 		054787A52AF7AFEA00823463 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 054787A42AF7AFEA00823463 /* SnapKit */; };
 		054787A82AF7AFF600823463 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 054787A72AF7AFF600823463 /* Then */; };
 		054787AA2AF7B08100823463 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787A92AF7B08100823463 /* UIColor+.swift */; };
+		054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787C62AF7BE6100823463 /* MyPageViewController.swift */; };
+		054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787C82AF7BE7400823463 /* ReportViewController.swift */; };
+		054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787CA2AF7BE7C00823463 /* HistoryViewController.swift */; };
+		054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787CC2AF7BEA800823463 /* CooingTabBarController.swift */; };
+		054787CF2AF7BEB800823463 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787CE2AF7BEB800823463 /* CALayer+.swift */; };
+		054787D12AF7C29800823463 /* CooingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D02AF7C29800823463 /* CooingButton.swift */; };
+		054787D32AF7C2D700823463 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D22AF7C2D700823463 /* UIButton+.swift */; };
+		054787D52AF7C42500823463 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D42AF7C42500823463 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0547875D2AF7992100823463 /* COOING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COOING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		054787602AF7992100823463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		054787622AF7992100823463 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		054787642AF7992100823463 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		054787642AF7992100823463 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		054787692AF7992300823463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0547876C2AF7992300823463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0547876E2AF7992300823463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +54,14 @@
 		0547879F2AF7AE2F00823463 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		054787A12AF7AE6F00823463 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		054787A92AF7B08100823463 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		054787C62AF7BE6100823463 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		054787C82AF7BE7400823463 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		054787CA2AF7BE7C00823463 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		054787CC2AF7BEA800823463 /* CooingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooingTabBarController.swift; sourceTree = "<group>"; };
+		054787CE2AF7BEB800823463 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
+		054787D02AF7C29800823463 /* CooingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CooingButton.swift; path = COOING/Global/Extension/CooingButton.swift; sourceTree = SOURCE_ROOT; };
+		054787D22AF7C2D700823463 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		054787D42AF7C42500823463 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +185,8 @@
 		054787842AF79EFE00823463 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				054787C12AF7BE3300823463 /* ViewController */,
+				054787C02AF7BE2E00823463 /* View */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -176,6 +194,8 @@
 		054787852AF79F0700823463 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				054787C32AF7BE3C00823463 /* ViewController */,
+				054787C22AF7BE3800823463 /* View */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -183,6 +203,8 @@
 		054787862AF79F8100823463 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				054787C52AF7BE4700823463 /* ViewController */,
+				054787C42AF7BE4300823463 /* View */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -197,7 +219,7 @@
 		054787882AF79FA600823463 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				054787642AF7992100823463 /* ViewController.swift */,
+				054787642AF7992100823463 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -209,6 +231,8 @@
 				054787952AF7ACE700823463 /* UIStackView+.swift */,
 				054787A12AF7AE6F00823463 /* UIFont+.swift */,
 				054787A92AF7B08100823463 /* UIColor+.swift */,
+				054787CE2AF7BEB800823463 /* CALayer+.swift */,
+				054787D22AF7C2D700823463 /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -217,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0547879F2AF7AE2F00823463 /* Font.swift */,
+				054787D42AF7C42500823463 /* Image.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -224,6 +249,7 @@
 		0547878B2AF7AC7F00823463 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				054787D02AF7C29800823463 /* CooingButton.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -233,8 +259,56 @@
 			children = (
 				0547878D2AF7ACA200823463 /* BaseViewController.swift */,
 				054787912AF7ACBA00823463 /* BaseView.swift */,
+				054787CC2AF7BEA800823463 /* CooingTabBarController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		054787C02AF7BE2E00823463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		054787C12AF7BE3300823463 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				054787C62AF7BE6100823463 /* MyPageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		054787C22AF7BE3800823463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = COOING/Presentation/Report/View;
+			sourceTree = "<group>";
+		};
+		054787C32AF7BE3C00823463 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				054787C82AF7BE7400823463 /* ReportViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		054787C42AF7BE4300823463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = COOING/Presentation/History/View;
+			sourceTree = "<group>";
+		};
+		054787C52AF7BE4700823463 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				054787CA2AF7BE7C00823463 /* HistoryViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,15 +393,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
+				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
-				054787652AF7992100823463 /* ViewController.swift in Sources */,
+				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
+				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
+				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
+				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
+				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
+				054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,
+				054787CF2AF7BEB800823463 /* CALayer+.swift in Sources */,
 				054787AA2AF7B08100823463 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

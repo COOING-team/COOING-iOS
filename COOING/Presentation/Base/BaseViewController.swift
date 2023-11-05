@@ -44,7 +44,7 @@ class BaseViewController: UIViewController {
 
     func configureUI() {
         //override Point
-        view.backgroundColor = .black
+        view.backgroundColor = .white
 
     }
 
