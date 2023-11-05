@@ -33,6 +33,9 @@
 		054787D12AF7C29800823463 /* CooingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D02AF7C29800823463 /* CooingButton.swift */; };
 		054787D32AF7C2D700823463 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D22AF7C2D700823463 /* UIButton+.swift */; };
 		054787D52AF7C42500823463 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D42AF7C42500823463 /* Image.swift */; };
+		05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC352AF7FE510082E3EB /* HomeView.swift */; };
+		05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */; };
+		05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC392AF815800082E3EB /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		054787D02AF7C29800823463 /* CooingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CooingButton.swift; path = COOING/Global/Extension/CooingButton.swift; sourceTree = SOURCE_ROOT; };
 		054787D22AF7C2D700823463 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		054787D42AF7C42500823463 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		05B0BC352AF7FE510082E3EB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = COOING/Global/Constant/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		05B0BC392AF815800082E3EB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = COOING/Presentation/Home/ViewController/QuestionView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,8 @@
 		054787872AF79F9F00823463 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05B0BC352AF7FE510082E3EB /* HomeView.swift */,
+				05B0BC392AF815800082E3EB /* QuestionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				054787642AF7992100823463 /* HomeViewController.swift */,
+				05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -399,13 +408,16 @@
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
+				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
+				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
+				05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */,
 				054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,

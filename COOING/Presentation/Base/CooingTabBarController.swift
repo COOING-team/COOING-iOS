@@ -20,10 +20,10 @@ class CooingTabBarController: UITabBarController {
     let reportViewController = ReportViewController()
     let myPageViewController = MyPageViewController()
     
-    lazy var homeNavigationContrller = UINavigationController(rootViewController: homeViewController)
-    lazy var historyNavigationContrller = UINavigationController(rootViewController: historyViewController)
-    lazy var reportNavigationContrller = UINavigationController(rootViewController: reportViewController)
-    lazy var myPageNavigationContrller = UINavigationController(rootViewController: myPageViewController)
+//    lazy var homeNavigationContrller = UINavigationController(rootViewController: homeViewController)
+//    lazy var historyNavigationContrller = UINavigationController(rootViewController: historyViewController)
+//    lazy var reportNavigationContrller = UINavigationController(rootViewController: reportViewController)
+//    lazy var myPageNavigationContrller = UINavigationController(rootViewController: myPageViewController)
     
     //MARK: - Life Cycle
     
@@ -31,7 +31,6 @@ class CooingTabBarController: UITabBarController {
         super.viewDidLoad()
         
         setTabBar()
-        setNavigationController()
         setViewController()
     }
     
@@ -52,25 +51,19 @@ class CooingTabBarController: UITabBarController {
 
     }
     
-    private func setNavigationController() {
-        homeNavigationContrller.setNavigationBarHidden(true, animated: true)
-        historyNavigationContrller.setNavigationBarHidden(true, animated: true)
-        reportNavigationContrller.setNavigationBarHidden(true, animated: true)
-        myPageNavigationContrller.setNavigationBarHidden(true, animated: true)
-    }
-    
     private func setViewController(){
-        homeNavigationContrller.tabBarItem = setTabBarItem(title: "홈", image: Image.home, selectedImage: Image.homeFill)
-        historyNavigationContrller.tabBarItem = setTabBarItem(title: "모아보기", image: Image.history, selectedImage: Image.historyFill)
-        reportNavigationContrller.tabBarItem = setTabBarItem(title: "레포트", image: Image.report, selectedImage: Image.reportFill)
-        myPageNavigationContrller.tabBarItem = setTabBarItem(title: "마이페이지", image: Image.my, selectedImage: Image.myFill)
+        homeViewController.tabBarItem = setTabBarItem(title: "홈", image: Image.home, selectedImage: Image.homeFill)
+        historyViewController.tabBarItem = setTabBarItem(title: "모아보기", image: Image.history, selectedImage: Image.historyFill)
+        reportViewController.tabBarItem = setTabBarItem(title: "레포트", image: Image.report, selectedImage: Image.reportFill)
+        myPageViewController.tabBarItem = setTabBarItem(title: "마이페이지", image: Image.my, selectedImage: Image.myFill)
         
         viewControllers = [
-            homeNavigationContrller,
-            historyNavigationContrller,
-            reportNavigationContrller,
-            myPageNavigationContrller
+            homeViewController,
+            historyViewController,
+            reportViewController,
+            myPageViewController
         ]
+        self.setViewControllers(viewControllers, animated: true)
     }
     
     private func setTabBarItem(title: String, image: UIImage, selectedImage: UIImage) -> UITabBarItem {
