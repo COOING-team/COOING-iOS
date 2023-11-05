@@ -12,6 +12,10 @@
 		054787652AF7992100823463 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787642AF7992100823463 /* ViewController.swift */; };
 		0547876A2AF7992300823463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054787692AF7992300823463 /* Assets.xcassets */; };
 		0547876D2AF7992300823463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547876B2AF7992300823463 /* LaunchScreen.storyboard */; };
+		0547877E2AF79DEC00823463 /* SUITE-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0547877A2AF79DEB00823463 /* SUITE-Bold.otf */; };
+		0547877F2AF79DEC00823463 /* SUITE-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0547877B2AF79DEC00823463 /* SUITE-ExtraBold.otf */; };
+		054787802AF79DEC00823463 /* SUITE-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0547877C2AF79DEC00823463 /* SUITE-SemiBold.otf */; };
+		054787812AF79DEC00823463 /* SUITE-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0547877D2AF79DEC00823463 /* SUITE-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		054787692AF7992300823463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0547876C2AF7992300823463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0547876E2AF7992300823463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0547877A2AF79DEB00823463 /* SUITE-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUITE-Bold.otf"; sourceTree = "<group>"; };
+		0547877B2AF79DEC00823463 /* SUITE-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUITE-ExtraBold.otf"; sourceTree = "<group>"; };
+		0547877C2AF79DEC00823463 /* SUITE-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUITE-SemiBold.otf"; sourceTree = "<group>"; };
+		0547877D2AF79DEC00823463 /* SUITE-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUITE-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,122 @@
 		0547875F2AF7992100823463 /* COOING */ = {
 			isa = PBXGroup;
 			children = (
-				054787602AF7992100823463 /* AppDelegate.swift */,
-				054787622AF7992100823463 /* SceneDelegate.swift */,
-				054787642AF7992100823463 /* ViewController.swift */,
-				054787692AF7992300823463 /* Assets.xcassets */,
-				0547876B2AF7992300823463 /* LaunchScreen.storyboard */,
+				054787782AF79CFF00823463 /* Data */,
+				054787772AF79CF700823463 /* Resource */,
+				054787762AF79CEE00823463 /* Application */,
+				054787752AF79CE500823463 /* Presentation */,
+				054787742AF79CD900823463 /* Global */,
 				0547876E2AF7992300823463 /* Info.plist */,
 			);
 			path = COOING;
+			sourceTree = "<group>";
+		};
+		054787742AF79CD900823463 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		054787752AF79CE500823463 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				054787862AF79F8100823463 /* History */,
+				054787852AF79F0700823463 /* Report */,
+				054787842AF79EFE00823463 /* MyPage */,
+				054787832AF79EE500823463 /* Home */,
+				054787822AF79EB800823463 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		054787762AF79CEE00823463 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				054787622AF7992100823463 /* SceneDelegate.swift */,
+				054787602AF7992100823463 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		054787772AF79CF700823463 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				054787692AF7992300823463 /* Assets.xcassets */,
+				0547876B2AF7992300823463 /* LaunchScreen.storyboard */,
+				054787792AF79DB300823463 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		054787782AF79CFF00823463 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		054787792AF79DB300823463 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0547877A2AF79DEB00823463 /* SUITE-Bold.otf */,
+				0547877B2AF79DEC00823463 /* SUITE-ExtraBold.otf */,
+				0547877D2AF79DEC00823463 /* SUITE-Medium.otf */,
+				0547877C2AF79DEC00823463 /* SUITE-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		054787822AF79EB800823463 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		054787832AF79EE500823463 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				054787882AF79FA600823463 /* ViewController */,
+				054787872AF79F9F00823463 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		054787842AF79EFE00823463 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		054787852AF79F0700823463 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		054787862AF79F8100823463 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		054787872AF79F9F00823463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		054787882AF79FA600823463 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				054787642AF7992100823463 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0547876D2AF7992300823463 /* LaunchScreen.storyboard in Resources */,
+				054787802AF79DEC00823463 /* SUITE-SemiBold.otf in Resources */,
 				0547876A2AF7992300823463 /* Assets.xcassets in Resources */,
+				054787812AF79DEC00823463 /* SUITE-Medium.otf in Resources */,
+				0547877F2AF79DEC00823463 /* SUITE-ExtraBold.otf in Resources */,
+				0547877E2AF79DEC00823463 /* SUITE-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
