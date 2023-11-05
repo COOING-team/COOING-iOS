@@ -22,6 +22,9 @@
 		0547879E2AF7ADAC00823463 /* SUITE-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0547879C2AF7ADAC00823463 /* SUITE-SemiBold.otf */; };
 		054787A02AF7AE2F00823463 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547879F2AF7AE2F00823463 /* Font.swift */; };
 		054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787A12AF7AE6F00823463 /* UIFont+.swift */; };
+		054787A52AF7AFEA00823463 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 054787A42AF7AFEA00823463 /* SnapKit */; };
+		054787A82AF7AFF600823463 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 054787A72AF7AFF600823463 /* Then */; };
+		054787AA2AF7B08100823463 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787A92AF7B08100823463 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,7 @@
 		0547879C2AF7ADAC00823463 /* SUITE-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUITE-SemiBold.otf"; sourceTree = "<group>"; };
 		0547879F2AF7AE2F00823463 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		054787A12AF7AE6F00823463 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		054787A92AF7B08100823463 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054787A52AF7AFEA00823463 /* SnapKit in Frameworks */,
+				054787A82AF7AFF600823463 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,7 @@
 				054787932AF7ACD400823463 /* UIView+.swift */,
 				054787952AF7ACE700823463 /* UIStackView+.swift */,
 				054787A12AF7AE6F00823463 /* UIFont+.swift */,
+				054787A92AF7B08100823463 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -246,6 +253,10 @@
 			dependencies = (
 			);
 			name = COOING;
+			packageProductDependencies = (
+				054787A42AF7AFEA00823463 /* SnapKit */,
+				054787A72AF7AFF600823463 /* Then */,
+			);
 			productName = COOING;
 			productReference = 0547875D2AF7992100823463 /* COOING.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +285,10 @@
 				Base,
 			);
 			mainGroup = 054787542AF7992100823463;
+			packageReferences = (
+				054787A32AF7AFEA00823463 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				054787A62AF7AFF600823463 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 0547875E2AF7992100823463 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,6 +328,7 @@
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,
+				054787AA2AF7B08100823463 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +534,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		054787A32AF7AFEA00823463 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		054787A62AF7AFF600823463 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		054787A42AF7AFEA00823463 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 054787A32AF7AFEA00823463 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		054787A72AF7AFF600823463 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 054787A62AF7AFF600823463 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 054787552AF7992100823463 /* Project object */;
 }
