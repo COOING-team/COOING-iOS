@@ -29,4 +29,9 @@ public enum Image {
     static let next = UIImage(named: "next")!
     static let pencil = UIImage(named: "pencil")!
 
+    // MARK: - home
+    
+    static let growing = UIImage(named: "growing")!
+    static let baby = UIImage(named: "baby")!
+    static let yellowBack = UIImage(named: "back_yellow")!
 }

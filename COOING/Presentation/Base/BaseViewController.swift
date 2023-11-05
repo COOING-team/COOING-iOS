@@ -38,6 +38,7 @@ class BaseViewController: UIViewController {
         hieararchy()
         setLayout()
         setButtonEvent()
+        customNavigationBar()
     }
 
     //MARK: - Functions
@@ -59,5 +60,11 @@ class BaseViewController: UIViewController {
     func setButtonEvent() {
         //override Point
     }
+    
+    func customNavigationBar() {
+            navigationController?.navigationBar.tintColor = .cooingYellow
+            let backButton: UIBarButtonItem = UIBarButtonItem()
+            navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        }
 
 }
