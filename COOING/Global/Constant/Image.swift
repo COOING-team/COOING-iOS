@@ -28,6 +28,9 @@ public enum Image {
     static let checkFill = UIImage(named: "check_fill")!
     static let next = UIImage(named: "next")!
     static let pencil = UIImage(named: "pencil")!
+    static let recording = UIImage(named: "recording")!
+    static let recordingFill = UIImage(named: "recordingFill")!
+
 
     // MARK: - home
     

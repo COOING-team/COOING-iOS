@@ -36,6 +36,9 @@
 		05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC352AF7FE510082E3EB /* HomeView.swift */; };
 		05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */; };
 		05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC392AF815800082E3EB /* QuestionView.swift */; };
+		7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */; };
+		7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87C2AF894C1008EDF60 /* RecordView.swift */; };
+		7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87E2AF89AFC008EDF60 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		05B0BC352AF7FE510082E3EB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = COOING/Global/Constant/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		05B0BC392AF815800082E3EB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = COOING/Presentation/Home/ViewController/QuestionView.swift; sourceTree = SOURCE_ROOT; };
+		7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		7B3BC87C2AF894C1008EDF60 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = COOING/Presentation/Home/ViewController/RecordView.swift; sourceTree = SOURCE_ROOT; };
+		7B3BC87E2AF89AFC008EDF60 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = COOING/Presentation/Home/ViewController/File.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +226,8 @@
 			children = (
 				05B0BC352AF7FE510082E3EB /* HomeView.swift */,
 				05B0BC392AF815800082E3EB /* QuestionView.swift */,
+				7B3BC87C2AF894C1008EDF60 /* RecordView.swift */,
+				7B3BC87E2AF89AFC008EDF60 /* File.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			children = (
 				054787642AF7992100823463 /* HomeViewController.swift */,
 				05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */,
+				7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -407,12 +416,15 @@
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
+				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
+				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
+				7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,

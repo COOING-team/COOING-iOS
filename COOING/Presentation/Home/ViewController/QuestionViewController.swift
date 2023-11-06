@@ -28,4 +28,16 @@ class QuestionViewController: BaseViewController {
             $0.edges.equalToSuperview()
         }
     }
+    
+    override func setButtonEvent() {
+        questionView.nextButton.addTarget(self, action: #selector(nextButtonDidTapped), for: .touchUpInside)
+    }
+    
+    // MARK: - Custom Method
+    
+    @objc
+    private func nextButtonDidTapped() {
+        let recordViewController = RecordViewController()
+        navigationController?.pushViewController(recordViewController, animated: true)
+    }
 }

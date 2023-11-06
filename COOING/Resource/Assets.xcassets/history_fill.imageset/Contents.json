@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "모아보기 (3).png",
+      "filename" : "history_fill.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "모아보기 (4).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "모아보기 (5).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
