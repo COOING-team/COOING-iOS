@@ -1,16 +1,17 @@
 //
-//  QuestionView.swift
+//  RecordView.swift
 //  COOING
 //
-//  Created by 박윤빈 on 2023/11/06.
+//  Created by 최지우 on 11/6/23.
 //
 
+import AVFoundation
 import UIKit
 
 import SnapKit
 import Then
 
-final class QuestionView: BaseView {
+final class RecordView: BaseView {
     
     // MARK: - Properties
 
@@ -19,9 +20,13 @@ final class QuestionView: BaseView {
     
     private var countDayLabel = UILabel()
     private var dateLabel = UILabel()
-    private let babyImageView = UIImageView(image: Image.baby)
+//    private let babyImageView = UIImageView(image: Image.baby)
+     var recordButton = CooingButton()
     private var questionLabel = UILabel()
-    var nextButton = CooingButton()
+    
+     var reRecordButton = CooingButton()
+     var listenButton = CooingButton()
+
     
     // MARK: - override Method
     
@@ -40,16 +45,27 @@ final class QuestionView: BaseView {
             $0.font = .body2()
             $0.textColor = .cooingBrown
         }
+        
         questionLabel.do {
             $0.text = "오늘 쿠잉이의 하루는 어땠어?"
             $0.font = .title3()
             $0.textColor = .cooingBrown
         }
         
-        nextButton.do {
-            $0.setTitle("답변 녹음하기", for: .normal)
+        recordButton.do {
+            $0.setImage(Image.recording, for: .normal)
+            $0.sizeToFit()
+        }
+      
+        
+        
+        reRecordButton.do {
+            $0.setTitle("다시 녹음하기", for: .normal)
         }
         
+        listenButton.do {
+            $0.setTitle("녹음 들어보기", for: .normal)
+        }
     }
     
     override func setLayout() {
@@ -64,30 +80,48 @@ final class QuestionView: BaseView {
             $0.centerX.equalToSuperview()
         }
         
-        babyImageView.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom).offset(63)
-            $0.centerX.equalToSuperview()
-            $0.height.width.equalTo(118)
-        }
-        
         questionLabel.snp.makeConstraints {
-            $0.top.equalTo(babyImageView.snp.bottom).offset(45)
+            $0.top.equalTo(dateLabel.snp.bottom).offset(38)
             $0.centerX.equalToSuperview()
         }
         
-        nextButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(186)
-            $0.leading.trailing.equalToSuperview().inset(32)
+        recordButton.snp.makeConstraints {
+            $0.top.equalTo(questionLabel.snp.bottom).offset(120)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(100)
         }
+        
+        
+        reRecordButton.snp_makeConstraints {
+            $0.top.equalTo(recordButton.snp.bottom).offset(118)
+            $0.leading.equalToSuperview().offset(45)
+            $0.width.equalTo(146)
+        }
+        
+        listenButton.snp_makeConstraints {
+            $0.top.equalTo(recordButton.snp.bottom).offset(118)
+            $0.leading.equalTo(reRecordButton.snp.trailing).offset(8)
+            $0.width.equalTo(146)
+        }
+        
+//        
+//        nextButton.snp.makeConstraints {
+//            $0.bottom.equalToSuperview().inset(186)
+//            $0.leading.trailing.equalToSuperview().inset(32)
+//        }
     }
     
     override func hieararchy() {
         addSubViews(countDayLabel,
                     dateLabel,
-                    babyImageView,
                     questionLabel,
-                    nextButton)
+                    recordButton,
+                    reRecordButton,
+                    listenButton)
+                    
+//
     }
 
 }
+
 
