@@ -26,7 +26,7 @@ public enum Image {
     static let myFill = UIImage(named: "my_fill")!
     static let back = UIImage(named: "back")!
     static let checkFill = UIImage(named: "check_fill")!
-    static let next = UIImage(named: "next")!
+    static let next = UIImage(named: "next_fill")!
     static let pencil = UIImage(named: "pencil")!
     static let recording = UIImage(named: "recording")!
     static let recordingFill = UIImage(named: "recordingFill")!
@@ -37,4 +37,8 @@ public enum Image {
     static let growing = UIImage(named: "growing")!
     static let baby = UIImage(named: "baby")!
     static let yellowBack = UIImage(named: "back_yellow")!
+    static let answer = UIImage(named: "answer")!
+    static let modify = UIImage(named: "modify")!
+
+
 }

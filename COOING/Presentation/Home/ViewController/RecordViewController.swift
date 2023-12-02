@@ -52,20 +52,14 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     func setupButtons() {
  
         recordView.recordButton.addTarget(self, action: #selector(recordAudio), for: .touchUpInside)
-
-        
         recordView.reRecordButton.addTarget(self, action: #selector(stopAudio), for: .touchUpInside)
-        
-        
         recordView.listenButton.addTarget(self, action: #selector(startAudio), for: .touchUpInside)
+        recordView.nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
 
         // Initially disable stop and play buttons
         recordView.reRecordButton.isEnabled = false
         recordView.listenButton.isEnabled = false
 
-
-        // Layout buttons here or by overriding viewDidLayoutSubviews()
-        // For example, if you are using Auto Layout, set the constraints here.
     }
     
     @objc func recordAudio() {
@@ -100,6 +94,11 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
                 print("audioPlayer error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    @objc func tappedNextButton() {
+        let transformRecordViewController = TransformRecordViewController()
+        navigationController?.pushViewController(transformRecordViewController, animated: true)
     }
 
     // MARK: - AVAudioPlayerDelegate Methods

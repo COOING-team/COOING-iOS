@@ -36,6 +36,11 @@
 		05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC352AF7FE510082E3EB /* HomeView.swift */; };
 		05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */; };
 		05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC392AF815800082E3EB /* QuestionView.swift */; };
+		7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C75972B19C7DC00A6CE1A /* TransformRecordViewController.swift */; };
+		7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C75992B19C7ED00A6CE1A /* TransformRecordView.swift */; };
+		7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C759B2B19E8EE00A6CE1A /* UIViewController+.swift */; };
+		7B2C759E2B19EB9400A6CE1A /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C759D2B19EB9400A6CE1A /* CommentViewController.swift */; };
+		7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C759F2B19EBF700A6CE1A /* CommentView.swift */; };
 		7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */; };
 		7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87C2AF894C1008EDF60 /* RecordView.swift */; };
 		7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87E2AF89AFC008EDF60 /* File.swift */; };
@@ -71,6 +76,11 @@
 		05B0BC352AF7FE510082E3EB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = COOING/Global/Constant/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		05B0BC392AF815800082E3EB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = COOING/Presentation/Home/ViewController/QuestionView.swift; sourceTree = SOURCE_ROOT; };
+		7B2C75972B19C7DC00A6CE1A /* TransformRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformRecordViewController.swift; sourceTree = "<group>"; };
+		7B2C75992B19C7ED00A6CE1A /* TransformRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransformRecordView.swift; path = COOING/Presentation/Home/ViewController/TransformRecordView.swift; sourceTree = SOURCE_ROOT; };
+		7B2C759B2B19E8EE00A6CE1A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		7B2C759D2B19EB9400A6CE1A /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		7B2C759F2B19EBF700A6CE1A /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommentView.swift; path = COOING/Presentation/Home/ViewController/CommentView.swift; sourceTree = SOURCE_ROOT; };
 		7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7B3BC87C2AF894C1008EDF60 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = COOING/Presentation/Home/ViewController/RecordView.swift; sourceTree = SOURCE_ROOT; };
 		7B3BC87E2AF89AFC008EDF60 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = COOING/Presentation/Home/ViewController/File.swift; sourceTree = SOURCE_ROOT; };
@@ -228,6 +238,8 @@
 				05B0BC392AF815800082E3EB /* QuestionView.swift */,
 				7B3BC87C2AF894C1008EDF60 /* RecordView.swift */,
 				7B3BC87E2AF89AFC008EDF60 /* File.swift */,
+				7B2C75992B19C7ED00A6CE1A /* TransformRecordView.swift */,
+				7B2C759F2B19EBF700A6CE1A /* CommentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +250,8 @@
 				054787642AF7992100823463 /* HomeViewController.swift */,
 				05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */,
 				7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */,
+				7B2C75972B19C7DC00A6CE1A /* TransformRecordViewController.swift */,
+				7B2C759D2B19EB9400A6CE1A /* CommentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 				054787A92AF7B08100823463 /* UIColor+.swift */,
 				054787CE2AF7BEB800823463 /* CALayer+.swift */,
 				054787D22AF7C2D700823463 /* UIButton+.swift */,
+				7B2C759B2B19E8EE00A6CE1A /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -411,11 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2C759E2B19EB9400A6CE1A /* CommentViewController.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
+				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
+				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
@@ -425,12 +443,14 @@
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
 				7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */,
+				7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
 				05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */,
 				054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */,
+				7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,
 				054787CF2AF7BEB800823463 /* CALayer+.swift in Sources */,
