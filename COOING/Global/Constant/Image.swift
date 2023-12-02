@@ -13,6 +13,8 @@ public enum Image {
     
     static let cooingIcon = UIImage(named: "cooing_icon")!
     static let cooingLogo = UIImage(named: "cooing_logo")!
+    static let kakaoLoginButton = UIImage(named: "kakaoLoginButton")!
+
     
     // MARK: - Icon
     
@@ -30,6 +32,10 @@ public enum Image {
     static let pencil = UIImage(named: "pencil")!
     static let recording = UIImage(named: "recording")!
     static let recordingFill = UIImage(named: "recordingFill")!
+    
+    // MARK: - Login
+    static let loginCooingLogo = UIImage(named: "loginCooingLogo")!
+    static let userInfoInput = UIImage(named: "userInfoInput")!
 
 
     // MARK: - home
