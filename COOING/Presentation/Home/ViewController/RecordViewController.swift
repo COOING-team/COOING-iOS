@@ -234,20 +234,27 @@ extension RecordViewController {
 // MARK: - Network
 extension RecordViewController {
     func uploadRecordedAudio(audioData: URL) {
-           do {
-               let data = try Data(contentsOf: audioData)
-               RecordViewController.recordProvider.request(.uploadAudioURL(data)) { result in
-                   switch result {
-                   case .success(let response):
-                       print("Audio uploaded successfully. Response: \(response)")
-                       // Handle successful upload if needed
-                   case .failure(let error):
-                       print("Error uploading audio: \(error)")
-                       // Handle error if needed
-                   }
-               }
-           } catch {
-               print("Error converting audio URL to Data: \(error)")
-           }
-       }
+        do {
+            let data = try Data(contentsOf: audioData)
+            RecordViewController.recordProvider.request(.uploadAudioURL(data)) { response in
+                switch response {
+                case .success(let response):
+                    print(response.statusCode)
+                    
+                    do {
+                        let responseData = try response.map(GenericResponse<String>.self)
+                        print("🚨\(responseData.result)")
+                    } catch {
+                        print("Error mapping response: \(error.localizedDescription)")
+                    }
+                    
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+        } catch {
+            print("Error converting URL to Data: \(error.localizedDescription)")
+        }
+    }
+
 }
