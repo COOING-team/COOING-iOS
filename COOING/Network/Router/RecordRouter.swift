@@ -9,7 +9,8 @@ import Foundation
 import Moya
 
 enum RecordRouter {
-    case todayRecord(param: TodayRecordDTO)
+    case uploadAudioURL(Data)
+    case todayRecord(cooingIndex: Int, param: TodayRecordDTO)
 }
 
 extension RecordRouter: TargetType, AccessTokenAuthorizable {
@@ -17,37 +18,42 @@ extension RecordRouter: TargetType, AccessTokenAuthorizable {
       return URL(string: Config.baseURL)!
   }
   
-  var path: String {
+var path: String {
     switch self {
-    case .todayRecord:
-        return "/api/v1/answer/create/{cooingIndex}"
+    case .uploadAudioURL:
+        return "/api/v1/answer/save-audio"
+    case .todayRecord(let cooingIndex, _):
+        return "/api/v1/answer/create/\(cooingIndex)"
     }
   }
   
   var method: Moya.Method {
     switch self {
-    case .todayRecord:
+    case .uploadAudioURL, .todayRecord:
         return .post
     }
   }
   
-  var task: Task {
-    switch self {
-    case .todayRecord(param: let param):
-        return .requestJSONEncodable(param)
-    }
-  }
+    var task: Task {
+        switch self {
+        case .uploadAudioURL(let audioData):
+            let formData = MultipartFormData(provider: .data(audioData), name: "audioFile", fileName: "file.wav", mimeType: "audio/wav")
+            return .uploadMultipart([formData])
+        case .todayRecord(_, let param):
+            return .requestJSONEncodable(param)
+        }
+      }
 
   var headers: [String : String]? {
+      let realm = RealmService()
+      let token = realm.getToken()
+      
       switch self {
-      default:
-//          let realm = RealmService()
-//          let token = realm.getToken()
-          let token = """
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTcwMTYyODMyMiwidXVpZCI6InRsc3JtYTIxNDJAbmF2ZXIuY29tIn0.__InuMpNF2DDFJ0haba15NArgDygVydkjia3AXR0zAPkjspatBoZLUAbIAtCUmVCFzaunX1lCOS_f8onXDGRfw
-"""
-
+      case .uploadAudioURL:
           return ["Content-Type":"multipart/form-data",
+                  "Authorization": "Bearer \(token)"]
+      case .todayRecord:
+          return ["Content-Type":"application/json",
                   "Authorization": "Bearer \(token)"]
       }
   }
@@ -58,6 +64,16 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTcwMTY
           return .bearer
       }
   }
+    
+    var sampleData: Data {
+        switch self {
+        case .uploadAudioURL:
+            return Data() // Actual sample data for `uploadAudioURL`
+        case .todayRecord(_, let param):
+            // You can encode your param to JSON data here for the sample data.
+            return try! JSONEncoder().encode(param)
+        }
+      }
 }
 
 
