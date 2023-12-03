@@ -48,6 +48,8 @@
 		7B543AA12B1C80DB00F2A8FA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA02B1C80DB00F2A8FA /* Moya */; };
 		7B543AA32B1C80DB00F2A8FA /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA22B1C80DB00F2A8FA /* ReactiveMoya */; };
 		7B543AA52B1C80DB00F2A8FA /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA42B1C80DB00F2A8FA /* RxMoya */; };
+		7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AA72B1C816800F2A8FA /* RealmService.swift */; };
+		7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AAA2B1C81D800F2A8FA /* Token.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
@@ -96,6 +98,8 @@
 		7B3BC87C2AF894C1008EDF60 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = COOING/Presentation/Home/ViewController/RecordView.swift; sourceTree = SOURCE_ROOT; };
 		7B3BC87E2AF89AFC008EDF60 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = COOING/Presentation/Home/ViewController/File.swift; sourceTree = SOURCE_ROOT; };
 		7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7B543AA72B1C816800F2A8FA /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		7B543AAA2B1C81D800F2A8FA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		7B82F2D82B1B35B5005DDFC9 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +144,7 @@
 		0547875F2AF7992100823463 /* COOING */ = {
 			isa = PBXGroup;
 			children = (
+				7B543AA62B1C814C00F2A8FA /* Realm */,
 				7B543A9E2B1C7C7500F2A8FA /* Network */,
 				7B543A9D2B1C7C7100F2A8FA /* Data */,
 				054787772AF79CF700823463 /* Resource */,
@@ -367,6 +372,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7B543AA62B1C814C00F2A8FA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7B543AA92B1C81CC00F2A8FA /* RealmDTO */,
+				7B543AA72B1C816800F2A8FA /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		7B543AA92B1C81CC00F2A8FA /* RealmDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B543AAA2B1C81D800F2A8FA /* Token.swift */,
+			);
+			path = RealmDTO;
+			sourceTree = "<group>";
+		};
 		7B82F2D32B1B3242005DDFC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2C759E2B19EB9400A6CE1A /* CommentViewController.swift in Sources */,
+				7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
@@ -500,6 +523,7 @@
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
 				7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
+				7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
