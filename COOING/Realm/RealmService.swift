@@ -41,12 +41,12 @@ class RealmService {
         }
     }
 
-    func addUser(accessToken: String, nickName: String) {
-        let nickName = NickName(accessToken: accessToken, nickName: nickName)
-        try! realm.write {
-            realm.add(nickName)
-        }
-    }
+//    func addUser(accessToken: String, nickName: String) {
+//        let nickName = NickName(accessToken: accessToken, nickName: nickName)
+//        try! realm.write {
+//            realm.add(nickName)
+//        }
+//    }
 
     init() {
         print("Realm Location: ", realm.configuration.fileURL ?? "cannot find location.")

@@ -6,11 +6,17 @@
 //
 
 import UIKit
+
 import KakaoSDKAuth
 import KakaoSDKUser
+import Moya
 import RealmSwift
 
 class LoginViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    private let authProvider = MoyaProvider<AuthRouter>(plugins: [MoyaLoggingPlugin()])
     
     // MARK: - UI Components
     
@@ -90,13 +96,23 @@ class LoginViewController: BaseViewController {
             if let error = error {
                 print("🎃", error)
             } else {
+                guard let providerId = user?.id else { return }
+                guard let nickname = user?.kakaoAccount?.profile?.nickname else { return }
                 guard let email = user?.kakaoAccount?.email else { return }
-                guard let id = user?.id else { return }
-//                self.postKakaoLoginRequest(email: email, id: String(id))
-                print("email🌈: \(email)  id: \(id)")
+
+                self.postKakaoLoginRequest(providerId: String(providerId), nickname: nickname, email: email)
+//                print("email🌈: \(email)  id: \(id)  nickname: \(nickname)")
             }
         }
     }
+    
+    private func addTokenInRealm(accessToken:String, refreshToken:String) {
+        RealmService.shared.addToken(accessToken: accessToken, refreshToken: refreshToken)
+        print("⭐️⭐️토큰 저장 성공~⭐️⭐️")
+        print(RealmService.shared.getToken())
+        print(RealmService.shared.getRefreshToken())
+    }
+
 
     func setUserInfo() {
         UserApi.shared.me() {(user, error) in
@@ -107,7 +123,7 @@ class LoginViewController: BaseViewController {
                 print("me() success.")
                 //do something
                 _ = user
-                self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
+//                self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
 
 //                if let url = user?.kakaoAccount?.profile?.profileImageUrl,
 //                    let data = try? Data(contentsOf: url) {
@@ -117,4 +133,28 @@ class LoginViewController: BaseViewController {
         }
     }
      
+}
+
+// MARK: - Network
+
+extension LoginViewController {
+    func postKakaoLoginRequest(providerId: String, nickname: String, email: String) {
+        self.authProvider.request(.kakaoLogin(param: KakaoLoginRequestDTO(providerId: providerId,
+                                                                          nickname: nickname,
+                                                                          email: email))) { response in
+            switch response {
+            case .success(let response):
+                do {
+                    print(response.statusCode)
+//                    let responseData = try response.data.map(
+                    print(response)
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            
+            }
+        }
+    }
 }

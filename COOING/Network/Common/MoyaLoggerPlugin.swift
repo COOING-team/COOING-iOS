@@ -10,12 +10,12 @@ import UIKit
 import Moya
 
 final class MoyaLoggingPlugin: PluginType {
-        
+    
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         return request
     }
     
-    // Request를 보낼 때 호출
+    // Request를 보낼 때
     func willSend(_ request: RequestType, target: TargetType) {
         guard let httpRequest = request.request else {
             print("--> 유효하지 않은 요청")
@@ -67,7 +67,6 @@ final class MoyaLoggingPlugin: PluginType {
         }
         log.append("⎣------------------ END HTTP (\(response.data.count)-byte body) ------------------⎦")
         print(log)
-
     }
     
     func onFail(_ error: MoyaError, target: TargetType) {
@@ -81,4 +80,5 @@ final class MoyaLoggingPlugin: PluginType {
         log.append("<-- END HTTP")
         print(log)
     }
+    
 }
