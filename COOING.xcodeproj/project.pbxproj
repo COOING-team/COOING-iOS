@@ -50,6 +50,11 @@
 		7B543AA52B1C80DB00F2A8FA /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA42B1C80DB00F2A8FA /* RxMoya */; };
 		7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AA72B1C816800F2A8FA /* RealmService.swift */; };
 		7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AAA2B1C81D800F2A8FA /* Token.swift */; };
+		7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3382B1C8DC8003E3A82 /* Config.swift */; };
+		7B7DA33C2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA33B2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift */; };
+		7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */; };
+		7B7DA3432B1C9A98003E3A82 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */; };
+		7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
@@ -100,6 +105,11 @@
 		7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7B543AA72B1C816800F2A8FA /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		7B543AAA2B1C81D800F2A8FA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7B7DA3382B1C8DC8003E3A82 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		7B7DA33B2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTO.swift; sourceTree = "<group>"; };
+		7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityTokenDTO.swift; sourceTree = "<group>"; };
 		7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		7B82F2D82B1B35B5005DDFC9 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +378,10 @@
 		7B543A9E2B1C7C7500F2A8FA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7B7DA33E2B1C927F003E3A82 /* Router */,
+				7B7DA33D2B1C9279003E3A82 /* DTO */,
+				7B7DA33A2B1C90CA003E3A82 /* Common */,
+				7B7DA3372B1C8DC2003E3A82 /* Config */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -387,6 +401,47 @@
 				7B543AAA2B1C81D800F2A8FA /* Token.swift */,
 			);
 			path = RealmDTO;
+			sourceTree = "<group>";
+		};
+		7B7DA3372B1C8DC2003E3A82 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DA3382B1C8DC8003E3A82 /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7B7DA33A2B1C90CA003E3A82 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DA33B2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7B7DA33D2B1C9279003E3A82 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DA33F2B1C9291003E3A82 /* Auth */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		7B7DA33E2B1C927F003E3A82 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7B7DA33F2B1C9291003E3A82 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */,
+				7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		7B82F2D32B1B3242005DDFC9 /* Login */ = {
@@ -513,9 +568,11 @@
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
+				7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
 				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
+				7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */,
 				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
 				7B82F2D92B1B35B5005DDFC9 /* Test.swift in Sources */,
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
@@ -525,16 +582,19 @@
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
 				7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
+				7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
 				7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */,
+				7B7DA33C2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift in Sources */,
 				7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
 				7B82F2D72B1B326A005DDFC9 /* TestLoginViewController.swift in Sources */,
+				7B7DA3432B1C9A98003E3A82 /* AuthRouter.swift in Sources */,
 				05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */,
 				054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */,
 				7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */,
@@ -678,6 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.178.115.217:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -704,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://54.178.115.217:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
