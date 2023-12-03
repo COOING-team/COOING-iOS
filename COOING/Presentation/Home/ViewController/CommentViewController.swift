@@ -20,6 +20,8 @@ class CommentViewController: BaseViewController {
     }
     
     override func configureUI() {
+        super.configureUI()
+
 //        navigationController?.isNavigationBarHidden = true
     }
     
