@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "unselectedMan.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

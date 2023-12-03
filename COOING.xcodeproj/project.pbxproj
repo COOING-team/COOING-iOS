@@ -89,6 +89,9 @@
 		7B7DA3562B1CE963003E3A82 /* CooingDefaultInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3552B1CE963003E3A82 /* CooingDefaultInfoDTO.swift */; };
 		7B7DA35A2B1CEE03003E3A82 /* ClovaSpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3592B1CEE03003E3A82 /* ClovaSpeechService.swift */; };
 		7B7DA35C2B1D0258003E3A82 /* SpeechRecognitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA35B2B1D0258003E3A82 /* SpeechRecognitionResponse.swift */; };
+		7B7DA35E2B1D1E71003E3A82 /* SetCooingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA35D2B1D1E71003E3A82 /* SetCooingInfoViewController.swift */; };
+		7B7DA3602B1D1E9A003E3A82 /* SetCooingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA35F2B1D1E99003E3A82 /* SetCooingInfoView.swift */; };
+		7B7DA3632B1D2228003E3A82 /* CooingInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
@@ -175,6 +178,9 @@
 		7B7DA3552B1CE963003E3A82 /* CooingDefaultInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooingDefaultInfoDTO.swift; sourceTree = "<group>"; };
 		7B7DA3592B1CEE03003E3A82 /* ClovaSpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClovaSpeechService.swift; sourceTree = "<group>"; };
 		7B7DA35B2B1D0258003E3A82 /* SpeechRecognitionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionResponse.swift; sourceTree = "<group>"; };
+		7B7DA35D2B1D1E71003E3A82 /* SetCooingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCooingInfoViewController.swift; sourceTree = "<group>"; };
+		7B7DA35F2B1D1E99003E3A82 /* SetCooingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCooingInfoView.swift; sourceTree = "<group>"; };
+		7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooingInfoRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,6 +557,7 @@
 		7B7DA33D2B1C9279003E3A82 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				7B7DA3612B1D2205003E3A82 /* Cooing */,
 				7B7DA3542B1CE92B003E3A82 /* Home */,
 				7B7DA34D2B1CE476003E3A82 /* Record */,
 				7B7DA33F2B1C9291003E3A82 /* Auth */,
@@ -565,6 +572,7 @@
 				7B7DA3502B1CE68F003E3A82 /* RecordRouter.swift */,
 				7B7DA3522B1CE927003E3A82 /* HomeRouter.swift */,
 				7B7DA3592B1CEE03003E3A82 /* ClovaSpeechService.swift */,
+				7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -595,6 +603,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		7B7DA3612B1D2205003E3A82 /* Cooing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cooing;
+			sourceTree = "<group>";
+		};
 		7B82F2D32B1B3242005DDFC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +622,7 @@
 		7B82F2D42B1B324F005DDFC9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7B7DA35F2B1D1E99003E3A82 /* SetCooingInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,6 +631,7 @@
 			isa = PBXGroup;
 			children = (
 				7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */,
+				7B7DA35D2B1D1E71003E3A82 /* SetCooingInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -718,6 +735,7 @@
 				7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				0583D6982B1BB6B100A87981 /* LevelTableSectionFooterView.swift in Sources */,
+				7B7DA3602B1D1E9A003E3A82 /* SetCooingInfoView.swift in Sources */,
 				7B7DA34C2B1CCB68003E3A82 /* RecordCompleteViewController.swift in Sources */,
 				7B7DA3472B1CC041003E3A82 /* GenericResponse.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
@@ -743,6 +761,7 @@
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
 				0583D69C2B1BB79600A87981 /* LevelTableViewCellRightView.swift in Sources */,
 				0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */,
+				7B7DA35E2B1D1E71003E3A82 /* SetCooingInfoViewController.swift in Sources */,
 				0583D6A42B1C70D500A87981 /* HistoryRightView.swift in Sources */,
 				7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
@@ -758,6 +777,7 @@
 				7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
+				7B7DA3632B1D2228003E3A82 /* CooingInfoRouter.swift in Sources */,
 				0583D6732B1A4A3B00A87981 /* FrequentWordView.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
