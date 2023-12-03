@@ -32,6 +32,10 @@ extension UIColor {
     static var navGray: UIColor {
         return UIColor(hex: "#898989")
     }
+    
+    static var d9Gray: UIColor {
+        return UIColor(hex: "#D9D9D9", alpha: 0.4)
+    }
 
 }
 

@@ -20,12 +20,11 @@ final class RecordView: BaseView {
     
     private var countDayLabel = UILabel()
     private var dateLabel = UILabel()
-//    private let babyImageView = UIImageView(image: Image.baby)
-     var recordButton = CooingButton()
+    var recordButton = UIButton()
     private var questionLabel = UILabel()
-    
-     var reRecordButton = CooingButton()
-     var listenButton = CooingButton()
+    var reRecordButton = CooingButton()
+    var listenButton = CooingButton()
+    let nextButton = UIButton()
 
     
     // MARK: - override Method
@@ -57,14 +56,16 @@ final class RecordView: BaseView {
             $0.sizeToFit()
         }
       
-        
-        
         reRecordButton.do {
             $0.setTitle("다시 녹음하기", for: .normal)
         }
         
         listenButton.do {
             $0.setTitle("녹음 들어보기", for: .normal)
+        }
+        
+        nextButton.do {
+            $0.setImage(Image.next, for: .normal)
         }
     }
     
@@ -91,24 +92,22 @@ final class RecordView: BaseView {
             $0.width.height.equalTo(100)
         }
         
-        
-        reRecordButton.snp_makeConstraints {
+        reRecordButton.snp.makeConstraints {
             $0.top.equalTo(recordButton.snp.bottom).offset(118)
             $0.leading.equalToSuperview().offset(45)
             $0.width.equalTo(146)
         }
         
-        listenButton.snp_makeConstraints {
+        listenButton.snp.makeConstraints {
             $0.top.equalTo(recordButton.snp.bottom).offset(118)
             $0.leading.equalTo(reRecordButton.snp.trailing).offset(8)
             $0.width.equalTo(146)
         }
         
-//        
-//        nextButton.snp.makeConstraints {
-//            $0.bottom.equalToSuperview().inset(186)
-//            $0.leading.trailing.equalToSuperview().inset(32)
-//        }
+        nextButton.snp.makeConstraints {
+            $0.top.equalTo(reRecordButton.snp.bottom).offset(77)
+            $0.trailing.equalToSuperview().inset(22)
+        }
     }
     
     override func hieararchy() {
@@ -117,9 +116,8 @@ final class RecordView: BaseView {
                     questionLabel,
                     recordButton,
                     reRecordButton,
-                    listenButton)
-                    
-//
+                    listenButton,
+                    nextButton)
     }
 
 }

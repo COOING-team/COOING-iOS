@@ -13,6 +13,8 @@ public enum Image {
     
     static let cooingIcon = UIImage(named: "cooing_icon")!
     static let cooingLogo = UIImage(named: "cooing_logo")!
+    static let kakaoLoginButton = UIImage(named: "kakaoLoginButton")!
+
     
     // MARK: - Icon
     
@@ -26,10 +28,14 @@ public enum Image {
     static let myFill = UIImage(named: "my_fill")!
     static let back = UIImage(named: "back")!
     static let checkFill = UIImage(named: "check_fill")!
-    static let next = UIImage(named: "next")!
+    static let next = UIImage(named: "next_fill")!
     static let pencil = UIImage(named: "pencil")!
     static let recording = UIImage(named: "recording")!
     static let recordingFill = UIImage(named: "recordingFill")!
+    
+    // MARK: - Login
+    static let loginCooingLogo = UIImage(named: "loginCooingLogo")!
+    static let userInfoInput = UIImage(named: "userInfoInput")!
 
 
     // MARK: - home
@@ -51,4 +57,8 @@ public enum Image {
     static let no = UIImage(named: "no")!
     static let selectLevel = UIImage(named: "select_level")!
     static let divideLine = UIImage(named: "divide_line")
+    static let answer = UIImage(named: "answer")!
+    static let modify = UIImage(named: "modify")!
+
+
 }
