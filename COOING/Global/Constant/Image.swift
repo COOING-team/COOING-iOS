@@ -37,6 +37,11 @@ public enum Image {
     // MARK: - Login
     static let loginCooingLogo = UIImage(named: "loginCooingLogo")!
     static let userInfoInput = UIImage(named: "userInfoInput")!
+    static let createBaby = UIImage(named: "createBaby")!
+    static let selectedMan = UIImage(named: "selectedMan")!
+    static let selectedWoman = UIImage(named: "selectedWoman")!
+    static let unselectedMan = UIImage(named: "unselectedMan")!
+    static let unselectedWoman = UIImage(named: "unselectedWoman")!
 
 
     // MARK: - home

@@ -31,6 +31,7 @@ class SetCooingInfoViewController: BaseViewController {
     
     override func setButtonEvent() {
         setCooingInfoView.nextButton.addTarget(self, action: #selector(nextButtonDidTapped), for: .touchUpInside)
+        setCooingInfoView.manButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
     }
     
     // MARK: - Custom Method
@@ -39,6 +40,10 @@ class SetCooingInfoViewController: BaseViewController {
     private func nextButtonDidTapped() {
         let cooingTabBarController = CooingTabBarController()
         navigationController?.pushViewController(cooingTabBarController, animated: true)
+    }
+    
+    @objc func buttonClicked() {
+        setCooingInfoView.manButton.setImage(Image.selectedMan, for: .normal)
     }
 }
 

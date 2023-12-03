@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        RealmService.shared.resetDB()
         
-        let navigationController = UINavigationController(rootViewController: LoginViewController())
+        let navigationController = UINavigationController(rootViewController: SetCooingInfoViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

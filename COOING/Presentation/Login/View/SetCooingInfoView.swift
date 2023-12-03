@@ -18,7 +18,7 @@ final class SetCooingInfoView: BaseView {
     // MARK: - UI Components
     
     var nextButton = UIButton()
-    private let logoImageView = UIImageView(image: Image.cooingLogo)
+    private let logoImageView = UIImageView(image: Image.createBaby)
     private var nameLabel = UILabel()
     private var sexLabel = UILabel()
     private var birthdayLabel = UILabel()
@@ -48,6 +48,13 @@ final class SetCooingInfoView: BaseView {
 
     
     // MARK: - override Method
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissDatePicker))
+                viewTapGesture.cancelsTouchesInView = false
+                self.addGestureRecognizer(viewTapGesture)
+    }
     
     override func configureUI() {
         
@@ -57,26 +64,37 @@ final class SetCooingInfoView: BaseView {
         }
         
         sexLabel.do {
-            $0.text = "이름"
+            $0.text = "성별"
             $0.font = .body1()
+            $0.textAlignment = .right
         }
         
         birthdayLabel.do {
-            $0.text = "이름"
+            $0.text = "생년월일"
             $0.font = .body1()
+            $0.textAlignment = .right
+
         }
         
         nameTextField.do {
-            $0.backgroundColor = .green
+            $0.backgroundColor = .cooingGray1
+        }
+        
+        manButton.do {
+            $0.setImage(Image.unselectedMan, for: .normal)
+        }
+        
+        womanButton.do {
+            $0.setImage(Image.unselectedWoman, for: .normal)
         }
         
         nextButton.do {
             $0.addTitleAttribute(title: "다음",
-                                 titleColor: .cooingBrown,
+                                 titleColor: .white,
                                  fontName: .title2())
             $0.setRoundBorder(borderColor: .cooingGray1,
                               borderWidth: 0.5,
-                              cornerRadius: 20)
+                              cornerRadius: 0)
             $0.layer.masksToBounds = false
             $0.backgroundColor = .cooingYellow
 
@@ -85,8 +103,8 @@ final class SetCooingInfoView: BaseView {
     
     override func setLayout() {
         logoImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(56)
-            $0.leading.equalToSuperview().inset(28)
+            $0.top.equalToSuperview().offset(200)
+            $0.centerX.equalToSuperview()
         }
         
         nameLabel.snp.makeConstraints {
@@ -95,7 +113,8 @@ final class SetCooingInfoView: BaseView {
         }
         
         nameTextField.snp.makeConstraints {
-            $0.leading.equalTo(nameLabel.snp.trailing).offset(10)
+            $0.top.equalTo(nameLabel)
+            $0.leading.equalTo(nameLabel.snp.trailing).offset(55)
 
         }
         
@@ -104,15 +123,33 @@ final class SetCooingInfoView: BaseView {
             $0.leading.equalToSuperview().offset(87)
         }
         
+        manButton.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(29)
+            $0.leading.equalTo(sexLabel.snp.trailing).offset(55)
+        }
+        
+        womanButton.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(29)
+            $0.leading.equalTo(manButton.snp.trailing).offset(20)
+        }
+        
         birthdayLabel.snp.makeConstraints {
             $0.top.equalTo(sexLabel.snp.bottom).offset(29)
             $0.leading.equalToSuperview().offset(87)
-
         }
         
+        dateLabel.snp.makeConstraints {
+            $0.top.equalTo(birthdayLabel)
+            $0.leading.equalTo(birthdayLabel.snp.trailing).offset(40)
+        }
+        
+        datePicker.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(30)
+        }
         nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview()
-            $0.height.equalTo(74)
+            $0.height.equalTo(80)
             $0.width.equalToSuperview()
         }
     }
@@ -121,27 +158,31 @@ final class SetCooingInfoView: BaseView {
         addSubViews(logoImageView,
                     nameLabel,
                     sexLabel,
+                    manButton,
+                    womanButton,
                     birthdayLabel,
                     nameTextField,
+                    dateLabel,
+                    datePicker,
                     nextButton
                     )
     }
     
     
     @objc func dateLabelTapped() {
-            datePicker.isHidden = false
-        }
+        datePicker.isHidden = false
+    }
         
-        @objc func dateChanged(_ sender: UIDatePicker) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy / MM / dd"
-            dateLabel.text = dateFormatter.string(from: sender.date)
-        }
+    @objc func dateChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy / MM / dd"
+        dateLabel.text = dateFormatter.string(from: sender.date)
+    }
         
-        // Optional: Call this method when you want to dismiss the picker, e.g. by tapping a "Done" button
-        func dismissDatePicker() {
-            datePicker.isHidden = true
-        }
+    @objc func dismissDatePicker() {
+        datePicker.isHidden = true
+    }
 
+    
 }
 
