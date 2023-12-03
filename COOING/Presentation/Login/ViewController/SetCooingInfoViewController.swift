@@ -32,18 +32,33 @@ class SetCooingInfoViewController: BaseViewController {
     override func setButtonEvent() {
         setCooingInfoView.nextButton.addTarget(self, action: #selector(nextButtonDidTapped), for: .touchUpInside)
         setCooingInfoView.manButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        setCooingInfoView.womanButton.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
+
     }
     
     // MARK: - Custom Method
     
     @objc
     private func nextButtonDidTapped() {
+        createBaby(name: setCooingInfoView.nameTextField.text ?? "CJW", sex: "Female", birth: setCooingInfoView.dateFormat)
+        
         let cooingTabBarController = CooingTabBarController()
-        navigationController?.pushViewController(cooingTabBarController, animated: true)
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            keyWindow.replaceRootViewController(UINavigationController(rootViewController: cooingTabBarController), animated: true, completion: nil)
+        }
     }
+    
     
     @objc func buttonClicked() {
         setCooingInfoView.manButton.setImage(Image.selectedMan, for: .normal)
+
+    }
+    
+    @objc func button1Clicked() {
+        setCooingInfoView.womanButton.setImage(Image.selectedWoman, for: .normal)
+
     }
 }
 

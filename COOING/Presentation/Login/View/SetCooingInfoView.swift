@@ -14,6 +14,7 @@ final class SetCooingInfoView: BaseView {
     
     // MARK: - Properties
 
+    var dateFormat: String = ""
         
     // MARK: - UI Components
     
@@ -145,7 +146,7 @@ final class SetCooingInfoView: BaseView {
         
         datePicker.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(30)
+            $0.bottom.equalToSuperview().inset(50)
         }
         nextButton.snp.makeConstraints {
             $0.bottom.equalToSuperview()
@@ -181,7 +182,15 @@ final class SetCooingInfoView: BaseView {
         
     @objc func dismissDatePicker() {
         datePicker.isHidden = true
+        
+        dateFormat(datePicker)
     }
+    
+    func dateFormat(_ sender: UIDatePicker) {
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateFormat = "yyyy-MM-dd" // Adjusted date format
+        dateFormat = dateFormatter.string(from: sender.date)
+   }
 
     
 }

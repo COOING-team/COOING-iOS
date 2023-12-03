@@ -122,6 +122,17 @@ class LoginViewController: BaseViewController {
             keyWindow.replaceRootViewController(UINavigationController(rootViewController: cooingTabBarController), animated: true, completion: nil)
         }
     }
+    
+    private func pushToSetInfoVC() {
+        let setCooingInfoViewController = SetCooingInfoViewController()
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            keyWindow.replaceRootViewController(UINavigationController(rootViewController: setCooingInfoViewController), animated: true, completion: nil)
+        }
+    }
+    
+    
      
 }
 
@@ -142,7 +153,7 @@ extension LoginViewController {
 
                     self.addTokenInRealm(accessToken: responseData.result.accessToken,
                                          refreshToken: responseData.result.refreshToken)
-                    self.pushToHomeVC()
+                    self.pushToSetInfoVC()
 
                     
                 } catch(let err) {
