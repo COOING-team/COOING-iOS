@@ -44,6 +44,12 @@
 		7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */; };
 		7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87C2AF894C1008EDF60 /* RecordView.swift */; };
 		7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BC87E2AF89AFC008EDF60 /* File.swift */; };
+		7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */; };
+		7B543AA12B1C80DB00F2A8FA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA02B1C80DB00F2A8FA /* Moya */; };
+		7B543AA32B1C80DB00F2A8FA /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA22B1C80DB00F2A8FA /* ReactiveMoya */; };
+		7B543AA52B1C80DB00F2A8FA /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7B543AA42B1C80DB00F2A8FA /* RxMoya */; };
+		7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AA72B1C816800F2A8FA /* RealmService.swift */; };
+		7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B543AAA2B1C81D800F2A8FA /* Token.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
@@ -91,6 +97,9 @@
 		7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		7B3BC87C2AF894C1008EDF60 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = COOING/Presentation/Home/ViewController/RecordView.swift; sourceTree = SOURCE_ROOT; };
 		7B3BC87E2AF89AFC008EDF60 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = COOING/Presentation/Home/ViewController/File.swift; sourceTree = SOURCE_ROOT; };
+		7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7B543AA72B1C816800F2A8FA /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		7B543AAA2B1C81D800F2A8FA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		7B82F2D82B1B35B5005DDFC9 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,10 +109,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B543AA52B1C80DB00F2A8FA /* RxMoya in Frameworks */,
 				7B82F2DC2B1B3A5F005DDFC9 /* Realm in Frameworks */,
 				7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */,
+				7B543AA12B1C80DB00F2A8FA /* Moya in Frameworks */,
 				7B82F2DE2B1B3A5F005DDFC9 /* RealmSwift in Frameworks */,
 				054787A52AF7AFEA00823463 /* SnapKit in Frameworks */,
+				7B543AA32B1C80DB00F2A8FA /* ReactiveMoya in Frameworks */,
 				054787A82AF7AFF600823463 /* Then in Frameworks */,
 				7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */,
 				7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */,
@@ -132,7 +144,9 @@
 		0547875F2AF7992100823463 /* COOING */ = {
 			isa = PBXGroup;
 			children = (
-				054787782AF79CFF00823463 /* Data */,
+				7B543AA62B1C814C00F2A8FA /* Realm */,
+				7B543A9E2B1C7C7500F2A8FA /* Network */,
+				7B543A9D2B1C7C7100F2A8FA /* Data */,
 				054787772AF79CF700823463 /* Resource */,
 				054787762AF79CEE00823463 /* Application */,
 				054787752AF79CE500823463 /* Presentation */,
@@ -182,13 +196,6 @@
 				054787792AF79DB300823463 /* Font */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		054787782AF79CFF00823463 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		054787792AF79DB300823463 /* Font */ = {
@@ -351,6 +358,37 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		7B543A9D2B1C7C7100F2A8FA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7B543A9E2B1C7C7500F2A8FA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7B543AA62B1C814C00F2A8FA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7B543AA92B1C81CC00F2A8FA /* RealmDTO */,
+				7B543AA72B1C816800F2A8FA /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		7B543AA92B1C81CC00F2A8FA /* RealmDTO */ = {
+			isa = PBXGroup;
+			children = (
+				7B543AAA2B1C81D800F2A8FA /* Token.swift */,
+			);
+			path = RealmDTO;
+			sourceTree = "<group>";
+		};
 		7B82F2D32B1B3242005DDFC9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +410,7 @@
 			children = (
 				7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */,
 				7B82F2D82B1B35B5005DDFC9 /* Test.swift */,
+				7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -400,6 +439,9 @@
 				7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */,
 				7B82F2DB2B1B3A5F005DDFC9 /* Realm */,
 				7B82F2DD2B1B3A5F005DDFC9 /* RealmSwift */,
+				7B543AA02B1C80DB00F2A8FA /* Moya */,
+				7B543AA22B1C80DB00F2A8FA /* ReactiveMoya */,
+				7B543AA42B1C80DB00F2A8FA /* RxMoya */,
 			);
 			productName = COOING;
 			productReference = 0547875D2AF7992100823463 /* COOING.app */;
@@ -434,6 +476,7 @@
 				054787A62AF7AFF600823463 /* XCRemoteSwiftPackageReference "Then" */,
 				7B82F2CB2B1B31AF005DDFC9 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				7B82F2DA2B1B3A5F005DDFC9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				7B543A9F2B1C80DB00F2A8FA /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 0547875E2AF7992100823463 /* Products */;
 			projectDirPath = "";
@@ -466,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2C759E2B19EB9400A6CE1A /* CommentViewController.swift in Sources */,
+				7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
@@ -477,7 +521,9 @@
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
+				7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
+				7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
@@ -719,6 +765,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		7B543A9F2B1C80DB00F2A8FA /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		7B82F2CB2B1B31AF005DDFC9 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -747,6 +801,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 054787A62AF7AFF600823463 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		7B543AA02B1C80DB00F2A8FA /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B543A9F2B1C80DB00F2A8FA /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		7B543AA22B1C80DB00F2A8FA /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B543A9F2B1C80DB00F2A8FA /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		7B543AA42B1C80DB00F2A8FA /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B543A9F2B1C80DB00F2A8FA /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */ = {
 			isa = XCSwiftPackageProductDependency;
