@@ -28,7 +28,6 @@ class LoginViewController: BaseViewController {
     override func hieararchy() {
         view.addSubview(loginCooingLogoImage)
         view.addSubview(kakaoLoginButton)
-                        
     }
     
     override func configureUI() {
@@ -73,8 +72,8 @@ class LoginViewController: BaseViewController {
                     // 어세스토큰
                     let accessToken = oauthToken?.accessToken
 
-                    //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
-                    self.setUserInfo()
+                    self.getUserInfo()
+
                 }
             }
         } else {
@@ -94,42 +93,29 @@ class LoginViewController: BaseViewController {
     private func getUserInfo() {
         UserApi.shared.me { user, error in
             if let error = error {
-                print("🎃", error)
+                print(error)
             } else {
                 guard let providerId = user?.id else { return }
                 guard let nickname = user?.kakaoAccount?.profile?.nickname else { return }
                 guard let email = user?.kakaoAccount?.email else { return }
 
                 self.postKakaoLoginRequest(providerId: String(providerId), nickname: nickname, email: email)
-//                print("email🌈: \(email)  id: \(id)  nickname: \(nickname)")
+//                print("email: \(email)  id: \(id)  nickname: \(nickname)")
             }
         }
     }
     
-    private func addTokenInRealm(accessToken:String, refreshToken:String) {
+    private func addTokenInRealm(accessToken: String, refreshToken: String) {
         RealmService.shared.addToken(accessToken: accessToken, refreshToken: refreshToken)
-        print("⭐️⭐️토큰 저장 성공~⭐️⭐️")
-        print(RealmService.shared.getToken())
-        print(RealmService.shared.getRefreshToken())
+        print("⭐️⭐️ restore token ⭐️⭐️")
     }
+    
+    private func pushToHomeVC() {
+        let cooingTabBarController = CooingTabBarController()
 
-
-    func setUserInfo() {
-        UserApi.shared.me() {(user, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("me() success.")
-                //do something
-                _ = user
-//                self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
-
-//                if let url = user?.kakaoAccount?.profile?.profileImageUrl,
-//                    let data = try? Data(contentsOf: url) {
-//                    self.profileImageView.image = UIImage(data: data)
-//                }
-            }
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            keyWindow.replaceRootViewController(UINavigationController(rootViewController: cooingTabBarController), animated: true, completion: nil)
         }
     }
      
@@ -146,8 +132,15 @@ extension LoginViewController {
             case .success(let response):
                 do {
                     print(response.statusCode)
-//                    let responseData = try response.data.map(
-                    print(response)
+
+                    let responseData = try response.map(GenericResponse<IdentityTokenDTO>.self)
+
+
+                    self.addTokenInRealm(accessToken: responseData.result.accessToken,
+                                         refreshToken: responseData.result.refreshToken)
+                    self.pushToHomeVC()
+
+                    
                 } catch(let err) {
                     print(err.localizedDescription)
                 }
