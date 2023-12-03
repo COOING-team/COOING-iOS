@@ -26,7 +26,7 @@ final class TransformRecordView: BaseView {
     private let answerImageView = UIImageView(image: Image.answer)
     let modifyButton = UIButton()
     private let answerTitleLabel = UILabel()
-    private var answerTextView = UITextView()
+    var answerTextView = UITextView()
     
     var transformButton = CooingButton()
     let backButton = UIButton()

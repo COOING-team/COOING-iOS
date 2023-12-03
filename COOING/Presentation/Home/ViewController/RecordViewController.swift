@@ -5,13 +5,18 @@
 //  Created by 최지우 on 11/6/23.
 //
 
-import AVFoundation
 import UIKit
+
+import AVFoundation
+import Moya
 
 class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
+    // MARK: - Properties
+    
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder?
+    let provider = MoyaProvider<ClovaSpeechService>()
     
     // MARK: - UI Components
     
@@ -97,8 +102,10 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     }
     
     @objc func tappedNextButton() {
-        let transformRecordViewController = TransformRecordViewController()
-        navigationController?.pushViewController(transformRecordViewController, animated: true)
+        
+        processRecordedAudio()
+        
+        
     }
 
     // MARK: - AVAudioPlayerDelegate Methods
@@ -140,4 +147,82 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
             $0.edges.equalToSuperview()
         }
     }
+    
+    
+}
+
+// MARK: - ClovaSpeechService
+
+extension RecordViewController {
+
+    // MARK: - AVAudioRecorderDelegate Methods
+    func convertAudioToWAV(audioURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
+            let exportSession = AVAssetExportSession(asset: AVAsset(url: audioURL), presetName: AVAssetExportPresetPassthrough)
+            
+            let filename = NSUUID().uuidString + ".wav"
+            let outputPath = NSTemporaryDirectory() + filename
+            let outputURL = URL(fileURLWithPath: outputPath)
+            
+            exportSession?.outputURL = outputURL
+            exportSession?.outputFileType = AVFileType.wav
+            
+            exportSession?.exportAsynchronously {
+                guard exportSession?.status == .completed else {
+                    if let error = exportSession?.error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.failure(NSError(domain: "ExportError", code: -1, userInfo: nil)))
+                    }
+                    return
+                }
+                completion(.success(outputURL))
+            }
+        }
+
+        func sendAudioFile(audioURL: URL) {
+            do {
+                let audioData = try Data(contentsOf: audioURL)
+                provider.request(.recognizeAudio(audioData: audioData, language: "Kor")) { result in
+                    switch result {
+                    case .success(let response):
+                        
+                        self.handleResponse(data: response.data) { recognizedResponse in
+                            let transformRecordViewController = TransformRecordViewController()
+                            transformRecordViewController.transformRecordView.answerTextView.text = recognizedResponse.text
+                            self.navigationController?.pushViewController(transformRecordViewController, animated: true)
+                        }
+                    case .failure(let error):
+                        print("Error sending audio file: \(error)")
+                    }
+                }
+            } catch {
+                print("Error reading audio file data: \(error)")
+            }
+        }
+    
+    // 녹음 완료 후 호출
+    func processRecordedAudio() {
+        guard let audioURL = audioRecorder?.url else { return }
+        convertAudioToWAV(audioURL: audioURL) { [weak self] result in
+            switch result {
+            case .success(let convertedURL):
+                self?.sendAudioFile(audioURL: convertedURL)
+            case .failure(let error):
+                print("Audio conversion error: \(error)")
+            }
+        }
+    }
+    
+    func handleResponse(data: Data, completion: @escaping (SpeechRecognitionResponse) -> Void) {
+            let decoder = JSONDecoder()
+            do {
+                let response = try decoder.decode(SpeechRecognitionResponse.self, from: data)
+                DispatchQueue.main.async {
+                    completion(response)
+                }
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }
+    
 }

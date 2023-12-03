@@ -57,7 +57,7 @@ final class RecordView: BaseView {
         }
       
         reRecordButton.do {
-            $0.setTitle("다시 녹음하기", for: .normal)
+            $0.setTitle("녹음 중단하기", for: .normal)
         }
         
         listenButton.do {

@@ -26,7 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: CooingTabBarController())
+
+        
+//        RealmService.shared.resetDB()
+        
+        let navigationController = UINavigationController(rootViewController: LoginViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
