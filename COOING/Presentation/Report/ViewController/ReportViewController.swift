@@ -54,5 +54,11 @@ class ReportViewController: BaseViewController {
             let secretNoteViewController = SecretNoteViewController()
             self.navigationController?.pushViewController(secretNoteViewController, animated: true)
         }
+        
+        reportView.usingWordHandler = {[weak self] in
+            guard let self else { return }
+            let usingWordViewController = UsingWordViewController()
+            self.navigationController?.pushViewController(usingWordViewController, animated: true)
+        }
     }
 }

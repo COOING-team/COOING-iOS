@@ -18,7 +18,7 @@ final class ReportView: BaseView {
     
     var frequentWordHandler: (() -> (Void))?
     var secretNoteHandler: (() -> (Void))?
-
+    var usingWordHandler: (() -> (Void))?
     
     // MARK: - UI Components
     
@@ -132,6 +132,9 @@ final class ReportView: BaseView {
         
         let secretNoteViewTappedGesture = UITapGestureRecognizer(target: self, action: #selector(secretNoteViewDidTapped))
         secretNoteView.addGestureRecognizer(secretNoteViewTappedGesture)
+        
+        let usingWordViewTappedGesture = UITapGestureRecognizer(target: self, action: #selector(usingWordViewDidTapped))
+        usingWordView.addGestureRecognizer(usingWordViewTappedGesture)
     }
     
     @objc
@@ -142,5 +145,10 @@ final class ReportView: BaseView {
     @objc
     private func secretNoteViewDidTapped() {
         secretNoteHandler?()
+    }
+    
+    @objc
+    private func usingWordViewDidTapped() {
+        usingWordHandler?()
     }
 }
