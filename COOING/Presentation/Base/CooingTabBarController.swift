@@ -37,7 +37,7 @@ class CooingTabBarController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        tabBar.frame.size.height = 53
+        tabBar.frame.size.height = 153
         tabBar.frame.origin.y = view.frame.height - 100
     }
     

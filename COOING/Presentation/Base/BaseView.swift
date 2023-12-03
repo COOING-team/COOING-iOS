@@ -14,7 +14,6 @@ class BaseView: UIView {
         configureUI()
         hieararchy()
         setLayout()
-        backgroundColor = .white
     }
     
     @available(*, unavailable)
@@ -23,7 +22,7 @@ class BaseView: UIView {
     }
     
     func configureUI() {
-        // override Point
+        self.backgroundColor = .white
         
     }
     

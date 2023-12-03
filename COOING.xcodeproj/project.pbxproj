@@ -33,6 +33,28 @@
 		054787D12AF7C29800823463 /* CooingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D02AF7C29800823463 /* CooingButton.swift */; };
 		054787D32AF7C2D700823463 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D22AF7C2D700823463 /* UIButton+.swift */; };
 		054787D52AF7C42500823463 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D42AF7C42500823463 /* Image.swift */; };
+		0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6622B19BF5A00A87981 /* ReportView.swift */; };
+		0583D6652B19C1A600A87981 /* ReportSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6642B19C1A600A87981 /* ReportSummaryView.swift */; };
+		0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6662B19C6E400A87981 /* Adjusted+.swift */; };
+		0583D6692B19C7A700A87981 /* ReportFrequentWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6682B19C7A700A87981 /* ReportFrequentWordView.swift */; };
+		0583D66B2B19C7B500A87981 /* ReportUsingWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D66A2B19C7B500A87981 /* ReportUsingWordView.swift */; };
+		0583D66D2B19C9F600A87981 /* ReportSecretNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D66C2B19C9F600A87981 /* ReportSecretNoteView.swift */; };
+		0583D66F2B19F1F100A87981 /* FrequentWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D66E2B19F1F100A87981 /* FrequentWordViewController.swift */; };
+		0583D6732B1A4A3B00A87981 /* FrequentWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6722B1A4A3B00A87981 /* FrequentWordView.swift */; };
+		0583D6752B1A4A8100A87981 /* FrequentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6742B1A4A8100A87981 /* FrequentTableViewCell.swift */; };
+		0583D6772B1A4A9B00A87981 /* FrequentWordRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6762B1A4A9B00A87981 /* FrequentWordRightView.swift */; };
+		0583D6882B1B916100A87981 /* SecretNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6872B1B916100A87981 /* SecretNoteViewController.swift */; };
+		0583D68B2B1B91C000A87981 /* SecretNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D68A2B1B91C000A87981 /* SecretNoteView.swift */; };
+		0583D68D2B1B93B400A87981 /* SecretNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D68C2B1B93B400A87981 /* SecretNoteTableViewCell.swift */; };
+		0583D6912B1BAC4700A87981 /* LevelReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6902B1BAC4700A87981 /* LevelReportViewController.swift */; };
+		0583D6942B1BAEBB00A87981 /* LevelReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6932B1BAEBB00A87981 /* LevelReportView.swift */; };
+		0583D6962B1BB54100A87981 /* LevelTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6952B1BB54100A87981 /* LevelTableSectionHeaderView.swift */; };
+		0583D6982B1BB6B100A87981 /* LevelTableSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6972B1BB6B100A87981 /* LevelTableSectionFooterView.swift */; };
+		0583D69A2B1BB72500A87981 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6992B1BB72500A87981 /* LevelTableViewCell.swift */; };
+		0583D69C2B1BB79600A87981 /* LevelTableViewCellRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D69B2B1BB79600A87981 /* LevelTableViewCellRightView.swift */; };
+		0583D6A02B1C6BC100A87981 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D69F2B1C6BC000A87981 /* HistoryView.swift */; };
+		0583D6A22B1C704400A87981 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6A12B1C704400A87981 /* HistoryTableViewCell.swift */; };
+		0583D6A42B1C70D500A87981 /* HistoryRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6A32B1C70D500A87981 /* HistoryRightView.swift */; };
 		05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC352AF7FE510082E3EB /* HomeView.swift */; };
 		05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */; };
 		05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC392AF815800082E3EB /* QuestionView.swift */; };
@@ -91,6 +113,28 @@
 		054787D02AF7C29800823463 /* CooingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CooingButton.swift; path = COOING/Global/Extension/CooingButton.swift; sourceTree = SOURCE_ROOT; };
 		054787D22AF7C2D700823463 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		054787D42AF7C42500823463 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		0583D6622B19BF5A00A87981 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		0583D6642B19C1A600A87981 /* ReportSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryView.swift; sourceTree = "<group>"; };
+		0583D6662B19C6E400A87981 /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
+		0583D6682B19C7A700A87981 /* ReportFrequentWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFrequentWordView.swift; sourceTree = "<group>"; };
+		0583D66A2B19C7B500A87981 /* ReportUsingWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUsingWordView.swift; sourceTree = "<group>"; };
+		0583D66C2B19C9F600A87981 /* ReportSecretNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSecretNoteView.swift; sourceTree = "<group>"; };
+		0583D66E2B19F1F100A87981 /* FrequentWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentWordViewController.swift; sourceTree = "<group>"; };
+		0583D6722B1A4A3B00A87981 /* FrequentWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentWordView.swift; sourceTree = "<group>"; };
+		0583D6742B1A4A8100A87981 /* FrequentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentTableViewCell.swift; sourceTree = "<group>"; };
+		0583D6762B1A4A9B00A87981 /* FrequentWordRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentWordRightView.swift; sourceTree = "<group>"; };
+		0583D6872B1B916100A87981 /* SecretNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNoteViewController.swift; sourceTree = "<group>"; };
+		0583D68A2B1B91C000A87981 /* SecretNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNoteView.swift; sourceTree = "<group>"; };
+		0583D68C2B1B93B400A87981 /* SecretNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNoteTableViewCell.swift; sourceTree = "<group>"; };
+		0583D6902B1BAC4700A87981 /* LevelReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelReportViewController.swift; sourceTree = "<group>"; };
+		0583D6932B1BAEBB00A87981 /* LevelReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelReportView.swift; sourceTree = "<group>"; };
+		0583D6952B1BB54100A87981 /* LevelTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableSectionHeaderView.swift; sourceTree = "<group>"; };
+		0583D6972B1BB6B100A87981 /* LevelTableSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableSectionFooterView.swift; sourceTree = "<group>"; };
+		0583D6992B1BB72500A87981 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
+		0583D69B2B1BB79600A87981 /* LevelTableViewCellRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCellRightView.swift; sourceTree = "<group>"; };
+		0583D69F2B1C6BC000A87981 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0583D6A12B1C704400A87981 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0583D6A32B1C70D500A87981 /* HistoryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRightView.swift; sourceTree = "<group>"; };
 		05B0BC352AF7FE510082E3EB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = COOING/Global/Constant/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		05B0BC392AF815800082E3EB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = COOING/Presentation/Home/ViewController/QuestionView.swift; sourceTree = SOURCE_ROOT; };
@@ -240,8 +284,8 @@
 		054787852AF79F0700823463 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				0583D6612B19BF5300A87981 /* View */,
 				054787C32AF7BE3C00823463 /* ViewController */,
-				054787C22AF7BE3800823463 /* View */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -249,8 +293,8 @@
 		054787862AF79F8100823463 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				0583D69E2B1C6BAD00A87981 /* View */,
 				054787C52AF7BE4700823463 /* ViewController */,
-				054787C42AF7BE4300823463 /* View */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -289,6 +333,7 @@
 				054787A92AF7B08100823463 /* UIColor+.swift */,
 				054787CE2AF7BEB800823463 /* CALayer+.swift */,
 				054787D22AF7C2D700823463 /* UIButton+.swift */,
+				0583D6662B19C6E400A87981 /* Adjusted+.swift */,
 				7B2C759B2B19E8EE00A6CE1A /* UIViewController+.swift */,
 			);
 			path = Extension;
@@ -336,28 +381,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		054787C22AF7BE3800823463 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = COOING/Presentation/Report/View;
-			sourceTree = "<group>";
-		};
 		054787C32AF7BE3C00823463 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				054787C82AF7BE7400823463 /* ReportViewController.swift */,
+				0583D66E2B19F1F100A87981 /* FrequentWordViewController.swift */,
+				0583D6872B1B916100A87981 /* SecretNoteViewController.swift */,
+				0583D6902B1BAC4700A87981 /* LevelReportViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		054787C42AF7BE4300823463 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = COOING/Presentation/History/View;
 			sourceTree = "<group>";
 		};
 		054787C52AF7BE4700823463 /* ViewController */ = {
@@ -366,6 +398,70 @@
 				054787CA2AF7BE7C00823463 /* HistoryViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0583D6612B19BF5300A87981 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0583D6922B1BAEA700A87981 /* LevelReport */,
+				0583D6892B1B917D00A87981 /* SecretNote */,
+				0583D6712B1A4A2E00A87981 /* Frequent */,
+				0583D6702B1A4A2100A87981 /* Intro */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0583D6702B1A4A2100A87981 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				0583D6622B19BF5A00A87981 /* ReportView.swift */,
+				0583D6642B19C1A600A87981 /* ReportSummaryView.swift */,
+				0583D6682B19C7A700A87981 /* ReportFrequentWordView.swift */,
+				0583D66A2B19C7B500A87981 /* ReportUsingWordView.swift */,
+				0583D66C2B19C9F600A87981 /* ReportSecretNoteView.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		0583D6712B1A4A2E00A87981 /* Frequent */ = {
+			isa = PBXGroup;
+			children = (
+				0583D6722B1A4A3B00A87981 /* FrequentWordView.swift */,
+				0583D6742B1A4A8100A87981 /* FrequentTableViewCell.swift */,
+				0583D6762B1A4A9B00A87981 /* FrequentWordRightView.swift */,
+			);
+			path = Frequent;
+			sourceTree = "<group>";
+		};
+		0583D6892B1B917D00A87981 /* SecretNote */ = {
+			isa = PBXGroup;
+			children = (
+				0583D68A2B1B91C000A87981 /* SecretNoteView.swift */,
+				0583D68C2B1B93B400A87981 /* SecretNoteTableViewCell.swift */,
+			);
+			path = SecretNote;
+			sourceTree = "<group>";
+		};
+		0583D6922B1BAEA700A87981 /* LevelReport */ = {
+			isa = PBXGroup;
+			children = (
+				0583D6932B1BAEBB00A87981 /* LevelReportView.swift */,
+				0583D6952B1BB54100A87981 /* LevelTableSectionHeaderView.swift */,
+				0583D6972B1BB6B100A87981 /* LevelTableSectionFooterView.swift */,
+				0583D6992B1BB72500A87981 /* LevelTableViewCell.swift */,
+				0583D69B2B1BB79600A87981 /* LevelTableViewCellRightView.swift */,
+			);
+			path = LevelReport;
+			sourceTree = "<group>";
+		};
+		0583D69E2B1C6BAD00A87981 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0583D69F2B1C6BC000A87981 /* HistoryView.swift */,
+				0583D6A12B1C704400A87981 /* HistoryTableViewCell.swift */,
+				0583D6A32B1C70D500A87981 /* HistoryRightView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7B543A9D2B1C7C7100F2A8FA /* Data */ = {
@@ -566,8 +662,11 @@
 				7B2C759E2B19EB9400A6CE1A /* CommentViewController.swift in Sources */,
 				7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
+				0583D6982B1BB6B100A87981 /* LevelTableSectionFooterView.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
+				0583D66F2B19F1F100A87981 /* FrequentWordViewController.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
+				0583D6A02B1C6BC100A87981 /* HistoryView.swift in Sources */,
 				7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
@@ -576,14 +675,19 @@
 				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
 				7B82F2D92B1B35B5005DDFC9 /* Test.swift in Sources */,
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
+				0583D6A22B1C704400A87981 /* HistoryTableViewCell.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
+				0583D69C2B1BB79600A87981 /* LevelTableViewCellRightView.swift in Sources */,
+				0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */,
+				0583D6A42B1C70D500A87981 /* HistoryRightView.swift in Sources */,
 				7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
 				7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
+				0583D6942B1BAEBB00A87981 /* LevelReportView.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
 				7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */,
@@ -591,15 +695,29 @@
 				7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
+				0583D6732B1A4A3B00A87981 /* FrequentWordView.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
+				0583D66B2B19C7B500A87981 /* ReportUsingWordView.swift in Sources */,
+				0583D68B2B1B91C000A87981 /* SecretNoteView.swift in Sources */,
+				0583D6882B1B916100A87981 /* SecretNoteViewController.swift in Sources */,
+				0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */,
 				7B82F2D72B1B326A005DDFC9 /* TestLoginViewController.swift in Sources */,
 				7B7DA3432B1C9A98003E3A82 /* AuthRouter.swift in Sources */,
 				05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */,
+				0583D66D2B19C9F600A87981 /* ReportSecretNoteView.swift in Sources */,
+				0583D68D2B1B93B400A87981 /* SecretNoteTableViewCell.swift in Sources */,
 				054787C92AF7BE7400823463 /* ReportViewController.swift in Sources */,
 				7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,
+				0583D6962B1BB54100A87981 /* LevelTableSectionHeaderView.swift in Sources */,
+				0583D6752B1A4A8100A87981 /* FrequentTableViewCell.swift in Sources */,
+				0583D6772B1A4A9B00A87981 /* FrequentWordRightView.swift in Sources */,
+				0583D6692B19C7A700A87981 /* ReportFrequentWordView.swift in Sources */,
+				0583D6652B19C1A600A87981 /* ReportSummaryView.swift in Sources */,
+				0583D69A2B1BB72500A87981 /* LevelTableViewCell.swift in Sources */,
+				0583D6912B1BAC4700A87981 /* LevelReportViewController.swift in Sources */,
 				054787CF2AF7BEB800823463 /* CALayer+.swift in Sources */,
 				054787AA2AF7B08100823463 /* UIColor+.swift in Sources */,
 			);

@@ -43,6 +43,20 @@ public enum Image {
     static let growing = UIImage(named: "growing")!
     static let baby = UIImage(named: "baby")!
     static let yellowBack = UIImage(named: "back_yellow")!
+    
+    // MARK: - Report
+    
+    static let reportImage = UIImage(named: "report_image")!
+    static let one = UIImage(named: "one")!
+    static let two = UIImage(named: "two")!
+    static let three = UIImage(named: "three")!
+    static let four = UIImage(named: "four")!
+    static let five = UIImage(named: "five")!
+    static let backGray = UIImage(named: "back_gray")!
+    static let yes = UIImage(named: "yes")!
+    static let no = UIImage(named: "no")!
+    static let selectLevel = UIImage(named: "select_level")!
+    static let divideLine = UIImage(named: "divide_line")
     static let answer = UIImage(named: "answer")!
     static let modify = UIImage(named: "modify")!
 

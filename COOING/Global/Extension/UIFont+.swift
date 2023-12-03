@@ -64,4 +64,12 @@ extension UIFont {
     class func nav() -> UIFont {
         return UIFont(name: AppFontName.semiBoldFont.rawValue, size: 10)!
     }
+    
+    class func report1() -> UIFont {
+        return UIFont(name: AppFontName.mediumFont.rawValue, size: 11)!
+    }
+    
+    class func report2() -> UIFont {
+        return UIFont(name: AppFontName.extraBoldFont.rawValue, size: 15)!
+    }
 }
