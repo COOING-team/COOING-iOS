@@ -11,7 +11,7 @@ class TransformRecordViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    private let transformRecordView = TransformRecordView()
+    let transformRecordView = TransformRecordView()
 
     // MARK: - override Functions
     
@@ -53,6 +53,7 @@ class TransformRecordViewController: BaseViewController {
     @objc
     private func nextButtonDidTapped() {
         let commentViewController = CommentViewController()
+        commentViewController.cooingAnswer = transformRecordView.answerTextView.text
         navigationController?.pushViewController(commentViewController, animated: true)
     }
 }

@@ -11,6 +11,7 @@ class CommentViewController: BaseViewController {
     
     // MARK: - UI Components
     
+    var cooingAnswer: String = ""
     private let commentView = CommentView()
 
     // MARK: - override Functions
@@ -51,3 +52,8 @@ class CommentViewController: BaseViewController {
     }
 }
 
+// MARK: - Network
+
+extension CommentViewController {
+    
+}
