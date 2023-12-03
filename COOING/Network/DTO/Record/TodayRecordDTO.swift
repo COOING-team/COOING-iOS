@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct TodayRecordDTO: Codable {
+    let answerText: String
+    let fileUrl: String
+    let comment: String
+}
