@@ -32,6 +32,7 @@ public enum Image {
     static let pencil = UIImage(named: "pencil")!
     static let recording = UIImage(named: "recording")!
     static let recordingFill = UIImage(named: "recordingFill")!
+    static let completeIcon = UIImage(named: "completeIcon")!
     
     // MARK: - Login
     static let loginCooingLogo = UIImage(named: "loginCooingLogo")!

@@ -131,6 +131,7 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     }
     
     override func configureUI() {
+        super.configureUI()
 
     }
     

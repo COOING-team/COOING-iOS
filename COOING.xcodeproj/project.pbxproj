@@ -79,11 +79,10 @@
 		7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */; };
 		7B7DA3472B1CC041003E3A82 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3462B1CC041003E3A82 /* GenericResponse.swift */; };
 		7B7DA34A2B1CC2B2003E3A82 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3492B1CC2B2003E3A82 /* UIWindow+.swift */; };
+		7B7DA34C2B1CCB68003E3A82 /* RecordCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA34B2B1CCB68003E3A82 /* RecordCompleteViewController.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
-		7B82F2D72B1B326A005DDFC9 /* TestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */; };
-		7B82F2D92B1B35B5005DDFC9 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B82F2D82B1B35B5005DDFC9 /* Test.swift */; };
 		7B82F2DC2B1B3A5F005DDFC9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2DB2B1B3A5F005DDFC9 /* Realm */; };
 		7B82F2DE2B1B3A5F005DDFC9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2DD2B1B3A5F005DDFC9 /* RealmSwift */; };
 /* End PBXBuildFile section */
@@ -158,8 +157,7 @@
 		7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityTokenDTO.swift; sourceTree = "<group>"; };
 		7B7DA3462B1CC041003E3A82 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		7B7DA3492B1CC2B2003E3A82 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
-		7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
-		7B82F2D82B1B35B5005DDFC9 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		7B7DA34B2B1CCB68003E3A82 /* RecordCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +322,7 @@
 				7B3BC87A2AF894B8008EDF60 /* RecordViewController.swift */,
 				7B2C75972B19C7DC00A6CE1A /* TransformRecordViewController.swift */,
 				7B2C759D2B19EB9400A6CE1A /* CommentViewController.swift */,
+				7B7DA34B2B1CCB68003E3A82 /* RecordCompleteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -565,8 +564,6 @@
 		7B82F2D52B1B3253005DDFC9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7B82F2D62B1B326A005DDFC9 /* TestLoginViewController.swift */,
-				7B82F2D82B1B35B5005DDFC9 /* Test.swift */,
 				7B543A9B2B1C744A00F2A8FA /* LoginViewController.swift */,
 			);
 			path = ViewController;
@@ -669,6 +666,7 @@
 				7B543AA82B1C816800F2A8FA /* RealmService.swift in Sources */,
 				054787CD2AF7BEA800823463 /* CooingTabBarController.swift in Sources */,
 				0583D6982B1BB6B100A87981 /* LevelTableSectionFooterView.swift in Sources */,
+				7B7DA34C2B1CCB68003E3A82 /* RecordCompleteViewController.swift in Sources */,
 				7B7DA3472B1CC041003E3A82 /* GenericResponse.swift in Sources */,
 				054787D52AF7C42500823463 /* Image.swift in Sources */,
 				0583D66F2B19F1F100A87981 /* FrequentWordViewController.swift in Sources */,
@@ -681,7 +679,6 @@
 				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
 				7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */,
 				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
-				7B82F2D92B1B35B5005DDFC9 /* Test.swift in Sources */,
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
 				0583D6A22B1C704400A87981 /* HistoryTableViewCell.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
@@ -710,7 +707,6 @@
 				0583D68B2B1B91C000A87981 /* SecretNoteView.swift in Sources */,
 				0583D6882B1B916100A87981 /* SecretNoteViewController.swift in Sources */,
 				0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */,
-				7B82F2D72B1B326A005DDFC9 /* TestLoginViewController.swift in Sources */,
 				7B7DA3432B1C9A98003E3A82 /* AuthRouter.swift in Sources */,
 				05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */,
 				0583D66D2B19C9F600A87981 /* ReportSecretNoteView.swift in Sources */,
