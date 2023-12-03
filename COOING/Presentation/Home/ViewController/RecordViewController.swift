@@ -17,6 +17,8 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder?
     let provider = MoyaProvider<ClovaSpeechService>()
+    static let recordProvider = MoyaProvider<RecordRouter>(plugins: [MoyaLoggingPlugin()])
+
     
     // MARK: - UI Components
     
@@ -206,6 +208,7 @@ extension RecordViewController {
         convertAudioToWAV(audioURL: audioURL) { [weak self] result in
             switch result {
             case .success(let convertedURL):
+                self?.uploadRecordedAudio(audioData: convertedURL)
                 self?.sendAudioFile(audioURL: convertedURL)
             case .failure(let error):
                 print("Audio conversion error: \(error)")
@@ -225,4 +228,33 @@ extension RecordViewController {
             }
         }
     
+}
+
+
+// MARK: - Network
+extension RecordViewController {
+    func uploadRecordedAudio(audioData: URL) {
+        do {
+            let data = try Data(contentsOf: audioData)
+            RecordViewController.recordProvider.request(.uploadAudioURL(data)) { response in
+                switch response {
+                case .success(let response):
+                    print(response.statusCode)
+                    
+                    do {
+                        let responseData = try response.map(GenericResponse<String>.self)
+                        print("🚨\(responseData.result)")
+                    } catch {
+                        print("Error mapping response: \(error.localizedDescription)")
+                    }
+                    
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+        } catch {
+            print("Error converting URL to Data: \(error.localizedDescription)")
+        }
+    }
+
 }

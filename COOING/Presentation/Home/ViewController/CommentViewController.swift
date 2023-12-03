@@ -55,5 +55,29 @@ class CommentViewController: BaseViewController {
 // MARK: - Network
 
 extension CommentViewController {
-    
+    func uploadTodayRecord(cooingIndex: Int, answerText: String, fileUrl: String, comment: String) {
+        RecordViewController.recordProvider.request(.todayRecord(cooingIndex: cooingIndex, 
+                                                                 param: TodayRecordDTO(answerText: answerText,
+                                                                                       fileUrl: fileUrl,
+                                                                                       comment: comment))) { response in
+            switch response {
+            case .success(let response):
+                do {
+                    print(response.statusCode)
+
+                    let responseData = try response.map(GenericResponse<String>.self)
+
+
+                    print("🔆\(responseData.result)")
+
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            
+            }
+        }
+    }
 }
