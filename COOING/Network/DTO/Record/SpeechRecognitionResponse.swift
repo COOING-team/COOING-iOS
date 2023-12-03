@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct SpeechRecognitionResponse: Codable {
+    let text: String
+    let quota: Int
+}
