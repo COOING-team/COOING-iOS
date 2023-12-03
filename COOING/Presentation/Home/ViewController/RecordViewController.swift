@@ -17,6 +17,8 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder?
     let provider = MoyaProvider<ClovaSpeechService>()
+    static let recordProvider = MoyaProvider<RecordRouter>(plugins: [MoyaLoggingPlugin()])
+
     
     // MARK: - UI Components
     
@@ -206,6 +208,7 @@ extension RecordViewController {
         convertAudioToWAV(audioURL: audioURL) { [weak self] result in
             switch result {
             case .success(let convertedURL):
+                self?.uploadRecordedAudio(audioData: convertedURL)
                 self?.sendAudioFile(audioURL: convertedURL)
             case .failure(let error):
                 print("Audio conversion error: \(error)")
@@ -225,4 +228,26 @@ extension RecordViewController {
             }
         }
     
+}
+
+
+// MARK: - Network
+extension RecordViewController {
+    func uploadRecordedAudio(audioData: URL) {
+           do {
+               let data = try Data(contentsOf: audioData)
+               RecordViewController.recordProvider.request(.uploadAudioURL(data)) { result in
+                   switch result {
+                   case .success(let response):
+                       print("Audio uploaded successfully. Response: \(response)")
+                       // Handle successful upload if needed
+                   case .failure(let error):
+                       print("Error uploading audio: \(error)")
+                       // Handle error if needed
+                   }
+               }
+           } catch {
+               print("Error converting audio URL to Data: \(error)")
+           }
+       }
 }
