@@ -1,0 +1,14 @@
+//
+//  TodayRecordDTO.swift
+//  COOING
+//
+//  Created by 최지우 on 12/4/23.
+//
+
+import Foundation
+
+struct TodayRecordDTO: Codable {
+    let answerText: String
+    let fileUrl: String
+    let comment: String
+}

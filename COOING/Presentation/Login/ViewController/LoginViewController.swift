@@ -59,32 +59,36 @@ class LoginViewController: BaseViewController {
     @objc
     func kakaoLoginButtonDidTapped() {
         
-        // 카카오톡 설치 여부 확인
-        if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoTalk() success.")
-                    // do something
-                    _ = oauthToken
-                    // 어세스토큰
-                    let accessToken = oauthToken?.accessToken
-
-                    self.getUserInfo()
-
-                }
-            }
+        if RealmService.shared.isAccessTokenPresent() {
+            pushToHomeVC()
         } else {
-            // 카카오 계정을 통한 웹 로그인 시도
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
+            // 카카오톡 설치 여부 확인
+            if (UserApi.isKakaoTalkLoginAvailable()) {
+                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("loginWithKakaoTalk() success.")
+                        // do something
+                        _ = oauthToken
+                        // 어세스토큰
+                        let accessToken = oauthToken?.accessToken
+                        
+                        self.getUserInfo()
+                        
+                    }
                 }
-                else {
-                    self.getUserInfo()
-                    _ = oauthToken
+            } else {
+                // 카카오 계정을 통한 웹 로그인 시도
+                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        self.getUserInfo()
+                        _ = oauthToken
+                    }
                 }
             }
         }
@@ -118,6 +122,17 @@ class LoginViewController: BaseViewController {
             keyWindow.replaceRootViewController(UINavigationController(rootViewController: cooingTabBarController), animated: true, completion: nil)
         }
     }
+    
+    private func pushToSetInfoVC() {
+        let setCooingInfoViewController = SetCooingInfoViewController()
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+            keyWindow.replaceRootViewController(UINavigationController(rootViewController: setCooingInfoViewController), animated: true, completion: nil)
+        }
+    }
+    
+    
      
 }
 
@@ -138,7 +153,7 @@ extension LoginViewController {
 
                     self.addTokenInRealm(accessToken: responseData.result.accessToken,
                                          refreshToken: responseData.result.refreshToken)
-                    self.pushToHomeVC()
+                    self.pushToSetInfoVC()
 
                     
                 } catch(let err) {
