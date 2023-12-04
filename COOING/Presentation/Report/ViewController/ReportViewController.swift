@@ -7,7 +7,13 @@
 
 import UIKit
 
+import Moya
+
 class ReportViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
     
     // MARK: - UI Components
     
@@ -20,6 +26,11 @@ class ReportViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setViewGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        networkFunctions()
     }
     
     // MARK: - Functions
@@ -59,6 +70,47 @@ class ReportViewController: BaseViewController {
             guard let self else { return }
             let usingWordViewController = UsingWordViewController()
             self.navigationController?.pushViewController(usingWordViewController, animated: true)
+        }
+    }
+    
+    private func networkFunctions() {
+        getInfoData()
+        getTotalData()
+    }
+}
+
+// MARK: - Network
+
+extension ReportViewController {
+    private func getInfoData() {
+        self.reportProvider.request(.info) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(GenericResponse<InfoDTO>.self)
+                    self.reportView.configureInfoView(data: responseData.result)
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    private func getTotalData() {
+        self.reportProvider.request(.total) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(GenericResponse<ReportTotalDTO>.self)
+                    self.reportView.reportSummaryView.configureSummaryView(data: responseData.result)
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
 }
