@@ -23,7 +23,7 @@ final class CommentView: BaseView {
     private var questionLabel = UILabel()
     
     private var transformView = UIView()
-    private var answerTextView = UITextView()
+    var answerTextView = UITextView()
     
     let backButton = UIButton()
     let nextButton = UIButton()
@@ -39,7 +39,7 @@ final class CommentView: BaseView {
     
     override func configureUI() {
         countDayLabel.do {
-            $0.text = "100일 째의 기록"
+            $0.text = "\(HomeViewController.cooingInfo.cooingDay)일 째의 기록"
             $0.font = .body1()
             $0.textColor = .cooingBrown
         }

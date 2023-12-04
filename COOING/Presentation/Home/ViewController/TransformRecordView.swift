@@ -43,7 +43,7 @@ final class TransformRecordView: BaseView {
     
     override func configureUI() {
         countDayLabel.do {
-            $0.text = "100일 째의 기록"
+            $0.text = "\(HomeViewController.cooingInfo.cooingDay)일 째의 기록"
             $0.font = .body1()
             $0.textColor = .cooingBrown
         }
@@ -58,7 +58,7 @@ final class TransformRecordView: BaseView {
         }
         
         questionLabel.do {
-            $0.text = "오늘 쿠잉이의 하루는 어땠어?"
+            $0.text = QuestionViewController.todayQuestion
             $0.font = .title3()
             $0.textColor = .cooingBrown
         }

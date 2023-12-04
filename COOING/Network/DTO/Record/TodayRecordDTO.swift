@@ -8,7 +8,7 @@
 import Foundation
 
 struct TodayRecordDTO: Codable {
-    let answerText: String
-    let fileUrl: String
-    let comment: String
+    var answerText: String
+    var fileUrl: String
+    var comment: String
 }

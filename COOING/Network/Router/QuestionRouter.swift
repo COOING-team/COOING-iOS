@@ -1,5 +1,5 @@
 //
-//  HomeRouter.swift
+//  QuestionRouter.swift
 //  COOING
 //
 //  Created by 최지우 on 12/4/23.
@@ -9,32 +9,32 @@ import Foundation
 
 import Moya
 
-enum HomeRouter {
-    case getInfo
+enum QuestionRouter {
+    case getQuestion(cooingIndex: Int)
 }
 
-extension HomeRouter: TargetType, AccessTokenAuthorizable {
+extension QuestionRouter: TargetType {
     public var baseURL: URL {
         return URL(string: Config.baseURL)!
     }
-
+    
     var path: String {
         switch self {
-        case .getInfo:
-            return "/api/v1/home/info"
+        case .getQuestion(let cooingIndex):
+            return "/api/v1/question/\(cooingIndex)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getInfo:
+        case .getQuestion:
             return .get
         }
     }
 
     var task: Task {
         switch self {
-        case .getInfo:
+        case .getQuestion:
             return .requestPlain
         }
     }
@@ -45,12 +45,8 @@ extension HomeRouter: TargetType, AccessTokenAuthorizable {
         return ["Content-Type":"application/json",
                 "Authorization": "Bearer \(token)"]
     }
-    
-    var authorizationType: Moya.AuthorizationType? {
-        switch self {
-        default:
-            return .bearer
-        }
-    }
 
+    var sampleData: Data {
+        return Data()
+    }
 }

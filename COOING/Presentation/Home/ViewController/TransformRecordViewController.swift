@@ -54,6 +54,7 @@ class TransformRecordViewController: BaseViewController {
     private func nextButtonDidTapped() {
         let commentViewController = CommentViewController()
         commentViewController.cooingAnswer = transformRecordView.answerTextView.text
+        CommentViewController.todayRecord.answerText = transformRecordView.answerTextView.text
         navigationController?.pushViewController(commentViewController, animated: true)
     }
 }

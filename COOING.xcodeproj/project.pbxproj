@@ -98,6 +98,8 @@
 		7B7DA35E2B1D1E71003E3A82 /* SetCooingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA35D2B1D1E71003E3A82 /* SetCooingInfoViewController.swift */; };
 		7B7DA3602B1D1E9A003E3A82 /* SetCooingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA35F2B1D1E99003E3A82 /* SetCooingInfoView.swift */; };
 		7B7DA3632B1D2228003E3A82 /* CooingInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */; };
+		7B7DA3652B1D553B003E3A82 /* QuestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3642B1D553A003E3A82 /* QuestionDTO.swift */; };
+		7B7DA3672B1D5555003E3A82 /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */; };
 		7B82F2CD2B1B31AF005DDFC9 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CC2B1B31AF005DDFC9 /* KakaoSDKAuth */; };
 		7B82F2CF2B1B31AF005DDFC9 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2CE2B1B31AF005DDFC9 /* KakaoSDKCommon */; };
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
@@ -193,6 +195,8 @@
 		7B7DA35D2B1D1E71003E3A82 /* SetCooingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCooingInfoViewController.swift; sourceTree = "<group>"; };
 		7B7DA35F2B1D1E99003E3A82 /* SetCooingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCooingInfoView.swift; sourceTree = "<group>"; };
 		7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooingInfoRouter.swift; sourceTree = "<group>"; };
+		7B7DA3642B1D553A003E3A82 /* QuestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
+		7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -599,6 +603,7 @@
 				7B7DA3522B1CE927003E3A82 /* HomeRouter.swift */,
 				7B7DA3592B1CEE03003E3A82 /* ClovaSpeechService.swift */,
 				7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */,
+				7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 			isa = PBXGroup;
 			children = (
 				7B7DA3552B1CE963003E3A82 /* CooingDefaultInfoDTO.swift */,
+				7B7DA3642B1D553A003E3A82 /* QuestionDTO.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -775,6 +781,7 @@
 				0589FB362B1CC04800D0CB7F /* UsingWordViewController.swift in Sources */,
 				054787A22AF7AE6F00823463 /* UIFont+.swift in Sources */,
 				7B7DA3512B1CE68F003E3A82 /* RecordRouter.swift in Sources */,
+				7B7DA3652B1D553B003E3A82 /* QuestionDTO.swift in Sources */,
 				7B7DA3562B1CE963003E3A82 /* CooingDefaultInfoDTO.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
 				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
@@ -823,6 +830,7 @@
 				7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */,
 				0589FB382B1CC06600D0CB7F /* UsingWordView.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
+				7B7DA3672B1D5555003E3A82 /* QuestionRouter.swift in Sources */,
 				0589FB462B1CFC7C00D0CB7F /* SecretNoteListDTO.swift in Sources */,
 				7B7DA35C2B1D0258003E3A82 /* SpeechRecognitionResponse.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,

@@ -22,7 +22,7 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
     
     // MARK: - UI Components
     
-    private let recordView = RecordView()
+    let recordView = RecordView()
 
     // MARK: - override Functions
     
@@ -31,6 +31,8 @@ class RecordViewController: BaseViewController,AVAudioPlayerDelegate, AVAudioRec
         
         setupRecorder()
         setupButtons()
+        print("🍊\(recordView.questionLabel.text)")
+        print("🐽\(QuestionViewController.todayQuestion)")
     }
     
     func setupRecorder() {
@@ -244,6 +246,7 @@ extension RecordViewController {
                     do {
                         let responseData = try response.map(GenericResponse<String>.self)
                         print("🚨\(responseData.result)")
+                        CommentViewController.todayRecord.fileUrl = responseData.result
                     } catch {
                         print("Error mapping response: \(error.localizedDescription)")
                     }

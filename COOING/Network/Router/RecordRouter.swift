@@ -68,9 +68,8 @@ var path: String {
     var sampleData: Data {
         switch self {
         case .uploadAudioURL:
-            return Data() // Actual sample data for `uploadAudioURL`
+            return Data()
         case .todayRecord(_, let param):
-            // You can encode your param to JSON data here for the sample data.
             return try! JSONEncoder().encode(param)
         }
       }
