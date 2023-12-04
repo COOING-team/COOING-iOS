@@ -7,13 +7,27 @@
 
 import UIKit
 
+import Moya
+
 class HomeViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    private let homeProvider = MoyaProvider<HomeRouter>(plugins: [MoyaLoggingPlugin()])
+    static var cooingInfo = CooingDefaultInfoDTO(name: "지우", month: 10, cooingDay: 3, todayRecord: false)
     
     // MARK: - UI Components
     
     private let homeView = HomeView()
 
     // MARK: - override Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("♥️")
+        getHomeInfo()
+    }
     
     override func hieararchy() {
         view.addSubview(homeView)
@@ -36,4 +50,28 @@ class HomeViewController: BaseViewController {
         let questionViewController = QuestionViewController()
         navigationController?.pushViewController(questionViewController, animated: true)
     }
+}
+
+// MARK: - Network
+
+extension HomeViewController {
+    func getHomeInfo() {
+        homeProvider.request(.getInfo) { response in
+                switch response {
+                case .success(let response):
+                    do {
+                        print(response.statusCode)
+
+                        let responseData = try response.map(GenericResponse<CooingDefaultInfoDTO>.self)
+                        HomeViewController.cooingInfo = responseData.result
+
+                        print("🔆\(responseData.result)")
+                    } catch let error {
+                        print(error)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
 }

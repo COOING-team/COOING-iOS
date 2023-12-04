@@ -11,23 +11,20 @@ import SnapKit
 import Then
 
 final class QuestionView: BaseView {
-    
-    // MARK: - Properties
-
         
     // MARK: - UI Components
     
     private var countDayLabel = UILabel()
     private var dateLabel = UILabel()
     private let babyImageView = UIImageView(image: Image.baby)
-    private var questionLabel = UILabel()
+    var questionLabel = UILabel()
     var nextButton = CooingButton()
     
     // MARK: - override Method
     
     override func configureUI() {
         countDayLabel.do {
-            $0.text = "100일 째의 기록"
+            $0.text = "\(HomeViewController.cooingInfo.cooingDay)일 째의 기록"
             $0.font = .body1()
             $0.textColor = .cooingBrown
         }
@@ -41,7 +38,7 @@ final class QuestionView: BaseView {
             $0.textColor = .cooingBrown
         }
         questionLabel.do {
-            $0.text = "오늘 쿠잉이의 하루는 어땠어?"
+            $0.text = QuestionViewController.todayQuestion
             $0.font = .title3()
             $0.textColor = .cooingBrown
         }
@@ -55,23 +52,23 @@ final class QuestionView: BaseView {
     override func setLayout() {
 
         countDayLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(170)
+            $0.top.equalToSuperview().inset(200)
             $0.centerX.equalToSuperview()
         }
         
         dateLabel.snp.makeConstraints {
-            $0.top.equalTo(countDayLabel.snp.bottom).inset(2)
+            $0.top.equalTo(countDayLabel.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
         }
         
         babyImageView.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom).offset(63)
+            $0.top.equalTo(dateLabel.snp.bottom).offset(100)
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(118)
         }
         
         questionLabel.snp.makeConstraints {
-            $0.top.equalTo(babyImageView.snp.bottom).offset(45)
+            $0.top.equalTo(babyImageView.snp.bottom).offset(60)
             $0.centerX.equalToSuperview()
         }
         
