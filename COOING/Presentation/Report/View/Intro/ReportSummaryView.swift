@@ -36,25 +36,25 @@ final class ReportSummaryView: BaseView {
         wordLabel.do {
             $0.font = .body4()
             $0.textColor = .cooingBrown
-            $0.text = "쿠잉이가 사용한 단어 수"
+            $0.text = "Jiwoo가 사용한 단어 수"
         }
         
         wordCountLabel.do {
             $0.font = .button1()
             $0.textColor = .cooingBrown
-            $0.text = "293,283개"
+            $0.text = "46개"
         }
         
         favoriteWordLabel.do {
             $0.font = .body4()
             $0.textColor = .cooingBrown
-            $0.text = "쿠잉이의 애착 단어"
+            $0.text = "Jiwoo의 애착 단어"
         }
         
         cooingFavoriteWordLabel.do {
             $0.font = .button1()
             $0.textColor = .cooingBrown
-            $0.text = "친구"
+            $0.text = "오늘"
         }
         
         wordStackView.do {

@@ -36,13 +36,13 @@ final class SecretNoteView: BaseView {
     override func configureUI() {
         
         wordTitleLabel.do {
-            $0.text = "쿠잉이의 시크릿 노트"
+            $0.text = "Jiwoo의 시크릿 노트"
             $0.font = .title2()
             $0.textColor = .cooingBrown
         }
         
         wordSubTitleLabel.do {
-            $0.text = "쿠잉이의 언어를 더 자세히 분석해요."
+            $0.text = "Jiwoo의 언어를 더 자세히 분석해요."
             $0.font = .body3()
             $0.textColor = .cooingBrown
         }

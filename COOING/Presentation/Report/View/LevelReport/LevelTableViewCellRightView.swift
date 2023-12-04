@@ -14,6 +14,14 @@ final class LevelTableViewCellRightView: BaseView {
     
     // MARK: - UI Components
     
+    var text: String = "" {
+        didSet {
+            wordLabel.text = text
+            self.snp.updateConstraints {
+                $0.width.equalTo(Double(wordLabel.intrinsicContentSize.width).adjusted)
+            }
+        }
+    }
     var wordLabel = UILabel()
 
     // MARK: - Life Cycle

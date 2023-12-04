@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
+struct FrequentWord {
+    let word: String
+    let count: Int
+}
+
 final class FrequentTableViewCell: UITableViewCell {
     
     // MARK: - Properties
@@ -65,7 +70,9 @@ final class FrequentTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(index: Int) {
+    func configureCell(index: Int, wordData: FrequentWord) {
         rankImageView.image = numberImageList[index]
+        frequentWordView.wordLabel.text = wordData.word
+        frequentWordView.countLabel.text = "\(wordData.count)"
     }
 }

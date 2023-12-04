@@ -55,7 +55,7 @@ final class LevelReportView: BaseView {
         }
         
         dateLabel.do {
-            $0.text = "7월 1째주"
+            $0.text = "12월 1째주"
             $0.font = .title1()
             $0.textColor = .cooingBrown
         }

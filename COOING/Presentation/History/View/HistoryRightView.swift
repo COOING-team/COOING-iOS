@@ -14,7 +14,7 @@ final class HistoryRightView: BaseView {
     
     // MARK: - UI Components
     
-    private var wordLabel = UILabel()
+    var wordLabel = UILabel()
 
     // MARK: - Life Cycle
     
@@ -38,7 +38,7 @@ final class HistoryRightView: BaseView {
         
         wordLabel.do {
             $0.font = .report1()
-            $0.text = "재미있는 일이 있는 하루였어"
+            $0.text = "오늘 학교 점심 맛있겠다"
             $0.textColor = .cooingBrown
             $0.numberOfLines = 2
         }

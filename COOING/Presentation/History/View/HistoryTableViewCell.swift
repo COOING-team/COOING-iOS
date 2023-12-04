@@ -10,6 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
+struct HistoryData {
+    let date: String
+    let text: String
+}
+
 final class HistoryTableViewCell: UITableViewCell {
     
     // MARK: - Properties
@@ -50,7 +55,7 @@ final class HistoryTableViewCell: UITableViewCell {
     
     private func configureUI() {
         dateLabel.do {
-            $0.text = "9/2"
+            $0.text = "12/1"
             $0.font = .body1()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
         }
@@ -81,6 +86,11 @@ final class HistoryTableViewCell: UITableViewCell {
             $0.height.equalTo(56.adjusted)
             $0.leading.equalTo(divideLineImageView.snp.trailing).offset(16.adjusted)
         }
+    }
+    
+    func configureCell(data: HistoryData) {
+        dateLabel.text = data.date
+        rightView.wordLabel.text = data.text
     }
 }
 

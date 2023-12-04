@@ -55,13 +55,13 @@ final class ReportView: BaseView {
         }
         
         weekNoticeLabel.do {
-            $0.text = "7월 1째주 쿠잉이의 주간 레포트"
+            $0.text = "12월 1째주 Jiwoo의 주간 레포트"
             $0.textColor = .cooingBrown
             $0.font = .title3()
         }
         
         cooingBirthLabel.do {
-            $0.text = "박쿠잉, 태어난 지 29개월 째"
+            $0.text = "Jiwoo, 태어난 지 36개월 째"
             $0.font = .body5()
             $0.textColor = .cooingBrown
         }
