@@ -9,12 +9,20 @@ import UIKit
 
 class CommentViewController: BaseViewController {
     
+    static var todayRecord = TodayRecordDTO(answerText: "", fileUrl: "", comment: "")
+    
     // MARK: - UI Components
     
     var cooingAnswer: String = ""
     private let commentView = CommentView()
 
     // MARK: - override Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈\(CommentViewController.todayRecord)")
+    }
     
     override func hieararchy() {
         view.addSubview(commentView)
@@ -47,6 +55,10 @@ class CommentViewController: BaseViewController {
     
     @objc
     private func nextButtonDidTapped() {
+        CommentViewController.todayRecord.comment = commentView.answerTextView.text
+        
+        
+        uploadTodayRecord(cooingIndex: (HomeViewController.cooingInfo.cooingDay+1))
         let recordCompleteViewController = RecordCompleteViewController()
         navigationController?.pushViewController(recordCompleteViewController, animated: true)
     }
@@ -55,11 +67,9 @@ class CommentViewController: BaseViewController {
 // MARK: - Network
 
 extension CommentViewController {
-    func uploadTodayRecord(cooingIndex: Int, answerText: String, fileUrl: String, comment: String) {
+    func uploadTodayRecord(cooingIndex: Int) {
         RecordViewController.recordProvider.request(.todayRecord(cooingIndex: cooingIndex, 
-                                                                 param: TodayRecordDTO(answerText: answerText,
-                                                                                       fileUrl: fileUrl,
-                                                                                       comment: comment))) { response in
+                                                                 param: CommentViewController.todayRecord)) { response in
             switch response {
             case .success(let response):
                 do {

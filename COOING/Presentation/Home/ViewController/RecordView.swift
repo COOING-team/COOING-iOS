@@ -21,7 +21,7 @@ final class RecordView: BaseView {
     private var countDayLabel = UILabel()
     private var dateLabel = UILabel()
     var recordButton = UIButton()
-    private var questionLabel = UILabel()
+    var questionLabel = UILabel()
     var reRecordButton = CooingButton()
     var listenButton = CooingButton()
     let nextButton = UIButton()
@@ -31,7 +31,7 @@ final class RecordView: BaseView {
     
     override func configureUI() {
         countDayLabel.do {
-            $0.text = "100일 째의 기록"
+            $0.text = "\(HomeViewController.cooingInfo.cooingDay)일 째의 기록"
             $0.font = .body1()
             $0.textColor = .cooingBrown
         }
@@ -46,7 +46,7 @@ final class RecordView: BaseView {
         }
         
         questionLabel.do {
-            $0.text = "오늘 쿠잉이의 하루는 어땠어?"
+            $0.text = QuestionViewController.todayQuestion
             $0.font = .title3()
             $0.textColor = .cooingBrown
         }
@@ -70,7 +70,7 @@ final class RecordView: BaseView {
     }
     
     override func setLayout() {
-
+        
         countDayLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(170)
             $0.centerX.equalToSuperview()
@@ -94,7 +94,7 @@ final class RecordView: BaseView {
         
         reRecordButton.snp.makeConstraints {
             $0.top.equalTo(recordButton.snp.bottom).offset(118)
-            $0.leading.equalToSuperview().offset(45)
+            $0.leading.equalToSuperview().offset(65)
             $0.width.equalTo(146)
         }
         

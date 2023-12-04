@@ -47,7 +47,7 @@ final class HomeView: BaseView {
         }
         
         dateLabel.do {
-            $0.text = "Jiwoo의\n말을 기록한지\n100일째"
+            $0.text = "Jiwoo의\n말을 기록한지\n4일째"
             $0.numberOfLines = 3
             $0.textAlignment = .center
             $0.font = .title1()
@@ -86,7 +86,7 @@ final class HomeView: BaseView {
         }
         
         growingImageView.snp.makeConstraints {
-            $0.top.equalTo(dateLabel.snp.bottom).offset(23)
+            $0.top.equalTo(dateLabel.snp.bottom).offset(60)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(164)
             $0.width.equalTo(158)
@@ -94,7 +94,7 @@ final class HomeView: BaseView {
         
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(51)
-            $0.top.equalTo(growingImageView.snp.bottom).offset(41)
+            $0.top.equalTo(growingImageView.snp.bottom).offset(55)
             $0.height.equalTo(56)
         }
     }
