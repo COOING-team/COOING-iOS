@@ -7,7 +7,14 @@
 
 import UIKit
 
+import Moya
+
 final class SecretNoteViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
+    private var secretNoteData: [SecretNoteList] = []
     
     // MARK: - UI Components
     
@@ -20,6 +27,7 @@ final class SecretNoteViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setTableView()
+        setNetworkFunctions()
     }
     
     // MARK: - Functions
@@ -57,18 +65,24 @@ final class SecretNoteViewController: BaseViewController {
         secretNoteView.weeklyReportTableView.dataSource = self
         secretNoteView.weeklyReportTableView.delegate = self
     }
+    
+    private func setNetworkFunctions() {
+        getSecretNoteListData()
+    }
 }
 
 extension SecretNoteViewController: UITableViewDelegate {}
 
 extension SecretNoteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return secretNoteData.count
+//        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SecretNoteTableViewCell.identifier, for: indexPath) as? SecretNoteTableViewCell ?? SecretNoteTableViewCell()
         cell.selectionStyle = .none
+        cell.configureCell(data: secretNoteData[indexPath.row])
         return cell
     }
     
@@ -77,7 +91,31 @@ extension SecretNoteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let levelReportViewController = LevelReportViewController()
-        navigationController?.pushViewController(levelReportViewController, animated: true)
+        
+        if secretNoteData[indexPath.row].noteStatus == "READABLE" {
+            let levelReportViewController = LevelReportViewController()
+            navigationController?.pushViewController(levelReportViewController, animated: true)
+        }
+    }
+}
+
+// MARK: - Network
+
+extension SecretNoteViewController {
+    private func getSecretNoteListData() {
+        self.reportProvider.request(.secretNoteList(month: 12)) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(GenericResponse<SecretNoteListDTO>.self)
+                    self.secretNoteData = responseData.result.secretNoteLists
+                    self.secretNoteView.weeklyReportTableView.reloadData()
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

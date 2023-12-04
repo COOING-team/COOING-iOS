@@ -63,4 +63,9 @@ final class LevelTableViewCell: UITableViewCell {
             $0.leading.equalTo(isPossibleButton.snp.trailing).offset(10.adjusted)
         }
     }
+    
+    func configureCell(boolData: Bool, contentData: String) {
+        isPossibleButton.isSelected = boolData
+        levelTableViewCellRightView.wordLabel.text = contentData
+    }
 }

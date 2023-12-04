@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: CooingTabBarController())
+        let navigationController = UINavigationController(rootViewController: LevelReportViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

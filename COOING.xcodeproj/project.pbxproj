@@ -58,6 +58,12 @@
 		0589FB362B1CC04800D0CB7F /* UsingWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB352B1CC04800D0CB7F /* UsingWordViewController.swift */; };
 		0589FB382B1CC06600D0CB7F /* UsingWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB372B1CC06600D0CB7F /* UsingWordView.swift */; };
 		0589FB3B2B1CCAC800D0CB7F /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0589FB3A2B1CCAC800D0CB7F /* DGCharts */; };
+		0589FB3E2B1CF6B200D0CB7F /* ReportTotalDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB3D2B1CF6B200D0CB7F /* ReportTotalDTO.swift */; };
+		0589FB402B1CF75400D0CB7F /* ReportRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB3F2B1CF75400D0CB7F /* ReportRouter.swift */; };
+		0589FB422B1CF92700D0CB7F /* UsingWordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB412B1CF92700D0CB7F /* UsingWordDTO.swift */; };
+		0589FB442B1CFABD00D0CB7F /* SecretNoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB432B1CFABD00D0CB7F /* SecretNoteDTO.swift */; };
+		0589FB462B1CFC7C00D0CB7F /* SecretNoteListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB452B1CFC7C00D0CB7F /* SecretNoteListDTO.swift */; };
+		0589FB482B1CFDDE00D0CB7F /* InfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589FB472B1CFDDE00D0CB7F /* InfoDTO.swift */; };
 		05B0BC362AF7FE510082E3EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC352AF7FE510082E3EB /* HomeView.swift */; };
 		05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */; };
 		05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0BC392AF815800082E3EB /* QuestionView.swift */; };
@@ -141,6 +147,12 @@
 		0583D6A32B1C70D500A87981 /* HistoryRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRightView.swift; sourceTree = "<group>"; };
 		0589FB352B1CC04800D0CB7F /* UsingWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingWordViewController.swift; sourceTree = "<group>"; };
 		0589FB372B1CC06600D0CB7F /* UsingWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingWordView.swift; sourceTree = "<group>"; };
+		0589FB3D2B1CF6B200D0CB7F /* ReportTotalDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTotalDTO.swift; sourceTree = "<group>"; };
+		0589FB3F2B1CF75400D0CB7F /* ReportRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRouter.swift; sourceTree = "<group>"; };
+		0589FB412B1CF92700D0CB7F /* UsingWordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingWordDTO.swift; sourceTree = "<group>"; };
+		0589FB432B1CFABD00D0CB7F /* SecretNoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNoteDTO.swift; sourceTree = "<group>"; };
+		0589FB452B1CFC7C00D0CB7F /* SecretNoteListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNoteListDTO.swift; sourceTree = "<group>"; };
+		0589FB472B1CFDDE00D0CB7F /* InfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDTO.swift; sourceTree = "<group>"; };
 		05B0BC352AF7FE510082E3EB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = COOING/Global/Constant/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		05B0BC372AF8127A0082E3EB /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		05B0BC392AF815800082E3EB /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = COOING/Presentation/Home/ViewController/QuestionView.swift; sourceTree = SOURCE_ROOT; };
@@ -484,6 +496,18 @@
 			path = UsingWord;
 			sourceTree = "<group>";
 		};
+		0589FB3C2B1CF69F00D0CB7F /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				0589FB3D2B1CF6B200D0CB7F /* ReportTotalDTO.swift */,
+				0589FB412B1CF92700D0CB7F /* UsingWordDTO.swift */,
+				0589FB432B1CFABD00D0CB7F /* SecretNoteDTO.swift */,
+				0589FB452B1CFC7C00D0CB7F /* SecretNoteListDTO.swift */,
+				0589FB472B1CFDDE00D0CB7F /* InfoDTO.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		7B543A9D2B1C7C7100F2A8FA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +563,7 @@
 		7B7DA33D2B1C9279003E3A82 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				0589FB3C2B1CF69F00D0CB7F /* Report */,
 				7B7DA33F2B1C9291003E3A82 /* Auth */,
 			);
 			path = DTO;
@@ -548,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */,
+				0589FB3F2B1CF75400D0CB7F /* ReportRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -690,6 +716,7 @@
 				0583D66F2B19F1F100A87981 /* FrequentWordViewController.swift in Sources */,
 				054787962AF7ACE700823463 /* UIStackView+.swift in Sources */,
 				7B7DA34A2B1CC2B2003E3A82 /* UIWindow+.swift in Sources */,
+				0589FB3E2B1CF6B200D0CB7F /* ReportTotalDTO.swift in Sources */,
 				0583D6A02B1C6BC100A87981 /* HistoryView.swift in Sources */,
 				7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */,
 				0589FB362B1CC04800D0CB7F /* UsingWordViewController.swift in Sources */,
@@ -698,6 +725,7 @@
 				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
 				7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */,
 				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
+				0589FB482B1CFDDE00D0CB7F /* InfoDTO.swift in Sources */,
 				7B3BC87B2AF894B8008EDF60 /* RecordViewController.swift in Sources */,
 				0583D6A22B1C704400A87981 /* HistoryTableViewCell.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
@@ -712,10 +740,12 @@
 				7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */,
 				054787CB2AF7BE7C00823463 /* HistoryViewController.swift in Sources */,
 				0583D6942B1BAEBB00A87981 /* LevelReportView.swift in Sources */,
+				0589FB442B1CFABD00D0CB7F /* SecretNoteDTO.swift in Sources */,
 				054787652AF7992100823463 /* HomeViewController.swift in Sources */,
 				05B0BC3A2AF815800082E3EB /* QuestionView.swift in Sources */,
 				7B3BC87F2AF89AFC008EDF60 /* File.swift in Sources */,
 				7B7DA33C2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift in Sources */,
+				0589FB422B1CF92700D0CB7F /* UsingWordDTO.swift in Sources */,
 				7B2C759A2B19C7ED00A6CE1A /* TransformRecordView.swift in Sources */,
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
@@ -734,7 +764,9 @@
 				7B2C75982B19C7DC00A6CE1A /* TransformRecordViewController.swift in Sources */,
 				0589FB382B1CC06600D0CB7F /* UsingWordView.swift in Sources */,
 				054787612AF7992100823463 /* AppDelegate.swift in Sources */,
+				0589FB462B1CFC7C00D0CB7F /* SecretNoteListDTO.swift in Sources */,
 				054787632AF7992100823463 /* SceneDelegate.swift in Sources */,
+				0589FB402B1CF75400D0CB7F /* ReportRouter.swift in Sources */,
 				0583D6962B1BB54100A87981 /* LevelTableSectionHeaderView.swift in Sources */,
 				0583D6752B1A4A8100A87981 /* FrequentTableViewCell.swift in Sources */,
 				0583D6772B1A4A9B00A87981 /* FrequentWordRightView.swift in Sources */,
