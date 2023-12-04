@@ -21,7 +21,7 @@ final class SecretNoteTableViewCell: UITableViewCell {
     private let dateLabel = UILabel()
     private let reportImageView = UIImageView(image: Image.reportImage)
     private let goLabel = UILabel()
-    private let nextImageView = UIImageView(image: Image.next)
+    private let nextImageView = UIImageView(image: Image.nextGray)
     private lazy var nextStackView = UIStackView(arrangedSubviews: [reportImageView, goLabel, nextImageView])
     
     // MARK: - init
@@ -97,6 +97,10 @@ final class SecretNoteTableViewCell: UITableViewCell {
             $0.bottom.equalToSuperview().inset(10.adjusted)
             $0.trailing.equalToSuperview().inset(25.adjusted)
         }
+    }
+    
+    func configureCell(data: SecretNoteList) {
+        dateLabel.text = "\(data.month)월 \(data.week)째주 레포트"
     }
 }
 

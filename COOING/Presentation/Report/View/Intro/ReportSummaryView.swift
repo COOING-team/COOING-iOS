@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 final class ReportSummaryView: BaseView {
-    
+
     // MARK: - UI Components
     
     private let wordLabel = UILabel()
@@ -91,5 +91,10 @@ final class ReportSummaryView: BaseView {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(45.adjusted)
         }
+    }
+    
+    func configureSummaryView(data: ReportTotalDTO) {
+        wordCountLabel.text = "\(data.totalWordNum) 개"
+        cooingFavoriteWordLabel.text = "\(data.mostUseWord ?? "아직 없어요!")"
     }
 }

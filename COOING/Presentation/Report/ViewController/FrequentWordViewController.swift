@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Moya
+
 final class FrequentWordViewController: BaseViewController {
     
     // MARK: - UI Components
@@ -38,6 +40,19 @@ final class FrequentWordViewController: BaseViewController {
         //override Point
     }
     
+    override func customNavigationBar() {
+        navigationController?.navigationBar.tintColor = .cooingBrown2
+        let backButton: UIBarButtonItem = UIBarButtonItem()
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        navigationItem.title = "레포트"
+        let titleAttributes = [
+            NSAttributedString.Key.font: UIFont.button1(),
+            NSAttributedString.Key.foregroundColor: UIColor.cooingBrown2
+        ]
+        navigationController?.navigationBar.titleTextAttributes = titleAttributes
+    }
+    
     private func setTableView() {
         frequentWordView.rankingTableView.register(FrequentTableViewCell.self, forCellReuseIdentifier: FrequentTableViewCell.identifier)
         
@@ -61,5 +76,11 @@ extension FrequentWordViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75.adjusted
+    }
+}
+
+extension FrequentWordViewController {
+    private func getUsingWordData() {
+        
     }
 }

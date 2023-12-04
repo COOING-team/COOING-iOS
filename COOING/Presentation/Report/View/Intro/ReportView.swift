@@ -25,10 +25,10 @@ final class ReportView: BaseView {
     private let titleLabel = UILabel()
     private let weekNoticeLabel = UILabel()
     private let cooingBirthLabel = UILabel()
-    private let reportSummaryView = ReportSummaryView()
-    private let frequentWordView = ReportFrequentWordView()
-    private let usingWordView = ReportUsingWordView()
-    private let secretNoteView = ReportSecretNoteView()
+    let reportSummaryView = ReportSummaryView()
+    let frequentWordView = ReportFrequentWordView()
+    let usingWordView = ReportUsingWordView()
+    let secretNoteView = ReportSecretNoteView()
     private lazy var wordStackView = UIStackView(arrangedSubviews: [frequentWordView, usingWordView])
 
     // MARK: - Life Cycle
@@ -150,5 +150,10 @@ final class ReportView: BaseView {
     @objc
     private func usingWordViewDidTapped() {
         usingWordHandler?()
+    }
+    
+    func configureInfoView(data: InfoDTO) {
+        weekNoticeLabel.text = "\(data.month)월 \(data.week)째주 \(data.name)의 주간 레포트"
+        cooingBirthLabel.text = "\(data.name), 태어난 지 \(data.birthMonth)개월 째"
     }
 }

@@ -14,7 +14,7 @@ final class LevelTableViewCellRightView: BaseView {
     
     // MARK: - UI Components
     
-    private var wordLabel = UILabel()
+    var wordLabel = UILabel()
 
     // MARK: - Life Cycle
     

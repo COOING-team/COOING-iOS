@@ -14,7 +14,6 @@ final class FrequentWordView: BaseView {
     
     // MARK: - UI Components
     
-    private let titleLabel = UILabel()
     private let wordTitleLabel = UILabel()
     private let wordSubTitleLabel = UILabel()
     var rankingTableView = UITableView()
@@ -34,12 +33,6 @@ final class FrequentWordView: BaseView {
     // MARK: - Functions
 
     override func configureUI() {
-        titleLabel.do {
-            $0.text = "레포트"
-            $0.font = .button1()
-            $0.textColor = .cooingBrown2
-        }
-        
         wordTitleLabel.do {
             $0.text = "빈출단어"
             $0.font = .title2()
@@ -59,20 +52,14 @@ final class FrequentWordView: BaseView {
     }
     
     override func hieararchy() {
-        self.addSubViews(titleLabel,
-                         wordTitleLabel,
+        self.addSubViews(wordTitleLabel,
                          wordSubTitleLabel,
                          rankingTableView)
     }
     
     override func setLayout() {
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide)
-            $0.centerX.equalToSuperview()
-        }
-        
         wordTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(29.adjusted)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(20.adjusted)
             $0.leading.equalToSuperview().inset(33.adjusted)
         }
         
