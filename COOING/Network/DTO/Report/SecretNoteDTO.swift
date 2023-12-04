@@ -11,6 +11,12 @@ struct SecretNoteDTO: Codable {
     let grade1, grade2, grade3: [Bool]
 }
 
+extension SecretNoteDTO {
+    static func booleanDummy() -> SecretNoteDTO {
+        return SecretNoteDTO(grade1: [true, false, true, true, false], grade2: [false, true, true, false, true, true, true], grade3: [true, true, true, false])
+    }
+}
+
 struct SecretNoteLevel {
     let firstSection, secondSection, thirdSection: [String]
 }

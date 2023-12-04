@@ -44,13 +44,13 @@ final class ReportSecretNoteView: BaseView {
         titleLabel.do {
             $0.font = .button1()
             $0.textColor = .cooingBrown
-            $0.text = "쿠잉이의 시크릿 노트"
+            $0.text = "Jiwoo의 시크릿 노트"
         }
         
         subTitleLabel.do {
             $0.font = .body6()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
-            $0.text = "쿠잉이의 언어를 더 자세히 분석해요."
+            $0.text = "Jiwoo의 언어를 더 자세히 분석해요."
         }
         
         totalStackView.do {

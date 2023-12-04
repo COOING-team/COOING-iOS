@@ -14,8 +14,8 @@ final class FrequentWordRightView: BaseView {
     
     // MARK: - UI Components
     
-    private var wordLabel = UILabel()
-    private var countLabel = UILabel()
+    var wordLabel = UILabel()
+    var countLabel = UILabel()
 
     // MARK: - Life Cycle
     

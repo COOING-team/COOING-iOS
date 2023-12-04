@@ -49,7 +49,7 @@ final class ReportFrequentWordView: BaseView {
         subTitleLabel.do {
             $0.font = .body6()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
-            $0.text = "쿠잉이가 자주 말한 단어예요."
+            $0.text = "Jiwoo가 자주 말한 단어예요."
         }
         
         totalStackView.do {

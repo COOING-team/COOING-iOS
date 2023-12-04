@@ -41,13 +41,13 @@ final class HomeView: BaseView {
             $0.endPoint = CGPoint(x: 1, y: 1)
         }
         cooingInfoLabel.do {
-            $0.text = "박쿠잉, 태어난지 29개월 째"
+            $0.text = "Jiwoo, 태어난지 36개월 째"
             $0.font = .body1()
             $0.textColor = .cooingBrown
         }
         
         dateLabel.do {
-            $0.text = "쿠잉이의\n말을 기록한지\n100일째"
+            $0.text = "Jiwoo의\n말을 기록한지\n100일째"
             $0.numberOfLines = 3
             $0.textAlignment = .center
             $0.font = .title1()

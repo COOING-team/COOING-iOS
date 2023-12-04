@@ -14,6 +14,11 @@ final class FrequentWordViewController: BaseViewController {
     // MARK: - UI Components
     
     private let frequentWordView = FrequentWordView()
+    private let dummyData: [FrequentWord] = [FrequentWord(word: "오늘", count: 7),
+                                             FrequentWord(word: "점심", count: 4),
+                                             FrequentWord(word: "학교", count: 3),
+                                             FrequentWord(word: "엄마", count: 2),
+                                             FrequentWord(word: "친구", count: 1),]
     
     // MARK: - Life Cycles
 
@@ -70,7 +75,7 @@ extension FrequentWordViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FrequentTableViewCell.identifier, for: indexPath) as? FrequentTableViewCell ?? FrequentTableViewCell()
-        cell.configureCell(index: indexPath.row)
+        cell.configureCell(index: indexPath.row, wordData: dummyData[indexPath.row])
         return cell
     }
     

@@ -66,6 +66,7 @@ final class LevelTableViewCell: UITableViewCell {
     
     func configureCell(boolData: Bool, contentData: String) {
         isPossibleButton.isSelected = boolData
-        levelTableViewCellRightView.wordLabel.text = contentData
+//        levelTableViewCellRightView.wordLabel.text = contentData
+        levelTableViewCellRightView.text = contentData
     }
 }

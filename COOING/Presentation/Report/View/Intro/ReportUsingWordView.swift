@@ -49,7 +49,7 @@ final class ReportUsingWordView: BaseView {
         subTitleLabel.do {
             $0.font = .body6()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
-            $0.text = "쿠잉이가 사용한 단어 수예요."
+            $0.text = "Jiwoo가 사용한 단어 수예요."
         }
         
         totalStackView.do {

@@ -12,6 +12,10 @@ final class HistoryViewController: BaseViewController {
     // MARK: - Properties
     
     let pickerMonth = ["8월", "9월", "10월", "11월", "12월"]
+    private let dummyData: [HistoryData] = [HistoryData(date: "12/1", text: "오늘 학교 점심 맛있겠다"),
+                                            HistoryData(date: "12/2", text: "오늘 점심에 친구 만났어. 오늘 학교 갔어"),
+                                            HistoryData(date: "12/3", text: "오늘 오늘 점심 뭐먹지. 오늘 점심 학식 먹어야지"),
+                                            HistoryData(date: "12/4", text: "오늘 엄마가 학교에 데리러 와줬으면 좋겠다. 엄마 보고싶다"),]
     
     // MARK: - UI Components
     
@@ -77,12 +81,13 @@ extension HistoryViewController: UITableViewDelegate {}
 
 extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as? HistoryTableViewCell ?? HistoryTableViewCell()
         cell.selectionStyle = .none
+        cell.configureCell(data: dummyData[indexPath.row])
         return cell
 
     }

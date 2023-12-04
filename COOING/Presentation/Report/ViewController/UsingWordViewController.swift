@@ -17,16 +17,16 @@ final class UsingWordViewController: BaseViewController {
     // MARK: - UI Components
     
     private let usingWordView = UsingWordView()
-    private var wordData: [UsingWord] = [UsingWord(day: "2023-12-03", wordCount: 1),
-                                         UsingWord(day: "2023-12-03", wordCount: 5),
-                                         UsingWord(day: "2023-12-03", wordCount: 0),
-                                         UsingWord(day: "2023-12-03", wordCount: 4),
-                                         UsingWord(day: "2023-12-03", wordCount: 0),
-                                         UsingWord(day: "2023-12-03", wordCount: 7),
-                                         UsingWord(day: "2023-12-03", wordCount: 11),]
-    let pickerData = ["2023년 10월 1주차", "22023년 10월 2주차", "2023년 10월 3주차"]
+    private var wordData: [UsingWord] = [UsingWord(day: "2023-12-01", wordCount: 11),
+                                         UsingWord(day: "2023-12-02", wordCount: 14),
+                                         UsingWord(day: "2023-12-03", wordCount: 9),
+                                         UsingWord(day: "2023-12-04", wordCount: 12),
+                                         UsingWord(day: "2023-12-05", wordCount: 0),
+                                         UsingWord(day: "2023-12-06", wordCount: 0),
+                                         UsingWord(day: "2023-12-07", wordCount: 0),]
+    let pickerData = ["2023년 12월 1주차", "22023년 12월 2주차", "2023년 12월 3주차"]
     var date: [String] = ["10-02", "10-03", "10-04", "10-06", "10-07" ,"10-09"]
-    var wordCount: [Double] = [10, 20, 15, 23, 25, 13]
+    var wordCount: [Double] = [5, 12, 7, 13, 2, 7]
     
     // MARK: - Life Cycles
 

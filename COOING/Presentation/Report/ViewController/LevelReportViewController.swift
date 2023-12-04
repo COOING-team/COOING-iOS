@@ -150,15 +150,17 @@ extension LevelReportViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             index = 0
-            cell.configureCell(boolData: stateData?[indexPath.section][index] ?? Bool(),
+            cell.configureCell(boolData: SecretNoteDTO.booleanDummy().grade1[index],
                                contentData: sectionLevelData[self.currentLevel].firstSection[indexPath.row])
         case 1:
             index = sectionLevelData[self.currentLevel].firstSection.count
-            cell.configureCell(boolData:stateData?[indexPath.section][index] ?? Bool(),
+            cell.configureCell(boolData:SecretNoteDTO.booleanDummy().grade1[index],
                                contentData: sectionLevelData[self.currentLevel].secondSection[indexPath.row])
         case 2:
             index = sectionLevelData[self.currentLevel].firstSection.count + sectionLevelData[self.currentLevel].secondSection.count
-            cell.configureCell(boolData:stateData?[indexPath.section][index] ?? Bool(),
+//            cell.configureCell(boolData:stateData?[indexPath.section][index] ?? Bool(),
+
+            cell.configureCell(boolData:SecretNoteDTO.booleanDummy().grade1[index],
                                contentData: sectionLevelData[self.currentLevel].thirdSection[indexPath.row])
             
         default:

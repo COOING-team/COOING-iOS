@@ -40,7 +40,7 @@ final class FrequentWordView: BaseView {
         }
         
         wordSubTitleLabel.do {
-            $0.text = "쿠잉이가 지난 한 주 동안 가장 많이 사용한 단어예요."
+            $0.text = "Jiwoo가 지난 한 주 동안 가장 많이 사용한 단어예요."
             $0.font = .body3()
             $0.textColor = .cooingBrown
         }

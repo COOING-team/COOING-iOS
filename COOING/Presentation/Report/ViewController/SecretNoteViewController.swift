@@ -27,7 +27,7 @@ final class SecretNoteViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setTableView()
-        setNetworkFunctions()
+//        setNetworkFunctions()
     }
     
     // MARK: - Functions
@@ -75,14 +75,15 @@ extension SecretNoteViewController: UITableViewDelegate {}
 
 extension SecretNoteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return secretNoteData.count
-//        return 5
+//        return secretNoteData.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SecretNoteTableViewCell.identifier, for: indexPath) as? SecretNoteTableViewCell ?? SecretNoteTableViewCell()
         cell.selectionStyle = .none
-        cell.configureCell(data: secretNoteData[indexPath.row])
+        cell.configureCell(data: indexPath.row + 1)
+//        cell.configureCell(data: secretNoteData[indexPath.row])
         return cell
     }
     
@@ -92,9 +93,11 @@ extension SecretNoteViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if secretNoteData[indexPath.row].noteStatus == "READABLE" {
+//        if secretNoteData[indexPath.row].noteStatus == "READABLE" {
+        if indexPath.row == 0 {
             let levelReportViewController = LevelReportViewController()
             navigationController?.pushViewController(levelReportViewController, animated: true)
+            //        }
         }
     }
 }
