@@ -33,6 +33,8 @@
 		054787D12AF7C29800823463 /* CooingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D02AF7C29800823463 /* CooingButton.swift */; };
 		054787D32AF7C2D700823463 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D22AF7C2D700823463 /* UIButton+.swift */; };
 		054787D52AF7C42500823463 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D42AF7C42500823463 /* Image.swift */; };
+		056476642B245CDC00AD377C /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476632B245CDC00AD377C /* HistoryDetailViewController.swift */; };
+		056476662B245D6600AD377C /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476652B245D6600AD377C /* HistoryDetailView.swift */; };
 		0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6622B19BF5A00A87981 /* ReportView.swift */; };
 		0583D6652B19C1A600A87981 /* ReportSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6642B19C1A600A87981 /* ReportSummaryView.swift */; };
 		0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6662B19C6E400A87981 /* Adjusted+.swift */; };
@@ -134,6 +136,8 @@
 		054787D02AF7C29800823463 /* CooingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CooingButton.swift; path = COOING/Global/Extension/CooingButton.swift; sourceTree = SOURCE_ROOT; };
 		054787D22AF7C2D700823463 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		054787D42AF7C42500823463 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		056476632B245CDC00AD377C /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		056476652B245D6600AD377C /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 		0583D6622B19BF5A00A87981 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		0583D6642B19C1A600A87981 /* ReportSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryView.swift; sourceTree = "<group>"; };
 		0583D6662B19C6E400A87981 /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				054787CA2AF7BE7C00823463 /* HistoryViewController.swift */,
+				056476632B245CDC00AD377C /* HistoryDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				0583D69F2B1C6BC000A87981 /* HistoryView.swift */,
 				0583D6A12B1C704400A87981 /* HistoryTableViewCell.swift */,
 				0583D6A32B1C70D500A87981 /* HistoryRightView.swift */,
+				056476652B245D6600AD377C /* HistoryDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -816,6 +822,7 @@
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				7B7DA3632B1D2228003E3A82 /* CooingInfoRouter.swift in Sources */,
 				0583D6732B1A4A3B00A87981 /* FrequentWordView.swift in Sources */,
+				056476662B245D6600AD377C /* HistoryDetailView.swift in Sources */,
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
 				0583D66B2B19C7B500A87981 /* ReportUsingWordView.swift in Sources */,
@@ -841,6 +848,7 @@
 				0583D6692B19C7A700A87981 /* ReportFrequentWordView.swift in Sources */,
 				0583D6652B19C1A600A87981 /* ReportSummaryView.swift in Sources */,
 				0583D69A2B1BB72500A87981 /* LevelTableViewCell.swift in Sources */,
+				056476642B245CDC00AD377C /* HistoryDetailViewController.swift in Sources */,
 				0583D6912B1BAC4700A87981 /* LevelReportViewController.swift in Sources */,
 				054787CF2AF7BEB800823463 /* CALayer+.swift in Sources */,
 				054787AA2AF7B08100823463 /* UIColor+.swift in Sources */,
