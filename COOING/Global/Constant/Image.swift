@@ -66,6 +66,10 @@ public enum Image {
     static let divideLine = UIImage(named: "divide_line")
     static let answer = UIImage(named: "answer")!
     static let modify = UIImage(named: "modify")!
+    
+    // MARK: - myPage
+    
+    static let myCooing = UIImage(named: "myCooing")
 
 
 }
