@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 enum MyRouter {
-    case myInfo
+    case getBabyInfo
     case signOut
 }
 
@@ -21,8 +21,8 @@ extension MyRouter: TargetType, AccessTokenAuthorizable {
     
     var path: String {
         switch self {
-        case .myInfo:
-            return "/mypage/info"
+        case .getBabyInfo:
+            return "/api/v1/auth/baby"
         case .signOut:
             return "/user/signout"
         }
@@ -30,7 +30,7 @@ extension MyRouter: TargetType, AccessTokenAuthorizable {
     
     var method: Moya.Method {
         switch self {
-        case .myInfo:
+        case .getBabyInfo:
             return .get
         case .signOut:
             return .delete
@@ -39,7 +39,7 @@ extension MyRouter: TargetType, AccessTokenAuthorizable {
     
     var task: Moya.Task {
         switch self {
-        case .myInfo:
+        case .getBabyInfo:
             return .requestPlain
         case .signOut:
             return .requestPlain
