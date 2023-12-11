@@ -108,5 +108,10 @@ final class HomeView: BaseView {
                     nextButton
                     )
     }
+    
+    func bindData() {
+        cooingInfoLabel.text = "\(HomeViewController.cooingInfo.name), 태어난지 \(HomeViewController.cooingInfo.month)개월 째"
+        dateLabel.text = "\(HomeViewController.cooingInfo.name)의\n말을 기록한지\n\(HomeViewController.cooingInfo.cooingDay)일째"
+    }
 
 }
