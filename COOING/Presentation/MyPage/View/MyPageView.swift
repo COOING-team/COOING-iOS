@@ -57,7 +57,7 @@ class MyPageView: BaseView {
     
     override func setLayout() {
         backgroundView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).offset(60)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(34)
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(90)
         }

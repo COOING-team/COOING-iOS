@@ -43,6 +43,15 @@ class MyPageViewController: BaseViewController {
         myPageView.myPageTableView.delegate = self
     }
    
+    func logout() {
+        RealmService.shared.resetDB()
+
+        let loginViewController = LoginViewController()
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+        let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+        keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
+        }
+    }
 
 }
 
@@ -82,10 +91,55 @@ extension MyPageViewController: UITableViewDelegate {
             self.navigationController?.pushViewController(provisionViewController, animated: true)
         } else if indexPath.row == 1 {
            // 로그아웃
+            logout()
         } else if indexPath.row == 2 {
             // 탈퇴
         } else {
             return
         }
     }
+}
+
+// MARK: - Network
+extension MyPageViewController {
+    
+//    private func getMyInfo() {
+//        self.myProvider.request(.myInfo) { response in
+//            switch response {
+//            case .success(let moyaResponse):
+//                do {
+//                    let responseData = try moyaResponse.map(MyInfoResponse.self)
+//                    self.mypageView.dataBind(model: responseData)
+//                } catch(let err) {
+//                    print(err.localizedDescription)
+//                }
+//            case .failure(let err):
+//                print(err.localizedDescription)
+//            }
+//        }
+//    }
+//    
+//    private func deleteUser() {
+//        self.myProvider.request(.signOut) { response in
+//            switch response {
+//            case .success(let moyaResponse):
+//                do {
+//                    let isSuccess = try moyaResponse.map(Bool.self)
+//                    if isSuccess {
+//                        RealmService.shared.resetDB()
+//                        let loginViewController = LoginViewController()
+//                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+//                            keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
+//                        }
+//                    }
+//                } catch(let err) {
+//                    print(err.localizedDescription)
+//                }
+//            case .failure(let err):
+//                print(err.localizedDescription)
+//            }
+//        }
+//    }
+
 }
