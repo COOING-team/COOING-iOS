@@ -99,12 +99,12 @@ final class SecretNoteTableViewCell: UITableViewCell {
         }
     }
     
-//    func configureCell(data: SecretNoteList) {
-//        dateLabel.text = "\(data.month)월 \(data.week)째주 레포트"
-//    }
-//
-    func configureCell(data: Int) {
-        dateLabel.text = "12월 \(data)째주 레포트"
+    func configureCell(data: SecretNoteList) {
+        dateLabel.text = "\(data.month)월 \(data.week)째주 레포트"
     }
+//
+//    func configureCell(data: Int) {
+//        dateLabel.text = "12월 \(data)째주 레포트"
+//    }
 }
 

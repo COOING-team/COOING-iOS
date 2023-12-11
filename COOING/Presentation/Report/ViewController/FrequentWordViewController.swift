@@ -11,14 +11,14 @@ import Moya
 
 final class FrequentWordViewController: BaseViewController {
     
+    // MARK: - Properites
+    
+    private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
+    
     // MARK: - UI Components
     
     private let frequentWordView = FrequentWordView()
-    private let dummyData: [FrequentWord] = [FrequentWord(word: "오늘", count: 7),
-                                             FrequentWord(word: "점심", count: 4),
-                                             FrequentWord(word: "학교", count: 3),
-                                             FrequentWord(word: "엄마", count: 2),
-                                             FrequentWord(word: "친구", count: 1),]
+    private var responseData: FrequentWordDTO?
     
     // MARK: - Life Cycles
 
@@ -27,6 +27,12 @@ final class FrequentWordViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getFrequentWordData()
     }
     
     // MARK: - Functions
@@ -64,6 +70,10 @@ final class FrequentWordViewController: BaseViewController {
         frequentWordView.rankingTableView.dataSource = self
         frequentWordView.rankingTableView.delegate = self
     }
+    
+    func setName(name: String) {
+        frequentWordView.wordSubTitleLabel.text = "\(name)가 지난 한 주 동안 가장 많이 사용한 단어예요."
+    }
 }
 
 extension FrequentWordViewController: UITableViewDelegate {}
@@ -75,7 +85,46 @@ extension FrequentWordViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FrequentTableViewCell.identifier, for: indexPath) as? FrequentTableViewCell ?? FrequentTableViewCell()
-        cell.configureCell(index: indexPath.row, wordData: dummyData[indexPath.row])
+        switch indexPath.row {
+        case 0:
+            if responseData?.frequentWords.firstWord.count ?? -1 <= 0 {
+                cell.isHidden = true
+            } else {
+                cell.configureCell(index: indexPath.row,
+                                   wordData: responseData?.frequentWords.firstWord ?? Word(word: "", count: 0))
+            }
+        case 1:
+               if responseData?.frequentWords.secondWord.count ?? -1 <= 0 {
+                   cell.isHidden = true
+               } else {
+                   cell.configureCell(index: indexPath.row,
+                                      wordData: responseData?.frequentWords.secondWord ?? Word(word: "", count: 0))
+               }
+        case 2:
+            if responseData?.frequentWords.thirdWord.count ?? -1 <= 0 {
+                cell.isHidden = true
+            } else {
+                cell.configureCell(index: indexPath.row,
+                                   wordData: responseData?.frequentWords.thirdWord ?? Word(word: "", count: 0))
+            }
+        case 3:
+            if responseData?.frequentWords.fourthWord.count ?? -1 <= 0 {
+                cell.isHidden = true
+            } else {
+                cell.configureCell(index: indexPath.row,
+                                   wordData: responseData?.frequentWords.fourthWord ?? Word(word: "", count: 0))
+            }
+        case 4:
+            if responseData?.frequentWords.fifthWord.count ?? -1 <= 0 {
+                cell.isHidden = true
+            } else {
+                cell.configureCell(index: indexPath.row,
+                                   wordData: responseData?.frequentWords.fifthWord ?? Word(word: "", count: 0))
+            }
+        default:
+            cell.configureCell(index: indexPath.row,
+                               wordData: responseData?.frequentWords.firstWord ?? Word(word: "", count: 0))
+        }
         return cell
     }
     
@@ -85,7 +134,20 @@ extension FrequentWordViewController: UITableViewDataSource {
 }
 
 extension FrequentWordViewController {
-    private func getUsingWordData() {
-        
+    private func getFrequentWordData() {
+        self.reportProvider.request(.frequent) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(GenericResponse<FrequentWordDTO>.self)
+                    self.responseData = responseData.result
+                    self.frequentWordView.rankingTableView.reloadData()
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

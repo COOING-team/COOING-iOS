@@ -155,5 +155,11 @@ final class ReportView: BaseView {
     func configureInfoView(data: InfoDTO) {
         weekNoticeLabel.text = "\(data.month)월 \(data.week)째주 \(data.name)의 주간 레포트"
         cooingBirthLabel.text = "\(data.name), 태어난 지 \(data.birthMonth)개월 째"
+        frequentWordView.subTitleLabel.text = "\(data.name)이(가) 자주 말한 단어예요."
+        usingWordView.subTitleLabel.text = "\(data.name)이(가) 사용한 단어 수예요."
+        secretNoteView.titleLabel.text = "\(data.name)의 시크릿 노트"
+        secretNoteView.subTitleLabel.text = "\(data.name)의 언어를 더 자세히 분석해요."
+        reportSummaryView.favoriteWordLabel.text = "\(data.name)의 애착 단어"
+        reportSummaryView.wordLabel.text = "\(data.name)가 사용한 단어 수"
     }
 }

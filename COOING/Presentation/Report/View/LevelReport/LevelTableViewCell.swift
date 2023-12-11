@@ -40,8 +40,8 @@ final class LevelTableViewCell: UITableViewCell {
     
     private func configureUI() {
         isPossibleButton.do {
-            $0.setImage(Image.yes, for: .normal)
-            $0.setImage(Image.no, for: .selected)
+            $0.setImage(Image.yes, for: .selected)
+            $0.setImage(Image.no, for: .normal)
             $0.isUserInteractionEnabled = false
         }
     }
@@ -58,7 +58,7 @@ final class LevelTableViewCell: UITableViewCell {
         }
         
         levelTableViewCellRightView.snp.makeConstraints {
-            $0.height.equalTo(26.adjusted)
+//            $0.height.equalTo(26.adjusted)
             $0.centerY.equalTo(isPossibleButton)
             $0.leading.equalTo(isPossibleButton.snp.trailing).offset(10.adjusted)
         }
@@ -66,7 +66,6 @@ final class LevelTableViewCell: UITableViewCell {
     
     func configureCell(boolData: Bool, contentData: String) {
         isPossibleButton.isSelected = boolData
-//        levelTableViewCellRightView.wordLabel.text = contentData
         levelTableViewCellRightView.text = contentData
     }
 }

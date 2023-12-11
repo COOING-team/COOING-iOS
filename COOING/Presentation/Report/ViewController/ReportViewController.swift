@@ -14,6 +14,7 @@ class ReportViewController: BaseViewController {
     // MARK: - Properties
     
     private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
+    private var name: String = String()
     
     // MARK: - UI Components
     
@@ -26,11 +27,17 @@ class ReportViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setViewGesture()
+        
+        print("year: \(CurrentDate.year)")
+        print("month: \(CurrentDate.month)")
+        print("day: \(CurrentDate.day)")
+        print("week: \(CurrentDate.week)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        networkFunctions()
+        networkFunctions()
     }
     
     // MARK: - Functions
@@ -57,18 +64,21 @@ class ReportViewController: BaseViewController {
         reportView.frequentWordHandler = {[weak self] in
             guard let self else { return }
             let frequentWordViewController = FrequentWordViewController()
+            frequentWordViewController.setName(name: name)
             self.navigationController?.pushViewController(frequentWordViewController, animated: true)
         }
         
         reportView.secretNoteHandler = {[weak self] in
             guard let self else { return }
             let secretNoteViewController = SecretNoteViewController()
+            secretNoteViewController.setName(name: name)
             self.navigationController?.pushViewController(secretNoteViewController, animated: true)
         }
         
         reportView.usingWordHandler = {[weak self] in
             guard let self else { return }
             let usingWordViewController = UsingWordViewController()
+            usingWordViewController.setName(name: name)
             self.navigationController?.pushViewController(usingWordViewController, animated: true)
         }
     }
@@ -89,6 +99,7 @@ extension ReportViewController {
                 do {
                     let responseData = try moyaResponse.map(GenericResponse<InfoDTO>.self)
                     self.reportView.configureInfoView(data: responseData.result)
+                    self.name = responseData.result.name
                 } catch(let err) {
                     print(err.localizedDescription)
                 }

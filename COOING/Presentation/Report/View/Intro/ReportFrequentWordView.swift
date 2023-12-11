@@ -17,7 +17,7 @@ final class ReportFrequentWordView: BaseView {
     // MARK: - UI Components
     
     private let titleLabel = UILabel()
-    private let subTitleLabel = UILabel()
+    var subTitleLabel = UILabel()
     private lazy var totalStackView = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
 
     // MARK: - Life Cycle
@@ -49,7 +49,6 @@ final class ReportFrequentWordView: BaseView {
         subTitleLabel.do {
             $0.font = .body6()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
-            $0.text = "Jiwoo가 자주 말한 단어예요."
         }
         
         totalStackView.do {

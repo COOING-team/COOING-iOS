@@ -7,26 +7,28 @@
 
 import UIKit
 
-struct UsingWord {
-    let day: String
-    let wordCount: Int
-}
+import Moya
 
 final class UsingWordViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
+    private var name: String = String()
+    private var averageWord: Int = Int()
+    private var wordData: [WordNum] = [] {
+        didSet {
+            usingWordView.setCharts(data: wordData)
+        }
+    }
+    let pickerData = ["\(CurrentDate.year)년 \(CurrentDate.month)월 1주차",
+                      "\(CurrentDate.year)년 \(CurrentDate.month)월 2주차",
+                      "\(CurrentDate.year)년 \(CurrentDate.month)월 3주차",
+                      "\(CurrentDate.year)년 \(CurrentDate.month)월 4주차"]
     
     // MARK: - UI Components
     
     private let usingWordView = UsingWordView()
-    private var wordData: [UsingWord] = [UsingWord(day: "2023-12-01", wordCount: 11),
-                                         UsingWord(day: "2023-12-02", wordCount: 14),
-                                         UsingWord(day: "2023-12-03", wordCount: 9),
-                                         UsingWord(day: "2023-12-04", wordCount: 12),
-                                         UsingWord(day: "2023-12-05", wordCount: 0),
-                                         UsingWord(day: "2023-12-06", wordCount: 0),
-                                         UsingWord(day: "2023-12-07", wordCount: 0),]
-    let pickerData = ["2023년 12월 1주차", "22023년 12월 2주차", "2023년 12월 3주차"]
-    var date: [String] = ["10-02", "10-03", "10-04", "10-06", "10-07" ,"10-09"]
-    var wordCount: [Double] = [5, 12, 7, 13, 2, 7]
     
     // MARK: - Life Cycles
 
@@ -34,9 +36,15 @@ final class UsingWordViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
-        setViewGesture()
+//        setViewGesture()
         setDelegate()
-        setCharts()
+        getUsingWordData(year: CurrentDate.year, month: CurrentDate.month, week: CurrentDate.week)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getUsingWordData(year: CurrentDate.year, month: CurrentDate.month, week: CurrentDate.week)
     }
     
     // MARK: - Functions
@@ -84,8 +92,8 @@ final class UsingWordViewController: BaseViewController {
         usingWordView.monthPickerView.dataSource = self
     }
     
-    private func setCharts() {
-        usingWordView.setCharts(data: wordData)
+    func setName(name: String) {
+        usingWordView.wordSubTitleLabel.text = "\(name)이(가) 말한 단어 수의 변화에요."
     }
 }
 
@@ -115,9 +123,25 @@ extension UsingWordViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        usingWordView.configureMonthButton(text: pickerData[row])
-        usingWordView.monthPickerView.isHidden = true // 선택 후 피커 뷰 숨기기
+}
+
+extension UsingWordViewController {
+    private func getUsingWordData(year: Int, month: Int, week: Int) {
+        self.reportProvider.request(.usingWord(year: CurrentDate.year,
+                                               month: CurrentDate.month,
+                                               week: CurrentDate.week)) { response in
+            switch response {
+            case .success(let moyaResponse):
+                do {
+                    let responseData = try moyaResponse.map(GenericResponse<UsingWordDTO>.self)
+                    self.wordData = responseData.result.wordNum
+                    self.usingWordView.bottomLabel.text = "\(CurrentDate.year)년 \(CurrentDate.month)월 \(CurrentDate.week)주차에는 평균 \(responseData.result.averageWordNum)개의 단어를 사용했어요!"
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@ final class LevelReportView: BaseView {
                                                   height: 150.adjusted))
     private let footerLabel = UILabel()
     private let backButton = UIButton()
-    private let dateLabel = UILabel()
+    var dateLabel = UILabel()
     private let levelButton = UIButton()
     private let levelLabel = UILabel()
     private lazy var levelStackView = UIStackView(arrangedSubviews: [levelButton, levelLabel])
@@ -55,7 +55,7 @@ final class LevelReportView: BaseView {
         }
         
         dateLabel.do {
-            $0.text = "12월 1째주"
+            $0.text = "\(CurrentDate.month)월 \(CurrentDate.week)째주"
             $0.font = .title1()
             $0.textColor = .cooingBrown
         }
