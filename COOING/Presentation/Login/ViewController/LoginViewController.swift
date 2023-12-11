@@ -22,6 +22,7 @@ class LoginViewController: BaseViewController {
     
     private let loginCooingLogoImage = UIImageView(image: Image.loginCooingLogo)
     private let kakaoLoginButton = UIButton()
+    private let appleLoginButton = UIButton()
 
     // MARK: - override Functions
     
