@@ -83,6 +83,8 @@ class LoginViewController: BaseViewController {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = [.fullName, .email] //유저로 부터 알 수 있는 정보들(name, email)
+        
+        
                
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
@@ -207,7 +209,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
             let idToken = appleIDCredential.identityToken!
             let tokeStr = String(data: idToken, encoding: .utf8)
     
-            postLoginRequest(name: String((fullName?.givenName)!), email: email!, oauthProvider: "APPLE")
+            postLoginRequest(name: String(((fullName?.givenName) ?? fullName?.familyName) ?? "이름없음"), email: (email ?? tokeStr) ?? "정보없음", oauthProvider: "APPLE")
             print("User ID : \(userIdentifier)")
             print("User Email : \(email ?? "")")
             print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
