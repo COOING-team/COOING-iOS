@@ -27,6 +27,14 @@ class LoginViewController: BaseViewController {
 
     // MARK: - override Functions
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if RealmService.shared.isAccessTokenPresent() {
+            pushToHomeVC()
+        }
+    }
+    
     override func hieararchy() {
         
         view.addSubview(loginCooingLogoImage)
@@ -84,37 +92,33 @@ class LoginViewController: BaseViewController {
     
     @objc
     func kakaoLoginButtonDidTapped() {
-        
-        if RealmService.shared.isAccessTokenPresent() {
-            pushToHomeVC()
-        } else {
-            // 카카오톡 설치 여부 확인
-            if (UserApi.isKakaoTalkLoginAvailable()) {
-                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        print("loginWithKakaoTalk() success.")
-                        // do something
-                        _ = oauthToken
-                        // 어세스토큰
-                        let accessToken = oauthToken?.accessToken
-                        
-                        self.getKakaoUserInfo()
-                        
-                    }
+     
+        // 카카오톡 설치 여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
                 }
-            } else {
-                // 카카오 계정을 통한 웹 로그인 시도
-                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        self.getKakaoUserInfo()
-                        _ = oauthToken
-                    }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    // do something
+                    _ = oauthToken
+                    // 어세스토큰
+                    let accessToken = oauthToken?.accessToken
+                    
+                    self.getKakaoUserInfo()
+                    
+                }
+            }
+        } else {
+            // 카카오 계정을 통한 웹 로그인 시도
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    self.getKakaoUserInfo()
+                    _ = oauthToken
                 }
             }
         }
