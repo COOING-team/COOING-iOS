@@ -24,7 +24,7 @@ extension MyRouter: TargetType, AccessTokenAuthorizable {
         case .getBabyInfo:
             return "/api/v1/auth/baby"
         case .signOut:
-            return "/user/signout"
+            return "/api/v1/auth/delete-account"
         }
     }
     

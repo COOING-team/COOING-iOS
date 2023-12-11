@@ -96,6 +96,7 @@ extension MyPageViewController: UITableViewDelegate {
             logout()
         } else if indexPath.row == 2 {
             // 탈퇴
+            deleteUser()
         } else {
             return
         }
@@ -125,28 +126,30 @@ extension MyPageViewController {
             }
         }
     }
-//    
-//    private func deleteUser() {
-//        self.myProvider.request(.signOut) { response in
-//            switch response {
-//            case .success(let moyaResponse):
-//                do {
-//                    let isSuccess = try moyaResponse.map(Bool.self)
-//                    if isSuccess {
-//                        RealmService.shared.resetDB()
-//                        let loginViewController = LoginViewController()
-//                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
-//                            keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
-//                        }
-//                    }
-//                } catch(let err) {
-//                    print(err.localizedDescription)
-//                }
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
-//    }
+    
+    private func deleteUser() {
+        self.provider.request(.signOut) { response in
+            switch response {
+            case .success(let response):
+                do {
+                   
+//                    let responseData = try response.map(GenericResponse<String>.self)
+//                    print(responseData)
+                    
+                        RealmService.shared.resetDB()
+                        let loginViewController = LoginViewController()
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+                            keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
+                        }
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 
 }
