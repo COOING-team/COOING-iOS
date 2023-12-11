@@ -62,9 +62,9 @@ class BaseViewController: UIViewController {
     }
     
     func customNavigationBar() {
-            navigationController?.navigationBar.tintColor = .cooingYellow
-            let backButton: UIBarButtonItem = UIBarButtonItem()
-            navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        }
+        navigationController?.navigationBar.tintColor = .cooingYellow
+        let backButton: UIBarButtonItem = UIBarButtonItem()
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
 
 }
