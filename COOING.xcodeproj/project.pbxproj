@@ -215,6 +215,7 @@
 		7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooingInfoRouter.swift; sourceTree = "<group>"; };
 		7B7DA3642B1D553A003E3A82 /* QuestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
 		7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
+		7BA2ACA72B274F140086DFE2 /* COOING.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = COOING.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +259,7 @@
 		0547875F2AF7992100823463 /* COOING */ = {
 			isa = PBXGroup;
 			children = (
+				7BA2ACA72B274F140086DFE2 /* COOING.entitlements */,
 				7B543AA62B1C814C00F2A8FA /* Realm */,
 				7B543A9E2B1C7C7500F2A8FA /* Network */,
 				7B543A9D2B1C7C7100F2A8FA /* Data */,
@@ -1025,8 +1027,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "https://cooing-server-unexpected-bandicoot-sr.apps.sys.paas-ta-dev10.kr";
+				CODE_SIGN_ENTITLEMENTS = COOING/COOING.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = COOING/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1052,8 +1056,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "https://cooing-server-unexpected-bandicoot-sr.apps.sys.paas-ta-dev10.kr";
+				CODE_SIGN_ENTITLEMENTS = COOING/COOING.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZ8WU7PA4J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = COOING/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
