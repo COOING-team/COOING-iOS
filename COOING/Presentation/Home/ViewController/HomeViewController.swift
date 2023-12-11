@@ -15,6 +15,8 @@ class HomeViewController: BaseViewController {
     
     private let homeProvider = MoyaProvider<HomeRouter>(plugins: [MoyaLoggingPlugin()])
     static var cooingInfo = CooingDefaultInfoDTO(name: "지우", month: 10, cooingDay: 3, todayRecord: false)
+
+       
     
     // MARK: - UI Components
     
@@ -66,6 +68,7 @@ extension HomeViewController {
 
                         let responseData = try response.map(GenericResponse<CooingDefaultInfoDTO>.self)
                         HomeViewController.cooingInfo = responseData.result
+                        self.homeView.bindData()
 
                         print("🔆\(responseData.result)")
                     } catch let error {

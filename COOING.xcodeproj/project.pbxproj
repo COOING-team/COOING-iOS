@@ -119,6 +119,7 @@
 		7B82F2D12B1B31AF005DDFC9 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2D02B1B31AF005DDFC9 /* KakaoSDKUser */; };
 		7B82F2DC2B1B3A5F005DDFC9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2DB2B1B3A5F005DDFC9 /* Realm */; };
 		7B82F2DE2B1B3A5F005DDFC9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B82F2DD2B1B3A5F005DDFC9 /* RealmSwift */; };
+		7BA2ACA92B2788CB0086DFE2 /* MyInfoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2ACA82B2788CB0086DFE2 /* MyInfoResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +227,7 @@
 		7B7DA3642B1D553A003E3A82 /* QuestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
 		7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
 		7BA2ACA72B274F140086DFE2 /* COOING.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = COOING.entitlements; sourceTree = "<group>"; };
+		7BA2ACA82B2788CB0086DFE2 /* MyInfoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -665,6 +667,7 @@
 			children = (
 				7B7DA3402B1C998E003E3A82 /* LoginRequestDTO.swift */,
 				7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */,
+				7BA2ACA82B2788CB0086DFE2 /* MyInfoResponseDTO.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -873,6 +876,7 @@
 				0547878E2AF7ACA200823463 /* BaseViewController.swift in Sources */,
 				054787D12AF7C29800823463 /* CooingButton.swift in Sources */,
 				7B7DA3632B1D2228003E3A82 /* CooingInfoRouter.swift in Sources */,
+				7BA2ACA92B2788CB0086DFE2 /* MyInfoResponseDTO.swift in Sources */,
 				7B700EBE2B264CC000473264 /* ProvisionView.swift in Sources */,
 				0583D6732B1A4A3B00A87981 /* FrequentWordView.swift in Sources */,
 				056476662B245D6600AD377C /* HistoryDetailView.swift in Sources */,

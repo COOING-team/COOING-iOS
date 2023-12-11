@@ -7,9 +7,11 @@
 
 import UIKit
 
+import Moya
+
 class MyPageViewController: BaseViewController {
     
-
+    let provider = MoyaProvider<MyRouter>()
     
     // MARK: - UI Components
     
@@ -94,6 +96,7 @@ extension MyPageViewController: UITableViewDelegate {
             logout()
         } else if indexPath.row == 2 {
             // 탈퇴
+            deleteUser()
         } else {
             return
         }
@@ -103,43 +106,50 @@ extension MyPageViewController: UITableViewDelegate {
 // MARK: - Network
 extension MyPageViewController {
     
-//    private func getMyInfo() {
-//        self.myProvider.request(.myInfo) { response in
-//            switch response {
-//            case .success(let moyaResponse):
-//                do {
-//                    let responseData = try moyaResponse.map(MyInfoResponse.self)
-//                    self.mypageView.dataBind(model: responseData)
-//                } catch(let err) {
-//                    print(err.localizedDescription)
-//                }
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
-//    }
-//    
-//    private func deleteUser() {
-//        self.myProvider.request(.signOut) { response in
-//            switch response {
-//            case .success(let moyaResponse):
-//                do {
-//                    let isSuccess = try moyaResponse.map(Bool.self)
-//                    if isSuccess {
-//                        RealmService.shared.resetDB()
-//                        let loginViewController = LoginViewController()
-//                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
-//                            keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
-//                        }
-//                    }
-//                } catch(let err) {
-//                    print(err.localizedDescription)
-//                }
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
-//    }
+    private func getBabyInfo() {
+        self.provider.request(.getBabyInfo) { response in
+            switch response {
+            case .success(let response):
+                do {
+                    print(response.statusCode)
+
+                    let responseData = try response.map(GenericResponse<MyInfoResponseDTO>.self)
+                    self.myPageView.nameLabel.text = responseData.result.name
+                    self.myPageView.monthLabel.text = "\(responseData.result.birthMonth)"
+
+                    print("🔆\(responseData.result)")
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    private func deleteUser() {
+        self.provider.request(.signOut) { response in
+            switch response {
+            case .success(let response):
+                do {
+                   
+//                    let responseData = try response.map(GenericResponse<String>.self)
+//                    print(responseData)
+                    
+                        RealmService.shared.resetDB()
+                        let loginViewController = LoginViewController()
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+                            keyWindow.replaceRootViewController(UINavigationController(rootViewController: loginViewController), animated: true, completion: nil)
+                        }
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 
 }

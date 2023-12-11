@@ -142,19 +142,13 @@ final class TransformRecordView: BaseView {
             $0.bottom.equalTo(transformView)
         }
         
-        transformButton.snp.makeConstraints {
-            $0.top.equalTo(transformView.snp.bottom).offset(39)
-            $0.horizontalEdges.equalToSuperview().inset(32)
-            $0.height.equalTo(48)
-        }
-        
         backButton.snp.makeConstraints {
-            $0.top.equalTo(transformButton.snp.bottom).offset(77)
+            $0.bottom.equalToSuperview().inset(50)
             $0.leading.equalToSuperview().inset(22)
         }
         
         nextButton.snp.makeConstraints {
-            $0.top.equalTo(transformButton.snp.bottom).offset(77)
+            $0.bottom.equalToSuperview().inset(50)
             $0.trailing.equalToSuperview().inset(22)
         }
     }
@@ -168,7 +162,6 @@ final class TransformRecordView: BaseView {
                     modifyButton,
                     answerTitleLabel,
                     answerTextView,
-                    transformButton,
                     backButton,
                     nextButton
         )

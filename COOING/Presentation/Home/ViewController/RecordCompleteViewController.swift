@@ -31,7 +31,7 @@ class RecordCompleteViewController: BaseViewController {
         super.configureUI()
         
         completeLabel.do {
-            $0.text = "100일 째의 기록이 완료되었어요."
+            $0.text = "기록이 완료되었어요."
             $0.font = .body2()
         }
         
