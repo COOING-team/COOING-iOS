@@ -56,6 +56,7 @@ class CooingTabBarController: UITabBarController {
         historyViewController.tabBarItem = setTabBarItem(title: "모아보기", image: Image.history, selectedImage: Image.historyFill)
         reportViewController.tabBarItem = setTabBarItem(title: "레포트", image: Image.report, selectedImage: Image.reportFill)
         myPageViewController.tabBarItem = setTabBarItem(title: "마이페이지", image: Image.my, selectedImage: Image.myFill)
+    
         
         viewControllers = [
             homeViewController,
