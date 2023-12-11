@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         
-//        RealmService.shared.resetDB()
+        RealmService.shared.resetDB()
         
         let navigationController = UINavigationController(rootViewController: LoginViewController())
         window?.rootViewController = navigationController

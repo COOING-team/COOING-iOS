@@ -9,9 +9,14 @@ import UIKit
 
 import Moya
 
-class SetCooingInfoViewController: BaseViewController {
+class SetCooingInfoViewController: BaseViewController, UITextFieldDelegate {
+    
+    // MARK: - Properties
     
     private let cooingInfoRouter = MoyaProvider<CooingInfoRouter>(plugins: [MoyaLoggingPlugin()])
+    var manChecked = false
+    var womanChecked = false
+    var checkedSex = "Male"
     
     // MARK: - UI Components
     
@@ -21,7 +26,13 @@ class SetCooingInfoViewController: BaseViewController {
     
     override func hieararchy() {
         view.addSubview(setCooingInfoView)
+        
+//        setCooingInfoView.nameTextField.delegate = self
+//        dismissKeyboard()
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+            self.view.endEditing(true)
+      }
     
     override func setLayout() {
         setCooingInfoView.snp.makeConstraints {
@@ -31,8 +42,8 @@ class SetCooingInfoViewController: BaseViewController {
     
     override func setButtonEvent() {
         setCooingInfoView.nextButton.addTarget(self, action: #selector(nextButtonDidTapped), for: .touchUpInside)
-        setCooingInfoView.manButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
-        setCooingInfoView.womanButton.addTarget(self, action: #selector(button1Clicked), for: .touchUpInside)
+        setCooingInfoView.manButton.addTarget(self, action: #selector(manButtonClicked), for: .touchUpInside)
+        setCooingInfoView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)
 
     }
     
@@ -40,7 +51,8 @@ class SetCooingInfoViewController: BaseViewController {
     
     @objc
     private func nextButtonDidTapped() {
-        createBaby(name: setCooingInfoView.nameTextField.text ?? "CJW", sex: "Female", birth: setCooingInfoView.dateFormat)
+        checkSex()
+        createBaby(name: setCooingInfoView.nameTextField.text ?? "CJW", sex: checkedSex, birth: setCooingInfoView.dateFormat)
         
         let cooingTabBarController = CooingTabBarController()
 
@@ -51,14 +63,34 @@ class SetCooingInfoViewController: BaseViewController {
     }
     
     
-    @objc func buttonClicked() {
-        setCooingInfoView.manButton.setImage(Image.selectedMan, for: .normal)
+    @objc func manButtonClicked() {
+        
+        manChecked.toggle()
+        if manChecked {
+            setCooingInfoView.manButton.setImage(Image.selectedMan, for: .normal)
+        } else {
+            setCooingInfoView.manButton.setImage(Image.unselectedMan, for: .normal)
+        }
 
     }
     
-    @objc func button1Clicked() {
-        setCooingInfoView.womanButton.setImage(Image.selectedWoman, for: .normal)
+    @objc func womanButtonClicked() {
+        
+        womanChecked.toggle()
+        if womanChecked {
+            setCooingInfoView.womanButton.setImage(Image.selectedWoman, for: .normal)
+        } else {
+            setCooingInfoView.womanButton.setImage(Image.unselectedWoman, for: .normal)
+        }
 
+    }
+    
+    func checkSex() {
+        if manChecked {
+            checkedSex = "Male"
+        } else {
+            checkedSex = "Female"
+        }
     }
 }
 

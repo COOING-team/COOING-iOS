@@ -116,7 +116,7 @@ final class SetCooingInfoView: BaseView {
         nameTextField.snp.makeConstraints {
             $0.top.equalTo(nameLabel)
             $0.leading.equalTo(nameLabel.snp.trailing).offset(55)
-
+            $0.width.equalTo(180)
         }
         
         sexLabel.snp.makeConstraints {
