@@ -38,7 +38,6 @@ final class UsingWordViewController: BaseViewController {
         
 //        setViewGesture()
         setDelegate()
-        getUsingWordData(year: CurrentDate.year, month: CurrentDate.month, week: CurrentDate.week)
     }
     
     override func viewWillAppear(_ animated: Bool) {

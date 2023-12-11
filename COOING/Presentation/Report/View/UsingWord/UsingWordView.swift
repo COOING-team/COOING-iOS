@@ -89,7 +89,6 @@ final class UsingWordView: BaseView {
         
         bottomLabel.do {
             $0.font = .body3()
-            $0.text = "2023년 12월 1주차에는 평균 19개의 단어를 사용했어요!"
             $0.textColor = .cooingBrown
         }
     }

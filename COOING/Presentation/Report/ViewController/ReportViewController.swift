@@ -27,12 +27,6 @@ class ReportViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setViewGesture()
-        
-        print("year: \(CurrentDate.year)")
-        print("month: \(CurrentDate.month)")
-        print("day: \(CurrentDate.day)")
-        print("week: \(CurrentDate.week)")
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +93,7 @@ extension ReportViewController {
                 do {
                     let responseData = try moyaResponse.map(GenericResponse<InfoDTO>.self)
                     self.reportView.configureInfoView(data: responseData.result)
+                    CurrentDate.week = responseData.result.week
                     self.name = responseData.result.name
                 } catch(let err) {
                     print(err.localizedDescription)
