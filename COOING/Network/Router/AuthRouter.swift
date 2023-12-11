@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum AuthRouter {
-    case kakaoLogin(param: KakaoLoginRequestDTO)
+    case login(param: LoginRequestDTO)
 }
 
 extension AuthRouter: TargetType {
@@ -19,21 +19,21 @@ extension AuthRouter: TargetType {
   
   var path: String {
     switch self {
-    case .kakaoLogin:
-        return "/api/v1/auth/kakao-login"
+    case .login:
+        return "/api/v1/auth/login"
     }
   }
   
   var method: Moya.Method {
     switch self {
-    case .kakaoLogin:
+    case .login:
         return .post
     }
   }
   
   var task: Task {
     switch self {
-    case .kakaoLogin(param: let param):
+    case .login(param: let param):
         return .requestJSONEncodable(param)
     }
   }

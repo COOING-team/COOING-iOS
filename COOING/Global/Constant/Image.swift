@@ -14,8 +14,8 @@ public enum Image {
     static let cooingIcon = UIImage(named: "cooing_icon")!
     static let cooingLogo = UIImage(named: "cooing_logo")!
     static let kakaoLoginButton = UIImage(named: "kakaoLoginButton")!
+    static let appleLoginButton = UIImage(named: "appleLogin")!
 
-    
     // MARK: - Icon
     
     static let report = UIImage(named: "report")!
