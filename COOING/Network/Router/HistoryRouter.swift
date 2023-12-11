@@ -53,7 +53,7 @@ extension HistoryRouter: TargetType {
         let realm = RealmService()
         let token = realm.getToken()
         return ["Content-Type":"application/json",
-                "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTcwMjMxNjI2MCwidXVpZCI6ImJpbjM5NTVAZGF1bS5uZXQifQ.KGb8KTaM4qlBV3hrwD7JIpdJpkjBOMQUB5mVUuXn6OKZ3xkasI3gpOIT8YWPIwxY1rCak5j_jL0kOYPhnJA5Jg"]
+                "Authorization": "Bearer \(token)"]
     }
 
     var sampleData: Data {
