@@ -16,13 +16,13 @@ final class LevelReportViewController: BaseViewController {
     private let reportProvider = MoyaProvider<ReportRouter>(plugins: [MoyaLoggingPlugin()])
     private let headerTitle: [String] = ["구문 구조", "문장 성분의 의미", "문법 형태소"]
     let pickerData = ["1단계", "2단계", "3단계"]
+    var index: Int = Int()
     private var sectionLevelData: [SecretNoteLevel] = [SecretNoteLevel.setFirstLevelSection(), SecretNoteLevel.setSecondLevelSection(), SecretNoteLevel.setThirdLevelSection()]
-    
-    private var firstSectionLevelData = SecretNoteLevel.setFirstLevelSection()
-    private var secondSectionLevelData = SecretNoteLevel.setSecondLevelSection()
-    private var thirdSectionLevelData = SecretNoteLevel.setThirdLevelSection()
-    private var stateData: [[Bool]]?
+
+    private var stateData: [[Bool]] = []
     private var currentLevel: Int = 0
+    private var month: Int = Int()
+    private var week: Int = Int()
     
     // MARK: - UI Components
     
@@ -36,12 +36,11 @@ final class LevelReportViewController: BaseViewController {
         
         setTableView()
         setDelegate()
-        getSecretNoteData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getSecretNoteData()
+        getSecretNoteData(month: self.month, week: self.week)
     }
     
     // MARK: - Functions
@@ -96,6 +95,12 @@ final class LevelReportViewController: BaseViewController {
         levelReportView.levelPickerView.delegate = self
         levelReportView.levelPickerView.dataSource = self
     }
+    
+    func setMonthWeek(month: Int, week: Int) {
+        self.month = month
+        self.week = week
+        self.levelReportView.dateLabel.text = "\(self.month)월 \(self.week)째주"
+    }
 }
 
 // MARK: - UITableViewDelegate, DataSource
@@ -146,27 +151,26 @@ extension LevelReportViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LevelTableViewCell.identifier, for: indexPath) as? LevelTableViewCell ?? LevelTableViewCell()
-        let index: Int
-        switch indexPath.section {
-        case 0:
-            index = 0
-            cell.configureCell(boolData: SecretNoteDTO.booleanDummy().grade1[index],
-                               contentData: sectionLevelData[self.currentLevel].firstSection[indexPath.row])
-        case 1:
-            index = sectionLevelData[self.currentLevel].firstSection.count
-            cell.configureCell(boolData:SecretNoteDTO.booleanDummy().grade1[index],
-                               contentData: sectionLevelData[self.currentLevel].secondSection[indexPath.row])
-        case 2:
-            index = sectionLevelData[self.currentLevel].firstSection.count + sectionLevelData[self.currentLevel].secondSection.count
-//            cell.configureCell(boolData:stateData?[indexPath.section][index] ?? Bool(),
-
-            cell.configureCell(boolData:SecretNoteDTO.booleanDummy().grade1[index],
-                               contentData: sectionLevelData[self.currentLevel].thirdSection[indexPath.row])
-            
-        default:
-            return cell
+        if stateData.count != 0 {
+            let index: Int
+            switch indexPath.section {
+            case 0:
+                index = 0
+                cell.configureCell(boolData:stateData[self.currentLevel][index + indexPath.row],
+                                   contentData: sectionLevelData[self.currentLevel].firstSection[indexPath.row])
+            case 1:
+                index = sectionLevelData[self.currentLevel].firstSection.count
+                cell.configureCell(boolData:stateData[self.currentLevel][index + indexPath.row],
+                                   contentData: sectionLevelData[self.currentLevel].secondSection[indexPath.row])
+            case 2:
+                index = sectionLevelData[self.currentLevel].firstSection.count + sectionLevelData[self.currentLevel].secondSection.count
+                cell.configureCell(boolData:stateData[self.currentLevel][index + indexPath.row],
+                                   contentData: sectionLevelData[self.currentLevel].thirdSection[indexPath.row])
+                
+            default:
+                return cell
+            }
         }
-
         cell.selectionStyle = .none
         return cell
     }
@@ -212,16 +216,18 @@ extension LevelReportViewController: UIPickerViewDataSource {
 // MARK: - Network
 
 extension LevelReportViewController {
-    private func getSecretNoteData() {
-        self.reportProvider.request(.secretNote(month: 12, week: 1)) { response in
+    private func getSecretNoteData(month: Int, week: Int) {
+        self.reportProvider.request(.secretNote(month: self.month, week: self.week)) { response in
             switch response {
             case .success(let moyaResponse):
                 do {
                     let responseData = try moyaResponse.map(GenericResponse<SecretNoteDTO>.self)
-                    self.stateData?.append(responseData.result.grade1)
-                    self.stateData?.append(responseData.result.grade2)
-                    self.stateData?.append(responseData.result.grade3)
-
+                    self.stateData.append(responseData.result.grade1)
+                    self.stateData.append(responseData.result.grade2)
+                    self.stateData.append(responseData.result.grade3)
+                    print("\(self.stateData)")
+                    self.levelReportView.levelReportTableView.reloadData()
+                    
                 } catch(let err) {
                     print(err.localizedDescription)
                 }

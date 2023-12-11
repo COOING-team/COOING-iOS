@@ -70,7 +70,7 @@ final class FrequentTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(index: Int, wordData: FrequentWord) {
+    func configureCell(index: Int, wordData: Word) {
         rankImageView.image = numberImageList[index]
         frequentWordView.wordLabel.text = wordData.word
         frequentWordView.countLabel.text = "\(wordData.count)"

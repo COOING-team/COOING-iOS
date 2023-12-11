@@ -19,7 +19,7 @@ final class HistoryDetailView: BaseView {
     // MARK: - UI Components
     
     private var countDayLabel = UILabel()
-    private var dateLabel = UILabel()
+    var dateLabel = UILabel()
     private var questionLabel = UILabel()
     
     private var transformView = UIView()
@@ -58,7 +58,7 @@ final class HistoryDetailView: BaseView {
         }
         
         questionLabel.do {
-            $0.text = "쿠잉이의 답변과 부모님의 코멘트 톺아보기"
+            $0.text = "\(HomeViewController.cooingInfo.name)의 답변과 부모님의 코멘트 톺아보기"
             $0.font = .title3()
             $0.textColor = .cooingBrown
         }
@@ -69,7 +69,7 @@ final class HistoryDetailView: BaseView {
         }
       
         answerTitleLabel.do {
-            $0.text = "쿠잉이의 답변"
+            $0.text = "\(HomeViewController.cooingInfo.name)의 답변"
             $0.font = .body2()
         }
         
@@ -77,6 +77,7 @@ final class HistoryDetailView: BaseView {
             $0.text = "재미있는 일이 있는 하루였어.등등등\n쿠잉이가 한 답변이 여기에 텍스트로 들어갑니다."
             $0.font = .body4()
             $0.backgroundColor = UIColor.clear
+            $0.textAlignment = .center
             $0.isEditable = false
         }
         
@@ -93,6 +94,7 @@ final class HistoryDetailView: BaseView {
             $0.text = "부모님이 코멘트를 입력 해 주세요"
             $0.font = .body4()
             $0.backgroundColor = .clear
+            $0.textAlignment = .center
             $0.isEditable = false
         }
     }
@@ -180,5 +182,39 @@ final class HistoryDetailView: BaseView {
                                 parentAnswerTextView,
                                 transformButton
         )
+    }
+    
+    private func isoToDate(isoDate: String) -> String{
+        // ISO 8601 형식의 날짜를 파싱하기 위한 DateFormatter
+        let isoFormatter = DateFormatter()
+        isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        isoFormatter.locale = Locale(identifier: "en_US_POSIX") // 중요: 고정된 날짜 형식을 처리하기 위한 로케일 설정
+        isoFormatter.timeZone = TimeZone(secondsFromGMT: 0) // 시간대 설정
+
+        // 문자열을 Date 객체로 변환
+        if let date = isoFormatter.date(from: isoDate) {
+            // 원하는 형식으로 날짜를 다시 변환하기 위한 DateFormatter
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "yyyy/MM/dd"
+
+            // 변환된 날짜 문자열
+            let outputDateString = outputFormatter.string(from: date)
+            return outputDateString
+        } else {
+            print("날짜 형식 변환 실패")
+            return ""
+        }
+    }
+    
+    func bindData(data: HistoryDetailDTO) {
+        countDayLabel.text = "\(data.cooingDay)일 째의 기록"
+        answerTextView.text = data.answerText
+        if data.comment == "" {
+            parentAnswerTextView.text = "해당 날짜에는 부모님의 코멘트가 없어요!"
+        } else {
+            parentAnswerTextView.text = data.comment
+        }
+        dateLabel.text = isoToDate(isoDate: data.createAt)
+        questionLabel.text = data.content
     }
 }

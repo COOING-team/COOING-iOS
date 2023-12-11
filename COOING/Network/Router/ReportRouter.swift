@@ -14,6 +14,7 @@ enum ReportRouter {
     case secretNote(month: Int, week: Int)
     case secretNoteList(month: Int)
     case info
+    case frequent
 }
 
 extension ReportRouter: TargetType {
@@ -33,6 +34,8 @@ extension ReportRouter: TargetType {
             return "/api/v1/report/secret-note-list"
         case .info:
             return "/api/v1/report/info"
+        case .frequent:
+            return "/api/v1/report/frequent"
         }
     }
     
@@ -47,6 +50,8 @@ extension ReportRouter: TargetType {
         case .secretNoteList:
             return .get
         case .info:
+            return .get
+        case .frequent:
             return .get
         }
     }
@@ -69,6 +74,8 @@ extension ReportRouter: TargetType {
                                       encoding: URLEncoding.queryString)
         case .info:
             return .requestPlain
+        case .frequent:
+            return .requestPlain
         }
     }
     
@@ -77,7 +84,7 @@ extension ReportRouter: TargetType {
         default:
             let token = RealmService.shared.getToken()
             return ["Content-Type":"application/json",
-                    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTcwMTY0Mzg5OCwidXVpZCI6InRsc3JtYTIxNDJAbmF2ZXIuY29tIn0.QvZh0a4p3zmf2o1HchY_HIXYYZhQe37vfaIGGAkmWXyg4mPpR6eLS7dSHRBy8elmdo5AMsRFqFpI206JQVyj9A"]
+                    "Authorization": "Bearer \(token)"]
         }
     }
 }

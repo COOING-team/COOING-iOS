@@ -19,6 +19,7 @@ final class LevelTableViewCellRightView: BaseView {
             wordLabel.text = text
             self.snp.updateConstraints {
                 $0.width.equalTo(Double(wordLabel.intrinsicContentSize.width).adjusted)
+                $0.height.equalTo((Double(wordLabel.intrinsicContentSize.height) + 8).adjusted)
             }
         }
     }
@@ -48,6 +49,7 @@ final class LevelTableViewCellRightView: BaseView {
             $0.font = .body6()
             $0.text = " 한 낱말 이상의 문장 구조가 나타나요."
             $0.textColor = .cooingBrown
+            $0.numberOfLines = 3
         }
     }
     
@@ -58,6 +60,7 @@ final class LevelTableViewCellRightView: BaseView {
     override func setLayout() {
         self.snp.makeConstraints {
             $0.width.equalTo(Double(wordLabel.intrinsicContentSize.width).adjusted)
+            $0.height.equalTo((Double(wordLabel.intrinsicContentSize.height) + 8).adjusted)
         }
         
         wordLabel.snp.makeConstraints {

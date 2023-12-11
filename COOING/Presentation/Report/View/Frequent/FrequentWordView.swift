@@ -15,7 +15,7 @@ final class FrequentWordView: BaseView {
     // MARK: - UI Components
     
     private let wordTitleLabel = UILabel()
-    private let wordSubTitleLabel = UILabel()
+    var wordSubTitleLabel = UILabel()
     var rankingTableView = UITableView()
 
     // MARK: - Life Cycle

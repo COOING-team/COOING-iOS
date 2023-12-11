@@ -15,8 +15,8 @@ final class SecretNoteView: BaseView {
     // MARK: - UI Components
     
     private let titleLabel = UILabel()
-    private let wordTitleLabel = UILabel()
-    private let wordSubTitleLabel = UILabel()
+    var wordTitleLabel = UILabel()
+    var wordSubTitleLabel = UILabel()
     var weeklyReportTableView = UITableView()
 
     // MARK: - Life Cycle
@@ -36,13 +36,11 @@ final class SecretNoteView: BaseView {
     override func configureUI() {
         
         wordTitleLabel.do {
-            $0.text = "Jiwoo의 시크릿 노트"
             $0.font = .title2()
             $0.textColor = .cooingBrown
         }
         
         wordSubTitleLabel.do {
-            $0.text = "Jiwoo의 언어를 더 자세히 분석해요."
             $0.font = .body3()
             $0.textColor = .cooingBrown
         }

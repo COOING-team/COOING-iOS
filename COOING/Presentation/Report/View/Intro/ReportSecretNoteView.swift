@@ -16,8 +16,8 @@ final class ReportSecretNoteView: BaseView {
     
     // MARK: - UI Components
     
-    private let titleLabel = UILabel()
-    private let subTitleLabel = UILabel()
+    var titleLabel = UILabel()
+    var subTitleLabel = UILabel()
     private lazy var totalStackView = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
     private let noteImageView = UIImageView(image: Image.reportImage)
 
@@ -44,13 +44,11 @@ final class ReportSecretNoteView: BaseView {
         titleLabel.do {
             $0.font = .button1()
             $0.textColor = .cooingBrown
-            $0.text = "Jiwoo의 시크릿 노트"
         }
         
         subTitleLabel.do {
             $0.font = .body6()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
-            $0.text = "Jiwoo의 언어를 더 자세히 분석해요."
         }
         
         totalStackView.do {

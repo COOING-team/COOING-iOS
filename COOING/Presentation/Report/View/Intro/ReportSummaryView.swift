@@ -14,9 +14,9 @@ final class ReportSummaryView: BaseView {
 
     // MARK: - UI Components
     
-    private let wordLabel = UILabel()
+    var wordLabel = UILabel()
     private let wordCountLabel = UILabel()
-    private let favoriteWordLabel = UILabel()
+    var favoriteWordLabel = UILabel()
     private let cooingFavoriteWordLabel = UILabel()
     private let characterImageView = UIImageView(image: Image.baby)
     private lazy var wordStackView = UIStackView(arrangedSubviews: [wordLabel,
@@ -36,7 +36,6 @@ final class ReportSummaryView: BaseView {
         wordLabel.do {
             $0.font = .body4()
             $0.textColor = .cooingBrown
-            $0.text = "Jiwoo가 사용한 단어 수"
         }
         
         wordCountLabel.do {
@@ -48,7 +47,6 @@ final class ReportSummaryView: BaseView {
         favoriteWordLabel.do {
             $0.font = .body4()
             $0.textColor = .cooingBrown
-            $0.text = "Jiwoo의 애착 단어"
         }
         
         cooingFavoriteWordLabel.do {

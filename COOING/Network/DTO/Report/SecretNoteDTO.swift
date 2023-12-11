@@ -41,7 +41,7 @@ extension SecretNoteLevel {
     }
     
     static func setThirdLevelSection() -> SecretNoteLevel {
-        return SecretNoteLevel(firstSection: ["한국어의 기본 구조인 세 낱말 이상을 조합하는 문장 구조가 나타나요."],
+        return SecretNoteLevel(firstSection: ["한국어의 기본 구조인 세 낱말 이상을 조합하는 \n문장 구조가 나타나요."],
                                secondSection: ["크다, 작다 등 관계어가 나타나요.",
                                                "왜, 어떻게, 이렇게 등의 의문사가 나타나요."],
                                thirdSection: ["고 등 연결어미가 나타나요.",

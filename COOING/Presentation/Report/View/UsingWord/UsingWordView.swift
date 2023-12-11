@@ -21,13 +21,13 @@ final class UsingWordView: BaseView {
     // MARK: - UI Components
     
     private let wordTitleLabel = UILabel()
-    private let wordSubTitleLabel = UILabel()
+    var wordSubTitleLabel = UILabel()
     private let monthButton = UIButton()
     private let monthLabel = UILabel()
     private lazy var monthStackView = UIStackView(arrangedSubviews: [monthButton, monthLabel])
     var monthPickerView = UIPickerView()
     var wordChart = BarChartView()
-    private var bottomLabel = UILabel()
+    var bottomLabel = UILabel()
     
     // MARK: - Life Cycle
     
@@ -51,7 +51,6 @@ final class UsingWordView: BaseView {
         }
         
         wordSubTitleLabel.do {
-            $0.text = "Jiwoo가 말한 단어 수의 변화예요."
             $0.font = .body3()
             $0.textColor = .cooingBrown
         }
@@ -61,7 +60,7 @@ final class UsingWordView: BaseView {
         }
         
         monthLabel.do {
-            $0.text = "2023년 12월 1주차"
+            $0.text = "\(CurrentDate.year)년 \(CurrentDate.month)월 \(CurrentDate.week)주차"
             $0.font = .body3()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
         }
@@ -90,7 +89,6 @@ final class UsingWordView: BaseView {
         
         bottomLabel.do {
             $0.font = .body3()
-            $0.text = "2023년 12월 1주차에는 평균 19개의 단어를 사용했어요!"
             $0.textColor = .cooingBrown
         }
     }
@@ -170,7 +168,7 @@ final class UsingWordView: BaseView {
         }
     }
     
-    func setCharts(data: [UsingWord]) {
+    func setCharts(data: [WordNum]) {
         var dataEntries: [BarChartDataEntry] = []
         var dataPoints: [String] = []
         for i in 0..<data.count {

@@ -35,6 +35,11 @@
 		054787D52AF7C42500823463 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054787D42AF7C42500823463 /* Image.swift */; };
 		056476642B245CDC00AD377C /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476632B245CDC00AD377C /* HistoryDetailViewController.swift */; };
 		056476662B245D6600AD377C /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476652B245D6600AD377C /* HistoryDetailView.swift */; };
+		056476682B25BC0300AD377C /* FrequentWordDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476672B25BC0300AD377C /* FrequentWordDTO.swift */; };
+		0564766A2B25BE8C00AD377C /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056476692B25BE8C00AD377C /* CurrentDate.swift */; };
+		0564766C2B26402B00AD377C /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564766B2B26402B00AD377C /* HistoryRouter.swift */; };
+		0564766E2B26403900AD377C /* HistoryListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564766D2B26403900AD377C /* HistoryListDTO.swift */; };
+		056476702B26404200AD377C /* HistoryDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564766F2B26404200AD377C /* HistoryDetailDTO.swift */; };
 		0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6622B19BF5A00A87981 /* ReportView.swift */; };
 		0583D6652B19C1A600A87981 /* ReportSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6642B19C1A600A87981 /* ReportSummaryView.swift */; };
 		0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0583D6662B19C6E400A87981 /* Adjusted+.swift */; };
@@ -145,6 +150,11 @@
 		054787D42AF7C42500823463 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		056476632B245CDC00AD377C /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		056476652B245D6600AD377C /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
+		056476672B25BC0300AD377C /* FrequentWordDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentWordDTO.swift; sourceTree = "<group>"; };
+		056476692B25BE8C00AD377C /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
+		0564766B2B26402B00AD377C /* HistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
+		0564766D2B26403900AD377C /* HistoryListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListDTO.swift; sourceTree = "<group>"; };
+		0564766F2B26404200AD377C /* HistoryDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailDTO.swift; sourceTree = "<group>"; };
 		0583D6622B19BF5A00A87981 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		0583D6642B19C1A600A87981 /* ReportSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryView.swift; sourceTree = "<group>"; };
 		0583D6662B19C6E400A87981 /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
@@ -409,6 +419,7 @@
 			children = (
 				0547879F2AF7AE2F00823463 /* Font.swift */,
 				054787D42AF7C42500823463 /* Image.swift */,
+				056476692B25BE8C00AD377C /* CurrentDate.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -541,8 +552,10 @@
 				0589FB3D2B1CF6B200D0CB7F /* ReportTotalDTO.swift */,
 				0589FB412B1CF92700D0CB7F /* UsingWordDTO.swift */,
 				0589FB432B1CFABD00D0CB7F /* SecretNoteDTO.swift */,
-				0589FB452B1CFC7C00D0CB7F /* SecretNoteListDTO.swift */,
 				0589FB472B1CFDDE00D0CB7F /* InfoDTO.swift */,
+				056476672B25BC0300AD377C /* FrequentWordDTO.swift */,
+				0564766D2B26403900AD377C /* HistoryListDTO.swift */,
+				0564766F2B26404200AD377C /* HistoryDetailDTO.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -623,6 +636,7 @@
 			children = (
 				0589FB3C2B1CF69F00D0CB7F /* Report */,
 				7B7DA3612B1D2205003E3A82 /* Cooing */,
+				0589FB452B1CFC7C00D0CB7F /* SecretNoteListDTO.swift */,
 				7B7DA3542B1CE92B003E3A82 /* Home */,
 				7B7DA34D2B1CE476003E3A82 /* Record */,
 				7B7DA33F2B1C9291003E3A82 /* Auth */,
@@ -640,6 +654,7 @@
 				7B7DA3592B1CEE03003E3A82 /* ClovaSpeechService.swift */,
 				7B7DA3622B1D2228003E3A82 /* CooingInfoRouter.swift */,
 				7B7DA3662B1D5555003E3A82 /* QuestionRouter.swift */,
+				0564766B2B26402B00AD377C /* HistoryRouter.swift */,
 				7B700EBF2B264F5900473264 /* MyRouter.swift */,
 			);
 			path = Router;
@@ -832,12 +847,16 @@
 				0583D6A22B1C704400A87981 /* HistoryTableViewCell.swift in Sources */,
 				054787D32AF7C2D700823463 /* UIButton+.swift in Sources */,
 				7B3BC87D2AF894C1008EDF60 /* RecordView.swift in Sources */,
+				0564766C2B26402B00AD377C /* HistoryRouter.swift in Sources */,
+				0564766E2B26403900AD377C /* HistoryListDTO.swift in Sources */,
 				0583D69C2B1BB79600A87981 /* LevelTableViewCellRightView.swift in Sources */,
 				0583D6672B19C6E400A87981 /* Adjusted+.swift in Sources */,
+				056476682B25BC0300AD377C /* FrequentWordDTO.swift in Sources */,
 				7B7DA35E2B1D1E71003E3A82 /* SetCooingInfoViewController.swift in Sources */,
 				0583D6A42B1C70D500A87981 /* HistoryRightView.swift in Sources */,
 				7B543A9C2B1C744A00F2A8FA /* LoginViewController.swift in Sources */,
 				05B0BC382AF8127A0082E3EB /* QuestionViewController.swift in Sources */,
+				0564766A2B25BE8C00AD377C /* CurrentDate.swift in Sources */,
 				7B543AAB2B1C81D800F2A8FA /* Token.swift in Sources */,
 				054787C72AF7BE6100823463 /* MyPageViewController.swift in Sources */,
 				7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */,
@@ -860,6 +879,7 @@
 				054787A02AF7AE2F00823463 /* Font.swift in Sources */,
 				054787922AF7ACBA00823463 /* BaseView.swift in Sources */,
 				0583D66B2B19C7B500A87981 /* ReportUsingWordView.swift in Sources */,
+				056476702B26404200AD377C /* HistoryDetailDTO.swift in Sources */,
 				0583D68B2B1B91C000A87981 /* SecretNoteView.swift in Sources */,
 				0583D6882B1B916100A87981 /* SecretNoteViewController.swift in Sources */,
 				0583D6632B19BF5A00A87981 /* ReportView.swift in Sources */,

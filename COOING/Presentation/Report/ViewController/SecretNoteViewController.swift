@@ -27,7 +27,7 @@ final class SecretNoteViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         setTableView()
-//        setNetworkFunctions()
+        setNetworkFunctions()
     }
     
     // MARK: - Functions
@@ -69,21 +69,24 @@ final class SecretNoteViewController: BaseViewController {
     private func setNetworkFunctions() {
         getSecretNoteListData()
     }
+    
+    func setName(name: String) {
+        secretNoteView.wordTitleLabel.text = "\(name)의 시크릿 노트"
+        secretNoteView.wordSubTitleLabel.text = "\(name)의 언어를 더 자세히 분석해요."
+    }
 }
 
 extension SecretNoteViewController: UITableViewDelegate {}
 
 extension SecretNoteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return secretNoteData.count
-        return 4
+        return secretNoteData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SecretNoteTableViewCell.identifier, for: indexPath) as? SecretNoteTableViewCell ?? SecretNoteTableViewCell()
         cell.selectionStyle = .none
-        cell.configureCell(data: indexPath.row + 1)
-//        cell.configureCell(data: secretNoteData[indexPath.row])
+        cell.configureCell(data: secretNoteData[indexPath.row])
         return cell
     }
     
@@ -93,11 +96,17 @@ extension SecretNoteViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        if secretNoteData[indexPath.row].noteStatus == "READABLE" {
-        if indexPath.row == 0 {
+        switch secretNoteData[indexPath.row].noteStatus {
+        case "READABLE":
             let levelReportViewController = LevelReportViewController()
+            levelReportViewController.setMonthWeek(month: secretNoteData[indexPath.row].month,
+                                                   week: secretNoteData[indexPath.row].week)
             navigationController?.pushViewController(levelReportViewController, animated: true)
-            //        }
+        case "NOT_CREATABLE":
+            showAlert(title: "해당 주차의 시크릿 노트가 \n아직 생성되지 않았어요",
+                      text: "시크릿 노트가 생성될 때 까지 조금만 기다려주세요!", style: .default)
+        default:
+            return
         }
     }
 }

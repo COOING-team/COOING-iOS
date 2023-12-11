@@ -20,6 +20,7 @@ final class HistoryTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     static let identifier = "HistoryTableViewCell"
+    var handler: (() -> (Void))?
     
     // MARK: - UI Components
     
@@ -88,9 +89,31 @@ final class HistoryTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(data: HistoryData) {
-        dateLabel.text = data.date
-        rightView.wordLabel.text = data.text
+    private func isoToMonthDay(isoDate: String) -> String{
+        // ISO 8601 형식의 날짜를 파싱하기 위한 DateFormatter
+        let isoFormatter = DateFormatter()
+        isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        isoFormatter.locale = Locale(identifier: "en_US_POSIX") // 중요: 고정된 날짜 형식을 처리하기 위한 로케일 설정
+        isoFormatter.timeZone = TimeZone(secondsFromGMT: 0) // 시간대 설정
+
+        // 문자열을 Date 객체로 변환
+        if let date = isoFormatter.date(from: isoDate) {
+            // 원하는 형식으로 날짜를 다시 변환하기 위한 DateFormatter
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "MM/dd"
+
+            // 변환된 날짜 문자열
+            let outputDateString = outputFormatter.string(from: date)
+            return outputDateString
+        } else {
+            print("날짜 형식 변환 실패")
+            return ""
+        }
+    }
+
+    func configureCell(data: HistoryListDTO) {
+        dateLabel.text = isoToMonthDay(isoDate: data.createAt)
+        rightView.wordLabel.text = data.content
     }
 }
 
