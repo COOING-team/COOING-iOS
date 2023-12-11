@@ -92,7 +92,7 @@
 		7B700EC02B264F5900473264 /* MyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B700EBF2B264F5900473264 /* MyRouter.swift */; };
 		7B7DA3392B1C8DC8003E3A82 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3382B1C8DC8003E3A82 /* Config.swift */; };
 		7B7DA33C2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA33B2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift */; };
-		7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */; };
+		7B7DA3412B1C998E003E3A82 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3402B1C998E003E3A82 /* LoginRequestDTO.swift */; };
 		7B7DA3432B1C9A98003E3A82 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */; };
 		7B7DA3452B1C9D1F003E3A82 /* IdentityTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */; };
 		7B7DA3472B1CC041003E3A82 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA3462B1CC041003E3A82 /* GenericResponse.swift */; };
@@ -198,7 +198,7 @@
 		7B700EBF2B264F5900473264 /* MyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRouter.swift; sourceTree = "<group>"; };
 		7B7DA3382B1C8DC8003E3A82 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7B7DA33B2B1C90DA003E3A82 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
-		7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequestDTO.swift; sourceTree = "<group>"; };
+		7B7DA3402B1C998E003E3A82 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		7B7DA3422B1C9A98003E3A82 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityTokenDTO.swift; sourceTree = "<group>"; };
 		7B7DA3462B1CC041003E3A82 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
@@ -646,7 +646,7 @@
 		7B7DA33F2B1C9291003E3A82 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				7B7DA3402B1C998E003E3A82 /* KakaoLoginRequestDTO.swift */,
+				7B7DA3402B1C998E003E3A82 /* LoginRequestDTO.swift */,
 				7B7DA3442B1C9D1E003E3A82 /* IdentityTokenDTO.swift */,
 			);
 			path = Auth;
@@ -821,7 +821,7 @@
 				7B7DA3562B1CE963003E3A82 /* CooingDefaultInfoDTO.swift in Sources */,
 				054787942AF7ACD400823463 /* UIView+.swift in Sources */,
 				7B2C759C2B19E8EE00A6CE1A /* UIViewController+.swift in Sources */,
-				7B7DA3412B1C998E003E3A82 /* KakaoLoginRequestDTO.swift in Sources */,
+				7B7DA3412B1C998E003E3A82 /* LoginRequestDTO.swift in Sources */,
 				7B7DA34F2B1CE61A003E3A82 /* TodayRecordDTO.swift in Sources */,
 				7B2C75A02B19EBF700A6CE1A /* CommentView.swift in Sources */,
 				0589FB482B1CFDDE00D0CB7F /* InfoDTO.swift in Sources */,

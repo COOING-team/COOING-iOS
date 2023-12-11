@@ -29,6 +29,8 @@ class LoginViewController: BaseViewController {
     override func hieararchy() {
         view.addSubview(loginCooingLogoImage)
         view.addSubview(kakaoLoginButton)
+        view.addSubview(appleLoginButton)
+
     }
     
     override func configureUI() {
@@ -37,6 +39,10 @@ class LoginViewController: BaseViewController {
         kakaoLoginButton.do {
             $0.setImage(Image.kakaoLoginButton, for: .normal)
         }
+        
+        appleLoginButton.do {
+            $0.setImage(Image.appleLoginButton, for: .normal)
+        }
     }
     
     override func setLayout() {
@@ -44,18 +50,30 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(205)
             $0.centerX.equalToSuperview()
         }
-        kakaoLoginButton.snp.makeConstraints {
+        appleLoginButton.snp.makeConstraints {
             $0.top.equalTo(loginCooingLogoImage.snp.bottom).offset(148)
             $0.centerX.equalToSuperview()
         }
+        kakaoLoginButton.snp.makeConstraints {
+            $0.top.equalTo(appleLoginButton.snp.bottom).offset(18)
+            $0.centerX.equalToSuperview()
+
+        }
+        
     }
     
     override func setButtonEvent() {
+        appleLoginButton.addTarget(self, action: #selector(appleLoginButtonDidTapped), for: .touchUpInside)
         kakaoLoginButton.addTarget(self, action: #selector(kakaoLoginButtonDidTapped), for: .touchUpInside)
 
     }
     
     // MARK: - Custom Method
+    
+    @objc
+    func appleLoginButtonDidTapped() {
+        
+    }
     
     @objc
     func kakaoLoginButtonDidTapped() {

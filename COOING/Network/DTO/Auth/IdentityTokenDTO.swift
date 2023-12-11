@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct IdentityTokenDTO: Codable {
     let accessToken: String
     let refreshToken: String

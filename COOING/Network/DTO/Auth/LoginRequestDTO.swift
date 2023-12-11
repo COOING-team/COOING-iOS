@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct KakaoLoginRequestDTO: Codable {
-    let providerId: String
-    let nickname: String
+struct LoginRequestDTO: Codable {
+    let name: String
     let email: String
+    let oauthProvider: String
 }
