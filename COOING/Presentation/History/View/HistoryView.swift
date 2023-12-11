@@ -42,7 +42,7 @@ final class HistoryView: BaseView {
 
     override func configureUI() {
         titleLabel.do {
-            $0.text = "이번 달\nJiwoo의 답변 모아보기"
+            $0.text = "이번 달\n\(HomeViewController.cooingInfo.name)의 답변 모아보기"
             $0.textAlignment = .left
             $0.font = .title2()
             $0.textColor = .cooingBrown
@@ -54,7 +54,7 @@ final class HistoryView: BaseView {
         }
         
         monthLabel.do {
-            $0.text = "2023년 12월"
+            $0.text = "\(CurrentDate.year)년 \(CurrentDate.month)월"
             $0.font = .body3()
             $0.textColor = .cooingBrown.withAlphaComponent(0.7)
         }
